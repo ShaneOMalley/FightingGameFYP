@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: b37f60547dfd81540804976263d0c970
+timeCreated: 1537442974
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ryu_attack_01
+    21300002: ryu_attack_02
+    21300004: ryu_attack_03
+    21300006: ryu_idle_01
+    21300008: ryu_idle_02
+    21300010: ryu_idle_03
+    21300012: ryu_idle_04
+    21300014: ryu_walk_01
+    21300016: ryu_walk_02
+    21300018: ryu_walk_03
+    21300020: ryu_walk_04
+    21300022: ryu_hit_01
+    21300024: ryu_hit_02
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ryu_attack_01
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 91
+        width: 43
+        height: 82
+      alignment: 9
+      pivot: {x: 0.476744, y: 0.5121951}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_attack_02
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 96
+        width: 47
+        height: 79
+      alignment: 9
+      pivot: {x: 0.43617, y: 0.5316456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_attack_03
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 10
+        width: 66
+        height: 81
+      alignment: 9
+      pivot: {x: 0.310606, y: 0.5185185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_hit_01
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 18
+        width: 39
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_hit_02
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 178
+        width: 46
+        height: 78
+      alignment: 9
+      pivot: {x: 0.5869565, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_01
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 41
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5121956, y: 0.493976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_02
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 173
+        width: 42
+        height: 83
+      alignment: 9
+      pivot: {x: 0.52381, y: 0.493976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_03
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 7
+        width: 41
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5121956, y: 0.493976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_04
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 173
+        width: 40
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5000005, y: 0.493976}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_01
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 93
+        width: 40
+        height: 81
+      alignment: 9
+      pivot: {x: 0.5499999, y: 0.5123457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_02
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 42
+        height: 83
+      alignment: 9
+      pivot: {x: 0.6071424, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_03
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 174
+        width: 35
+        height: 82
+      alignment: 9
+      pivot: {x: 0.58571416, y: 0.5000001}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_04
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 175
+        width: 35
+        height: 81
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.5123457}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
