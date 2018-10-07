@@ -205,8 +205,9 @@ public class PlayerController : MonoBehaviour
         // Hit detection
         if (!_currentHitboxHit && HitBoxes != null && HitBoxes.IsIntersecting(OtherPlayer.Hurtboxes))
         {
-            OtherPlayer.Hit(20, 0.2f);
-            KnockbackSpeed(0.2f);
+            Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
+            OtherPlayer.Hit(hitbox);
+            KnockbackSpeed(hitbox.PushbackHit);
             _currentHitboxHit = true;
         }
 
@@ -234,16 +235,21 @@ public class PlayerController : MonoBehaviour
             {
                 _knockback_speed = 0;
             }
-
-            Debug.Log("speed = " + _knockback_speed);
         }
     }
 
     public void Hit(int num_frames, float relative_knockback = 0, int damage = 0)
     {
+        Debug.LogFormat("{0:d}, {1:f}, {2:d}", num_frames, relative_knockback, damage);
+
         _hitstun_frames = num_frames;
         KnockbackSpeed(relative_knockback);
         FireTrigger(TRIGGER_RYU_HIT);
+    }
+
+    public void Hit(Hitbox hitbox)
+    {
+        Hit(hitbox.Hitstun, hitbox.KnocbackHit, hitbox.Damage);
     }
 
     public void KnockbackSpeed(float relative_knockback)

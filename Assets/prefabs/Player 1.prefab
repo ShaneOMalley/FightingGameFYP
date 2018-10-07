@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 61010778018702872}
   - component: {fileID: 61476551187282280}
   - component: {fileID: 61634758659237798}
+  - component: {fileID: 114927133805869862}
   m_Layer: 0
   m_Name: hurt
   m_TagString: Untagged
@@ -457,6 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4471815173460664}
   - component: {fileID: 61577634163285318}
+  - component: {fileID: 114468952942202896}
   m_Layer: 0
   m_Name: hit
   m_TagString: Untagged
@@ -1199,7 +1201,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1114887481756330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: -0.026301194}
+  m_LocalPosition: {x: -2, y: 0, z: -0.026301194}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 4261647795788844}
@@ -2612,6 +2614,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kind: 0
+--- !u!114 &114468952942202896
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733030808411126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+  KnocbackHit: 0.5
+  KnockbackBlock: 0.3
+  PushbackHit: 0.2
+  PushbackBlock: 0.2
+  Hitstun: 0
+  Blockstun: 0
 --- !u!114 &114788517766181886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2624,6 +2644,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kind: 0
+--- !u!114 &114927133805869862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566722517200762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+  KnocbackHit: 0.5
+  KnockbackBlock: 0.3
+  PushbackHit: 0.2
+  PushbackBlock: 0.2
+  Hitstun: 0
+  Blockstun: 0
 --- !u!114 &114950513895064934
 MonoBehaviour:
   m_ObjectHideFlags: 1
