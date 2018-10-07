@@ -6,7 +6,6 @@ using UnityEngine;
 public class GameCamera : MonoBehaviour
 {
     public Transform[] Subjects;
-    public Vector2 Offset = new Vector2(0, 0);
     public Transform CameraBoundsLeft;
     public Transform CameraBoundsRight;
 
@@ -15,7 +14,6 @@ public class GameCamera : MonoBehaviour
     public float MaxCameraWidth = 16;
 
     private Camera _camera;
-    private float _initial_z;
     private float _gap_percentage;
 
     public float CameraWidth
@@ -51,8 +49,6 @@ public class GameCamera : MonoBehaviour
     void Start ()
     {
         _camera = GetComponent<Camera>();
-        
-        _initial_z = transform.position.z;
 
         // The percentage of the screen which will be taken up by the gap
         _gap_percentage = 1 - (Padding * 2);
@@ -65,8 +61,7 @@ public class GameCamera : MonoBehaviour
 	void Update ()
     {
         Vector3 target_pos = getAveragePos2d(Subjects);
-        transform.position = target_pos;
-        transform.position = new Vector3(transform.position.x, transform.position.y, _initial_z);
+        transform.position = new Vector3(target_pos.x, transform.position.y, transform.position.z);
 
         // Clamp camera position between bounds
         float left = transform.position.x - CameraWidth / 2;
@@ -74,14 +69,12 @@ public class GameCamera : MonoBehaviour
 
         if (left < CameraBoundsLeft.position.x)
         {
-            transform.position = new Vector3(CameraBoundsLeft.position.x + CameraWidth / 2, transform.position.y, _initial_z);
+            transform.position = new Vector3(CameraBoundsLeft.position.x + CameraWidth / 2, transform.position.y, transform.position.z);
         }
         else if (right > CameraBoundsRight.position.x)
         {
-            transform.position = new Vector3(CameraBoundsRight.position.x - CameraWidth / 2, transform.position.y, _initial_z);
+            transform.position = new Vector3(CameraBoundsRight.position.x - CameraWidth / 2, transform.position.y, transform.position.z);
         }
-
-        transform.position += new Vector3(Offset.x, Offset.y, 0);
 
         // Control Camera Zoom
         float leftmostSubjectX = Subjects.Min(subject => subject.position.x);

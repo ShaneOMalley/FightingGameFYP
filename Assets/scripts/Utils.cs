@@ -24,4 +24,9 @@ public static class Utils
         // TODO: Figure out how to do this
         return 69420;
     }
+
+    public static float NormalDeltaTime()
+    {
+        return Time.deltaTime * 60;
+    }
 }

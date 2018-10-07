@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float WalkSpeedForward = 4;
-    public float WalkSpeedBackward = 3.5f;
+    public float WalkSpeedForward = 0.06f;
+    public float WalkSpeedBackward = 0.035f;
+
+    private float _initialY;
+    private float _gravity = 0;
+    private float _velY = 0;
 
     public GameCamera CurrentGameCamera;
     public PlayerController OtherPlayer;
+    public GameObject HitSpark;
+    public GameObject BlockSpark;
 
     public enum PlayerEnum { P1, P2 }
     public PlayerEnum PlayerNum = PlayerEnum.P1;
@@ -17,22 +23,50 @@ public class PlayerController : MonoBehaviour
     private enum State {
         STATE_IDLE = 0,
         STATE_WALK = 1,
-        STATE_ATTACK = 2,
-        STATE_HIT = 3,
-        STATE_BLOCK = 4
+        STATE_HIT = 2,
+        STATE_BLOCK = 3,
+        STATE_CROUCH = 4,
+        STATE_KNOCKDOWN_AIR = 5,
+        STATE_KNOCKDOWN_GROUND = 6,
+        STATE_KNOCKDOWN_GETUP = 7,
     }
+    private State _state = State.STATE_IDLE;
     private enum Direction { RIGHT, LEFT }
 
     private const string TRIGGER_RYU_ATTACK = "play_attack";
+    private const string TRIGGER_RYU_KICK = "play_kick";
     private const string TRIGGER_RYU_HIT = "play_hit";
+    private const string TRIGGER_RYU_BLOCK = "play_block";
+    private const string TRIGGER_RYU_CROUCH = "play_crouch";
+    private const string TRIGGER_RYU_SWEEP = "play_sweep";
+    private const string TRIGGER_RYU_OVERHEAD = "play_overhead";
+    private const string TRIGGER_RYU_KNOCKDOWN_AIR = "play_knockdown_air";
+    private const string TRIGGER_RYU_KNOCKDOWN_GROUND = "play_knockdown_ground";
+    private const string TRIGGER_RYU_KNOCKDOWN_GETUP = "play_knockdown_getup";
+
+    private static string[] StuckAnims = 
+    {
+        "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead",
+        "ryu_knockdown_air", "ryu_knockdown_ground", "ryu_knockdown_getup"
+    };
+
+    private static State[] StuckStates =
+    {
+        State.STATE_HIT, State.STATE_BLOCK, State.STATE_KNOCKDOWN_AIR,
+        State.STATE_KNOCKDOWN_GROUND, State.STATE_KNOCKDOWN_GETUP,
+    };
 
     private Transform _currentBoxesFrame;
     private Animator _animator;
     private Direction _direction = Direction.RIGHT;
     private bool _movingForward = true;
 
+    private bool _isCrouching = false;
+
     private const float KNOCKBACK_DECELERATION = 0.05f;
     private int _hitstun_frames = 0;
+    private int _blockstun_frames = 0;
+    private int _frames_on_ground = 0;
     private float _knockback_speed = 0;
 
     private bool _currentHitboxHit = false;
@@ -65,6 +99,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public BoxCollider2D[] ProxBoxes
+    {
+        get
+        {
+            Transform boxGroup = CurrentBoxesFrame.Find("prox");
+            if (boxGroup == null)
+                return null;
+            return boxGroup.GetComponents<BoxCollider2D>();
+        }
+    }
+
+
     public BoxCollider2D PushBox
     {
         get { return CurrentBoxesFrame.Find("push").GetComponent<BoxCollider2D>(); }
@@ -85,60 +131,172 @@ public class PlayerController : MonoBehaviour
         get { return _hitstun_frames > 0; }
     }
 
+    private bool _inBlockStun
+    {
+        get { return _blockstun_frames > 0; }
+    }
+
+    private bool _inAirKnockdown
+    {
+        get { return _state == State.STATE_KNOCKDOWN_AIR; }
+    }
+
+    private bool _inGroundKnockdown
+    {
+        get { return _state == State.STATE_KNOCKDOWN_GROUND; }
+    }
+
+    private bool _inGetup
+    {
+        get { return _state == State.STATE_KNOCKDOWN_GETUP; }
+    }
+
     private bool _isStuck
     {
         get
         {
             // Is the player attacking?
-            if (_animator.GetCurrentAnimatorStateInfo(0).IsName("ryu_attack"))
-                return true;
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            foreach (string anim_name in StuckAnims)
+                if (stateInfo.IsName(anim_name))
+                    return true;
 
-            // Is the player in hitstun?
-            if (_inHitstun)
+            // Is the player in a stuck state?
+            foreach (State state in StuckStates)
+                if (_state == state)
+                    return true;
+
+            // Is the player in hitstun or blockstun?
+            if (_inHitstun || _inBlockStun)
                 return true;
 
             return false;
         }
     }
 
+    // Holding Directions
+    private bool HoldingBack
+    {
+        get
+        {
+            float horizontal = GetAxis("Horizontal");
+            return (_direction == Direction.RIGHT && horizontal < 0)
+                || (_direction == Direction.LEFT && horizontal > 0);
+        }
+    }
+
+    public bool HoldingForward
+    {
+        get { return GetAxis("Horizontal") != 0 && !HoldingBack; }
+    }
+
+    public bool HoldingDown
+    {
+        get { return GetAxis("Vertical") < 0; }
+    }
+
+    public bool IsBlocking
+    {
+        get { return HoldingBack && !_isStuck; }
+    }
+
+    public bool IsCrouching
+    {
+        get { return _isCrouching; }
+    }
+    
+    public bool IsStanding
+    {
+        get { return !IsCrouching; }
+    }
 
     // Use this for initialization
     void Start ()
     {
         _animator = this.GetComponent<Animator>();
+
+        _initialY = transform.position.y;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
+        Debug.Log(_axis_prefix + " is " + _state + " and is stuck? " + _isStuck);
+
+        // Crouching
+        if (!_isStuck)
+        {
+            if (GetAxis("Vertical") < 0)
+            {
+                SetState(State.STATE_CROUCH);
+                _isCrouching = true;
+            }
+            else
+            {
+                SetState(State.STATE_IDLE);
+                _isCrouching = false;
+            }
+
+            SetCrouching(_isCrouching);
+        }
+
         // Movement
-        if (GetAxis("Horizontal") > 0 && !_isStuck)
+        if (!_isStuck && !_isCrouching)
         {
-            SetState(State.STATE_WALK);
+            if (GetAxis("Horizontal") > 0)
+            {
+                SetState(State.STATE_WALK);
 
-            SetForward(_direction == Direction.RIGHT);
-            float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
+                SetForward(_direction == Direction.RIGHT);
+                float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
-        else if (GetAxis("Horizontal") < 0 && !_isStuck)
-        {
-            SetState(State.STATE_WALK);
+                transform.Translate(speed, 0, 0);
+            }
+            else if (GetAxis("Horizontal") < 0)
+            {
+                SetState(State.STATE_WALK);
 
-            SetForward(_direction == Direction.LEFT);
-            float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
+                SetForward(_direction == Direction.LEFT);
+                float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
-        }
-        else if (!_isStuck)
-        {
-            SetState(State.STATE_IDLE);
+                transform.Translate(-speed, 0, 0);
+            }
+            else
+            {
+                SetState(State.STATE_IDLE);
+            }
         }
 
         // Attacking
-        if (GetButtonDown("Attack") && !_isStuck)
+        if (!_isStuck)
         {
-            FireTrigger(TRIGGER_RYU_ATTACK);
+            // Standing Attacks
+            if (IsStanding)
+            {
+                if (GetButtonDown("Attack"))
+                {
+                    if (HoldingForward)
+                    {
+                        FireTrigger(TRIGGER_RYU_OVERHEAD);
+                    }
+                    else
+                    {
+                        FireTrigger(TRIGGER_RYU_ATTACK);
+                    }
+                }
+                else if (GetButtonDown("Kick"))
+                {
+                    FireTrigger(TRIGGER_RYU_KICK);
+                }
+            }
+            // Crouching Attacks
+            else if (IsCrouching)
+            {
+                if (GetButtonDown("Kick"))
+                {
+                    FireTrigger(TRIGGER_RYU_SWEEP);
+                }
+            }
         }
 
         // Update direction to face the other player
@@ -202,13 +360,64 @@ public class PlayerController : MonoBehaviour
             right.transform.Translate(overlap_amount / 2, 0, 0);
         }
 
-        // Hit detection
-        if (!_currentHitboxHit && HitBoxes != null && HitBoxes.IsIntersecting(OtherPlayer.Hurtboxes))
+        // Proximity guard / Hit Detection
+        if (OtherPlayer.Hurtboxes != null)
         {
-            Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
-            OtherPlayer.Hit(hitbox);
-            KnockbackSpeed(hitbox.PushbackHit);
-            _currentHitboxHit = true;
+            // Hit detection
+            Vector3 hitPos;
+            bool contact = false;
+            if (!_currentHitboxHit && HitBoxes != null && HitBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
+            {
+                hitPos.z -= 0.1f;
+
+                Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
+                Hitbox.HitLevel level = hitbox.Level;
+
+                bool blocked = OtherPlayer.IsBlocking;
+                if (blocked)
+                {
+                    if (level == Hitbox.HitLevel.MID && OtherPlayer.HoldingDown)
+                    {
+                        blocked = false;
+                    }
+                    else if (level == Hitbox.HitLevel.LOW && !OtherPlayer.HoldingDown)
+                    {
+                        blocked = false;
+                    }
+                }
+
+                if (blocked)
+                {
+                    OtherPlayer.Block(hitbox);
+                    Instantiate(BlockSpark, hitPos, Quaternion.identity);
+                    KnockbackSpeed(hitbox.PushbackBlock);
+                }
+                else
+                {
+                    if (hitbox.KnocksDown)
+                    {
+                        OtherPlayer.KnockDown(hitbox);
+                    }
+                    else
+                    {
+                        OtherPlayer.Hit(hitbox);
+                    }
+                    Instantiate(HitSpark, hitPos, Quaternion.identity);
+                    KnockbackSpeed(hitbox.PushbackHit);
+                }
+
+                _currentHitboxHit = true;
+                contact = true;
+            }
+
+            // Proximity guard detection
+            if (!contact && ProxBoxes != null && ProxBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
+            {
+                if (OtherPlayer.IsBlocking)
+                {
+                    OtherPlayer.Block(1, 0);
+                }
+            }
         }
 
         // Hitstun handling
@@ -224,24 +433,64 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // Blockstun handling
+        else if (_inBlockStun)
+        {
+            if (--_blockstun_frames == 0)
+            {
+                SetState(State.STATE_IDLE);
+            }
+            else
+            {
+                SetState(State.STATE_BLOCK);
+            }
+        }
+
+        // Air knockdown handling
+        else if (_inAirKnockdown)
+        {
+            transform.Translate(0, _velY, 0);
+            _velY -= _gravity;
+
+            // Check if player hit the ground
+            if (_velY <= 0 && transform.position.y <= _initialY)
+            {
+                transform.position = new Vector3(transform.position.x, _initialY, transform.position.z);
+                SetState(State.STATE_KNOCKDOWN_GROUND);
+                FireTrigger(TRIGGER_RYU_KNOCKDOWN_GROUND);
+            }
+        }
+
+        // Ground knockdown handling
+        else if (_inGroundKnockdown)
+        {
+            if (--_frames_on_ground == 0)
+            {
+                SetState(State.STATE_KNOCKDOWN_GETUP);
+                FireTrigger(TRIGGER_RYU_KNOCKDOWN_GETUP);
+            }
+        }
+
         // Knockback
         if (_knockback_speed != 0)
         {
             transform.Translate(_knockback_speed, 0, 0);
 
-            float prev_speed = _knockback_speed;
-            _knockback_speed -= KNOCKBACK_DECELERATION * Mathf.Sign(_knockback_speed);
-            if (Mathf.Sign(_knockback_speed) != Mathf.Sign(prev_speed))
+            // Only decelerate if the player isn't being knocked through the air
+            if (_state != State.STATE_KNOCKDOWN_AIR)
             {
-                _knockback_speed = 0;
+                float prev_speed = _knockback_speed;
+                _knockback_speed -= KNOCKBACK_DECELERATION * Mathf.Sign(_knockback_speed);
+                if (Mathf.Sign(_knockback_speed) != Mathf.Sign(prev_speed))
+                {
+                    _knockback_speed = 0;
+                }
             }
         }
     }
 
     public void Hit(int num_frames, float relative_knockback = 0, int damage = 0)
     {
-        Debug.LogFormat("{0:d}, {1:f}, {2:d}", num_frames, relative_knockback, damage);
-
         _hitstun_frames = num_frames;
         KnockbackSpeed(relative_knockback);
         FireTrigger(TRIGGER_RYU_HIT);
@@ -249,7 +498,34 @@ public class PlayerController : MonoBehaviour
 
     public void Hit(Hitbox hitbox)
     {
-        Hit(hitbox.Hitstun, hitbox.KnocbackHit, hitbox.Damage);
+        Hit(hitbox.Hitstun, hitbox.KnockbackHit, hitbox.Damage);
+    }
+
+    public void KnockDown(float velY, float gravity, float relative_knockback, int frames_on_ground)
+    {
+        _frames_on_ground = frames_on_ground;
+        KnockbackSpeed(relative_knockback);
+        _velY = velY;
+        _gravity = gravity;
+        FireTrigger(TRIGGER_RYU_KNOCKDOWN_AIR);
+        SetState(State.STATE_KNOCKDOWN_AIR);
+    }
+
+    public void KnockDown(Hitbox hitbox)
+    {
+        KnockDown(hitbox.KnockdownLaunch, hitbox.KnockdownGravity, hitbox.KnockbackHit, hitbox.KnockdownGroundFrames);
+    }
+
+    public void Block(int num_frames, float relative_knockback = 0)
+    {
+        _blockstun_frames = num_frames;
+        KnockbackSpeed(relative_knockback);
+        FireTrigger(TRIGGER_RYU_BLOCK);
+    }
+
+    public void Block(Hitbox hitbox)
+    {
+        Block(hitbox.Blockstun, hitbox.KnockbackBlock);
     }
 
     public void KnockbackSpeed(float relative_knockback)
@@ -278,6 +554,7 @@ public class PlayerController : MonoBehaviour
     private void SetState(State state)
     {
         _animator.SetInteger("state", (int)state);
+        _state = state;
     }
 
     private void FireTrigger(string trigger)
@@ -285,10 +562,20 @@ public class PlayerController : MonoBehaviour
         _animator.SetTrigger(trigger);
     }
 
+    private void ResetTrigger(string trigger)
+    {
+        _animator.ResetTrigger(trigger);
+    }
+
     private void SetForward(bool isForward)
     {
         _animator.SetBool("moving_forward", isForward);
         _movingForward = isForward;
+    }
+
+    private void SetCrouching(bool isCrouching)
+    {
+        _animator.SetBool("is_crouching", IsCrouching);
     }
 
     private void UpdateTransformDirection()

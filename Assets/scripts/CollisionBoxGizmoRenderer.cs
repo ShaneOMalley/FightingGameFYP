@@ -4,67 +4,95 @@ using UnityEngine;
 
 public class CollisionBoxGizmoRenderer : MonoBehaviour
 {
-    public enum Kind { HURT, HIT, PUSH, THROW, PROX }
-    public Kind kind = Kind.HURT;
+    private static Sprite BoxSprite;
+    private const string SPRITE_NAME = "boxSprite";
 
-	void Start()
-    {
-	}
+    private GameObject _spritesGo;
 
-    private void Update()
+    void Start()
     {
+        // Intialize the resource if it hasn't been done yet
+        if (BoxSprite == null)
+        {
+            BoxSprite = Resources.Load<Sprite>(SPRITE_NAME);
+        }
+
         foreach (Transform boxGroup in transform)
         {
+            // Set up color of sprite GameObject
             Color color;
+            float relZ;
             switch (boxGroup.name)
             {
                 case "hurt":
                     color = Color.green;
+                    relZ = -0.2f;
                     break;
                 case "hit":
                     color = Color.red;
+                    relZ = -0.3f;
                     break;
                 case "push":
                     color = Color.magenta;
+                    relZ = -0.1f;
                     break;
                 case "throw":
                     color = Color.blue;
+                    relZ = -0.35f;
                     break;
                 case "prox":
                     color = Color.yellow;
+                    relZ = -0.15f;
                     break;
                 case "camera":
-                    color = Color.black;
+                    color = new Color(0, 0, 0, 0);
+                    relZ = 0.0f;
                     break;
                 default:
                     color = Color.white;
+                    relZ = -2f;
                     break;
             }
 
+            // Set up GameObject to hold sprite-rendering GameObjects
+            GameObject spritesGo = new GameObject("sprites");
+            spritesGo.transform.Translate(0, 0, relZ);
+            spritesGo.transform.SetParent(boxGroup);
+            
             foreach (BoxCollider2D box in boxGroup.GetComponents<BoxCollider2D>())
             {
-                float left = box.bounds.min.x;
-                float right = box.bounds.max.x;
-                float bottom = box.bounds.min.y;
-                float top = box.bounds.max.y;
-                float z = box.bounds.min.z;
+                // Setup GameObject to render sprite
+                GameObject spriteGo = new GameObject("sprite");
+                spriteGo.transform.SetParent(spritesGo.transform);
+                SpriteRenderer sr = spriteGo.AddComponent<SpriteRenderer>();
+                sr.sprite = BoxSprite;
+                sr.drawMode = SpriteDrawMode.Sliced;
+                sr.color = color;
+                sr.enabled = false;
 
-                Vector3 topLeft = new Vector3(left, top, z);
-                Vector3 bottomRight = new Vector3(right, bottom, z);
-                Vector3 bottomLeft = box.bounds.min;
-                Vector3 topRight = box.bounds.max;
-                
-                Debug.DrawLine(topLeft, topRight, color);
-                Debug.DrawLine(bottomLeft, bottomRight, color);
-                Debug.DrawLine(topRight, bottomRight, color);
-
-                float step = (right - left) / 10f;
-
-                for (float x = left; x < right; x+=step)
-                {
-                    Debug.DrawLine(new Vector3(x, bottom, z), new Vector3(x, top, z), color);
-                }
+                // Set position and dimensions of sprite
+                spriteGo.transform.localPosition = box.bounds.min;
+                float w = box.bounds.size.x;
+                float h = box.bounds.size.y;
+                sr.size = new Vector2(w, h);
             }
         }
+    }
+
+    private void setSpriteRenderersActiveRecursively(bool enabled)
+    {
+        foreach (Transform boxGroup in transform)
+        {
+            Transform sprites = boxGroup.Find("sprites");
+            foreach (Transform sprite in sprites)
+            {
+                sprite.GetComponent<SpriteRenderer>().enabled = enabled;
+            }
+        }
+    }
+
+    private void Update()
+    {
+        setSpriteRenderersActiveRecursively(Globals.DRAW_HITBOXES);
     }
 }

@@ -138,7 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &61548604
 GameObject:
@@ -166,7 +166,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &73930005 stripped
 Transform:
@@ -189,29 +189,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4916969738767378, guid: 4828793b3f52f434ba81a6ec3174e543,
     type: 2}
   m_PrefabInternal: {fileID: 2026242113}
---- !u!1 &969531804 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1566722517200762, guid: 4828793b3f52f434ba81a6ec3174e543,
-    type: 2}
-  m_PrefabInternal: {fileID: 2026242113}
---- !u!114 &969531811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 969531804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 1
-  KnocbackHit: 0.5
-  KnockbackBlock: 0.3
-  PushbackHit: 0.2
-  PushbackBlock: 0.2
-  Hitstun: 0
-  Blockstun: 0
 --- !u!1001 &1333656580
 Prefab:
   m_ObjectHideFlags: 0
@@ -249,7 +226,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4916969738767378, guid: 4828793b3f52f434ba81a6ec3174e543, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114325196394187302, guid: 4828793b3f52f434ba81a6ec3174e543,
         type: 2}
@@ -277,6 +254,10 @@ Prefab:
     - target: {fileID: 4916969738767378, guid: 4828793b3f52f434ba81a6ec3174e543, type: 2}
       propertyPath: m_LocalScale.x
       value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1114887481756330, guid: 4828793b3f52f434ba81a6ec3174e543, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4828793b3f52f434ba81a6ec3174e543, type: 2}
@@ -374,29 +355,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2026242113}
   m_Script: {fileID: 11500000, guid: efb2f71825f7aa247865c3ef172b364f, type: 3}
---- !u!1 &1595144184 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1733030808411126, guid: 4828793b3f52f434ba81a6ec3174e543,
-    type: 2}
-  m_PrefabInternal: {fileID: 2026242113}
---- !u!114 &1595144187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1595144184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 1
-  KnocbackHit: 0.5
-  KnockbackBlock: 0.3
-  PushbackHit: 0.2
-  PushbackBlock: 0.2
-  Hitstun: 0
-  Blockstun: 0
 --- !u!114 &1842440820 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114424234953278294, guid: c9ac5b2c4e81d1d4d9e3f12711433d37,
