@@ -8,9 +8,14 @@ public class PlayerController : MonoBehaviour
     public float WalkSpeedForward = 0.06f;
     public float WalkSpeedBackward = 0.035f;
 
+    public float JumpPower = 2f;
+    public float JumpSpeedHorizontal = 0.15f;
+    public float JumpGravity = 0.05f;
+
     private float _initialY;
     private float _gravity = 0;
     private float _velY = 0;
+    private float _jumpVelX = 0;
 
     public GameCamera CurrentGameCamera;
     public PlayerController OtherPlayer;
@@ -29,6 +34,14 @@ public class PlayerController : MonoBehaviour
         STATE_KNOCKDOWN_AIR = 5,
         STATE_KNOCKDOWN_GROUND = 6,
         STATE_KNOCKDOWN_GETUP = 7,
+        STATE_PRE_JUMP = 8,
+        STATE_NEUTRAL_JUMP = 9,
+        STATE_BACK_JUMP = 10,
+        STATE_FORWARD_JUMP = 11,
+        STATE_FLIP_OUT = 12,
+        STATE_JUMP_ATTACK = 13,
+
+        STATE_JUMP_NODECISION = 500,
     }
     private State _state = State.STATE_IDLE;
     private enum Direction { RIGHT, LEFT }
@@ -39,14 +52,16 @@ public class PlayerController : MonoBehaviour
     private const string TRIGGER_RYU_BLOCK = "play_block";
     private const string TRIGGER_RYU_CROUCH = "play_crouch";
     private const string TRIGGER_RYU_SWEEP = "play_sweep";
+    private const string TRIGGER_RYU_CROUCH_PUNCH = "play_crouch_punch";
     private const string TRIGGER_RYU_OVERHEAD = "play_overhead";
+    private const string TRIGGER_RYU_JUMP_KICK = "play_jump_kick";
     private const string TRIGGER_RYU_KNOCKDOWN_AIR = "play_knockdown_air";
     private const string TRIGGER_RYU_KNOCKDOWN_GROUND = "play_knockdown_ground";
     private const string TRIGGER_RYU_KNOCKDOWN_GETUP = "play_knockdown_getup";
 
     private static string[] StuckAnims = 
     {
-        "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead",
+        "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_crouch_punch",
         "ryu_knockdown_air", "ryu_knockdown_ground", "ryu_knockdown_getup"
     };
 
@@ -54,6 +69,18 @@ public class PlayerController : MonoBehaviour
     {
         State.STATE_HIT, State.STATE_BLOCK, State.STATE_KNOCKDOWN_AIR,
         State.STATE_KNOCKDOWN_GROUND, State.STATE_KNOCKDOWN_GETUP,
+        State.STATE_PRE_JUMP, State.STATE_NEUTRAL_JUMP, State.STATE_BACK_JUMP,
+        State.STATE_FORWARD_JUMP, State.STATE_FLIP_OUT,
+    };
+
+    private static string[] AirStuckAnims =
+    {
+        "ryu_jump_kick", "ryu_flip_out"
+    };
+
+    private static State[] AirStuckStates =
+    {
+        State.STATE_FLIP_OUT
     };
 
     private Transform _currentBoxesFrame;
@@ -62,6 +89,9 @@ public class PlayerController : MonoBehaviour
     private bool _movingForward = true;
 
     private bool _isCrouching = false;
+    
+    private bool _isAirborne = false;
+    private State _jumpDecision = State.STATE_NEUTRAL_JUMP;
 
     private const float KNOCKBACK_DECELERATION = 0.05f;
     private int _hitstun_frames = 0;
@@ -126,6 +156,16 @@ public class PlayerController : MonoBehaviour
         get { return _isP1 ? "P1_" : "P2_"; }
     }
 
+    private bool _isFacingRight
+    {
+        get { return _direction == Direction.RIGHT; }
+    }
+
+    private bool _onLeftSide
+    {
+        get { return transform.position.x < OtherPlayer.transform.position.x; }
+    }
+
     private bool _inHitstun
     {
         get { return _hitstun_frames > 0; }
@@ -151,6 +191,11 @@ public class PlayerController : MonoBehaviour
         get { return _state == State.STATE_KNOCKDOWN_GETUP; }
     }
 
+    private bool _inPreJump
+    {
+        get { return _state == State.STATE_PRE_JUMP; }
+    }
+
     private bool _isStuck
     {
         get
@@ -173,6 +218,25 @@ public class PlayerController : MonoBehaviour
             return false;
         }
     }
+    
+    public bool _isAirStuck
+    {
+        get
+        {
+            // Is the player attacking?
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            foreach (string anim_name in AirStuckAnims)
+                if (stateInfo.IsName(anim_name))
+                    return true;
+
+            // Is the player in a stuck state?
+            foreach (State state in AirStuckStates)
+                if (_state == state)
+                    return true;
+
+            return false;
+        }
+    }
 
     // Holding Directions
     private bool HoldingBack
@@ -180,8 +244,8 @@ public class PlayerController : MonoBehaviour
         get
         {
             float horizontal = GetAxis("Horizontal");
-            return (_direction == Direction.RIGHT && horizontal < 0)
-                || (_direction == Direction.LEFT && horizontal > 0);
+            return (_isFacingRight && horizontal < 0)
+                || (!_isFacingRight && horizontal > 0);
         }
     }
 
@@ -210,18 +274,48 @@ public class PlayerController : MonoBehaviour
         get { return !IsCrouching; }
     }
 
+    public bool IsAirborne
+    {
+        get { return _isAirborne; }
+    }
+
+    public bool IsGrounded
+    {
+        get { return !IsAirborne; }
+    }
+
     // Use this for initialization
     void Start ()
     {
         _animator = this.GetComponent<Animator>();
-
         _initialY = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_axis_prefix + " is " + _state + " and is stuck? " + _isStuck);
+        // Jumping
+        if (!_isStuck && IsGrounded)
+        {
+            if (GetAxis("Vertical") > 0)
+            {
+                SetState(State.STATE_PRE_JUMP);
+                SetJumpDecision(State.STATE_JUMP_NODECISION);
+            }
+        }
+
+        // Branch from Pre-jump to one of three jumping options: neutral, back, forward
+        if (_inPreJump && _jumpDecision == State.STATE_JUMP_NODECISION)
+        {
+            if (GetAxis("Horizontal") * (_isFacingRight ? 1 : -1) < 0)
+            {
+                SetJumpDecision(State.STATE_BACK_JUMP);
+            }
+            else if (GetAxis("Horizontal") * (_isFacingRight ? 1 : -1) > 0)
+            {
+                SetJumpDecision(State.STATE_FORWARD_JUMP);
+            }
+        }
 
         // Crouching
         if (!_isStuck)
@@ -247,7 +341,7 @@ public class PlayerController : MonoBehaviour
             {
                 SetState(State.STATE_WALK);
 
-                SetForward(_direction == Direction.RIGHT);
+                SetForward(_isFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
                 transform.Translate(speed, 0, 0);
@@ -256,7 +350,7 @@ public class PlayerController : MonoBehaviour
             {
                 SetState(State.STATE_WALK);
 
-                SetForward(_direction == Direction.LEFT);
+                SetForward(!_isFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
                 transform.Translate(-speed, 0, 0);
@@ -292,26 +386,31 @@ public class PlayerController : MonoBehaviour
             // Crouching Attacks
             else if (IsCrouching)
             {
-                if (GetButtonDown("Kick"))
+                if (GetButtonDown("Attack"))
+                {
+                    FireTrigger(TRIGGER_RYU_CROUCH_PUNCH);
+                }
+                else if (GetButtonDown("Kick"))
                 {
                     FireTrigger(TRIGGER_RYU_SWEEP);
                 }
             }
         }
 
-        // Update direction to face the other player
-        if (!_inHitstun)
+        // Air attacks
+        if (IsAirborne && !_isAirStuck)
         {
-            if (OtherPlayer.transform.position.x > transform.position.x)
+            if (GetButtonDown("Kick"))
             {
-                _direction = Direction.RIGHT;
+                FireTrigger(TRIGGER_RYU_JUMP_KICK);
+                Debug.Log("air kick fired");
             }
-            else
-            {
-                _direction = Direction.LEFT;
-            }
+        }
 
-            UpdateTransformDirection();
+        // Update direction to face the other player
+        if (!_isStuck)
+        {
+            UpdateDirection();
         }
 
         // Handle enabling of collision boxes
@@ -394,7 +493,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    if (hitbox.KnocksDown)
+                    if ((hitbox.KnocksDownGround && OtherPlayer.IsGrounded) 
+                        || (hitbox.KnocksDownAir && OtherPlayer.IsAirborne))
                     {
                         OtherPlayer.KnockDown(hitbox);
                     }
@@ -411,13 +511,13 @@ public class PlayerController : MonoBehaviour
             }
 
             // Proximity guard detection
-            if (!contact && ProxBoxes != null && ProxBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
-            {
-                if (OtherPlayer.IsBlocking)
-                {
-                    OtherPlayer.Block(1, 0);
-                }
-            }
+            //if (!contact && ProxBoxes != null && ProxBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
+            //{
+            //    if (OtherPlayer.IsBlocking)
+            //    {
+            //        OtherPlayer.Block(1, 0);
+            //    }
+            //}
         }
 
         // Hitstun handling
@@ -443,6 +543,22 @@ public class PlayerController : MonoBehaviour
             else
             {
                 SetState(State.STATE_BLOCK);
+            }
+        }
+
+        // Airborne handling
+        if (IsAirborne)
+        {
+            _velY -= JumpGravity;
+            transform.Translate(_jumpVelX, _velY, 0);
+
+            // Check if player touched the ground
+            if (_velY <= 0 && transform.position.y <= _initialY)
+            {
+                transform.position = new Vector3(transform.position.x, _initialY, transform.position.z);
+                SetState(State.STATE_IDLE);
+                SetAirborne(false);
+                UpdateDirection();
             }
         }
 
@@ -491,9 +607,20 @@ public class PlayerController : MonoBehaviour
 
     public void Hit(int num_frames, float relative_knockback = 0, int damage = 0)
     {
-        _hitstun_frames = num_frames;
-        KnockbackSpeed(relative_knockback);
-        FireTrigger(TRIGGER_RYU_HIT);
+        // Flip out in air if player is airborne
+        if (IsAirborne)
+        {
+            _velY = Math.Abs(_velY);
+            _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? -1 : 1);
+            SetState(State.STATE_FLIP_OUT);
+        }
+        // Apply hit as normal if player is grounded
+        else
+        {
+            KnockbackSpeed(relative_knockback);
+            _hitstun_frames = num_frames;
+            FireTrigger(TRIGGER_RYU_HIT);
+        }
     }
 
     public void Hit(Hitbox hitbox)
@@ -508,7 +635,11 @@ public class PlayerController : MonoBehaviour
         _velY = velY;
         _gravity = gravity;
         FireTrigger(TRIGGER_RYU_KNOCKDOWN_AIR);
+
         SetState(State.STATE_KNOCKDOWN_AIR);
+        SetAirborne(false);
+        _hitstun_frames = 0;
+        _blockstun_frames = 0;
     }
 
     public void KnockDown(Hitbox hitbox)
@@ -530,7 +661,28 @@ public class PlayerController : MonoBehaviour
 
     public void KnockbackSpeed(float relative_knockback)
     {
-        _knockback_speed = relative_knockback * (_direction == Direction.RIGHT ? -1 : 1);
+        _knockback_speed = relative_knockback * (_onLeftSide ? -1 : 1);
+    }
+
+    public void JumpNeutral()
+    {
+        _velY = JumpPower;
+        SetAirborne(true);
+        _jumpVelX = 0;
+    }
+
+    public void JumpBack()
+    {
+        _velY = JumpPower;
+        SetAirborne(true);
+        _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? -1 : 1);
+    }
+
+    public void JumpForward()
+    {
+        _velY = JumpPower;
+        SetAirborne(true);
+        _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? 1 : -1);
     }
 
     private void SetCollisionBoxesFrame(string name)
@@ -557,6 +709,12 @@ public class PlayerController : MonoBehaviour
         _state = state;
     }
 
+    private void SetJumpDecision(State state)
+    {
+        _animator.SetInteger("jump_decision", (int)state);
+        _jumpDecision = state;
+    }
+
     private void FireTrigger(string trigger)
     {
         _animator.SetTrigger(trigger);
@@ -578,10 +736,27 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("is_crouching", IsCrouching);
     }
 
-    private void UpdateTransformDirection()
+    private void SetAirborne(bool isAirborne)
     {
+        _animator.SetBool("grounded", !isAirborne);
+        _isAirborne = isAirborne;
+    }
+
+    private void UpdateDirection()
+    {
+        // Update the player's direction
+        if (OtherPlayer.transform.position.x > transform.position.x)
+        {
+            _direction = Direction.RIGHT;
+        }
+        else
+        {
+            _direction = Direction.LEFT;
+        }
+
+        // Update the direction (x-scale of the transform)
         float scaleX = transform.localScale.x;
-        if ((_direction == Direction.RIGHT && scaleX < 0) || (_direction == Direction.LEFT && scaleX > 0))
+        if ((_isFacingRight && scaleX < 0) || (!_isFacingRight && scaleX > 0))
         {
             transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
         }

@@ -16,7 +16,8 @@ public class Hitbox : MonoBehaviour
     public int Hitstun = 0;
     public int Blockstun = 0;
 
-    public bool KnocksDown = false;
+    public bool KnocksDownGround = false;
+    public bool KnocksDownAir = false;
     public float KnockdownLaunch = 0;
     public float KnockdownGravity = 0;
     public int KnockdownGroundFrames = 0;

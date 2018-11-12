@@ -1,0 +1,19 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# https://www.codeandweb.com/texturepacker/unity
+#
+# $TexturePacker:SmartUpdate:d94551291c8d3cf1f974d6de35eafe6b:7da3612bec6cab1c5558ef011902118c:354a53accf8a68135acea2c7cdc5b7c7$
+#
+:format=40300
+:texture=bird_fly.png
+:size=128x256
+:pivotpoints=enabled
+:borders=disabled
+
+bird_fly_01;1;175;72;44; 0.63888889;0.13636364; 0;0;0;0; 5;72;0;17;0;0;40;0;44;72;44; 3;2;3;4;1;2;4;0;1;4
+bird_fly_02;1;221;74;34; 0.62162162;0.14705882000000003; 0;0;0;0; 7;24;23;74;33;74;0;20;0;0;20;0;34;4;34; 5;4;5;6;0;3;4;0;1;2;0;2;3;0;4;6
+bird_fly_03;1;133;65;40; 0.63076923;0.8; 0;0;0;0; 4;65;0;0;0;0;40;65;40; 2;1;2;3;0;1;3
+bird_fly_04;68;131;56;42; 0.55357143;0.80952381; 0;0;0;0; 6;56;0;0;0;0;36;18;41;25;42;56;42; 4;0;4;5;1;4;0;1;2;3;1;3;4
+bird_fly_05;1;100;56;31; 0.53571429;0.64516129; 0;0;0;0; 6;56;24;56;13;43;0;0;0;0;31;41;31; 4;3;4;5;2;3;5;1;2;5;0;1;5

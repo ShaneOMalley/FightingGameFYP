@@ -6,7 +6,6 @@ public class Hit : MonoBehaviour
 {
     public void Destroy()
     {
-        Debug.Log("Destroying");
         Destroy(gameObject);
     }
 }
