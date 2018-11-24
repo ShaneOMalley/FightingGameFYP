@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameplayData Data;
+
+    public int MaxHP = 100;
+    private int _hp;
+
     public float WalkSpeedForward = 0.06f;
     public float WalkSpeedBackward = 0.035f;
 
@@ -102,6 +107,12 @@ public class PlayerController : MonoBehaviour
     private bool _currentHitboxHit = false;
 
     // Properties
+    public int HP
+    {
+        get { return _hp; }
+        set { _hp = value; }
+    }
+
     public Transform CurrentBoxesFrame
     {
         get { return _currentBoxesFrame; }
@@ -151,7 +162,7 @@ public class PlayerController : MonoBehaviour
         get { return PlayerNum == PlayerEnum.P1; }
     }
 
-    private string _axis_prefix
+    public string Prefix
     {
         get { return _isP1 ? "P1_" : "P2_"; }
     }
@@ -200,6 +211,10 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
+            // Is it not in gameplay state?
+            if (Data.CurrentState != GameplayData.State.GAMEPLAY)
+                return true;
+
             // Is the player attacking?
             AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
             foreach (string anim_name in StuckAnims)
@@ -289,6 +304,7 @@ public class PlayerController : MonoBehaviour
     {
         _animator = this.GetComponent<Animator>();
         _initialY = transform.position.y;
+        _hp = MaxHP;
     }
 
     // Update is called once per frame
@@ -470,16 +486,16 @@ public class PlayerController : MonoBehaviour
                 hitPos.z -= 0.1f;
 
                 Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
-                Hitbox.HitLevel level = hitbox.Level;
+                AttackData.HitLevel level = hitbox.AttackData.Level;
 
                 bool blocked = OtherPlayer.IsBlocking;
                 if (blocked)
                 {
-                    if (level == Hitbox.HitLevel.MID && OtherPlayer.HoldingDown)
+                    if (level == AttackData.HitLevel.MID && OtherPlayer.HoldingDown)
                     {
                         blocked = false;
                     }
-                    else if (level == Hitbox.HitLevel.LOW && !OtherPlayer.HoldingDown)
+                    else if (level == AttackData.HitLevel.LOW && !OtherPlayer.HoldingDown)
                     {
                         blocked = false;
                     }
@@ -489,12 +505,13 @@ public class PlayerController : MonoBehaviour
                 {
                     OtherPlayer.Block(hitbox);
                     Instantiate(BlockSpark, hitPos, Quaternion.identity);
-                    KnockbackSpeed(hitbox.PushbackBlock);
+                    KnockbackSpeed(hitbox.AttackData.PushbackBlock);
                 }
                 else
                 {
-                    if ((hitbox.KnocksDownGround && OtherPlayer.IsGrounded) 
-                        || (hitbox.KnocksDownAir && OtherPlayer.IsAirborne))
+                    OtherPlayer.TakeDamage(hitbox);
+                    if ((hitbox.AttackData.KnocksDownGround && OtherPlayer.IsGrounded) 
+                        || (hitbox.AttackData.KnocksDownAir && OtherPlayer.IsAirborne))
                     {
                         OtherPlayer.KnockDown(hitbox);
                     }
@@ -503,7 +520,7 @@ public class PlayerController : MonoBehaviour
                         OtherPlayer.Hit(hitbox);
                     }
                     Instantiate(HitSpark, hitPos, Quaternion.identity);
-                    KnockbackSpeed(hitbox.PushbackHit);
+                    KnockbackSpeed(hitbox.AttackData.PushbackHit);
                 }
 
                 _currentHitboxHit = true;
@@ -605,7 +622,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Hit(int num_frames, float relative_knockback = 0, int damage = 0)
+    public void TakeDamage(int damage)
+    {
+        // Apply damage
+        HP -= damage;
+    }
+
+    public void TakeDamage(Hitbox hitbox)
+    {
+        TakeDamage(hitbox.AttackData.Damage);
+    }
+
+    public void Hit(int num_frames, float relative_knockback = 0)
     {
         // Flip out in air if player is airborne
         if (IsAirborne)
@@ -625,7 +653,7 @@ public class PlayerController : MonoBehaviour
 
     public void Hit(Hitbox hitbox)
     {
-        Hit(hitbox.Hitstun, hitbox.KnockbackHit, hitbox.Damage);
+        Hit(hitbox.AttackData.Hitstun, hitbox.AttackData.KnockbackHit);
     }
 
     public void KnockDown(float velY, float gravity, float relative_knockback, int frames_on_ground)
@@ -644,7 +672,8 @@ public class PlayerController : MonoBehaviour
 
     public void KnockDown(Hitbox hitbox)
     {
-        KnockDown(hitbox.KnockdownLaunch, hitbox.KnockdownGravity, hitbox.KnockbackHit, hitbox.KnockdownGroundFrames);
+        KnockDown(hitbox.AttackData.KnockdownLaunch, hitbox.AttackData.KnockdownGravity, 
+            hitbox.AttackData.KnockbackHit, hitbox.AttackData.KnockdownGroundFrames);
     }
 
     public void Block(int num_frames, float relative_knockback = 0)
@@ -656,7 +685,7 @@ public class PlayerController : MonoBehaviour
 
     public void Block(Hitbox hitbox)
     {
-        Block(hitbox.Blockstun, hitbox.KnockbackBlock);
+        Block(hitbox.AttackData.Blockstun, hitbox.AttackData.KnockbackBlock);
     }
 
     public void KnockbackSpeed(float relative_knockback)
@@ -765,16 +794,16 @@ public class PlayerController : MonoBehaviour
     // InputManager helpers
     private float GetAxis(string axis)
     {
-        return Input.GetAxisRaw(_axis_prefix + axis);
+        return Input.GetAxisRaw(Prefix + axis);
     }
 
     private bool GetButton(string button)
     {
-        return Input.GetButton(_axis_prefix + button);
+        return Input.GetButton(Prefix + button);
     }
 
     private bool GetButtonDown(string button)
     {
-        return Input.GetButtonDown(_axis_prefix + button);
+        return Input.GetButtonDown(Prefix + button);
     }
 }

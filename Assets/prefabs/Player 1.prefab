@@ -11266,19 +11266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 2
-  Damage: 1
-  KnockbackHit: 0.5
-  KnockbackBlock: 0.3
-  PushbackHit: 0.2
-  PushbackBlock: 0.2
-  Hitstun: 20
-  Blockstun: 18
-  KnocksDownGround: 0
-  KnocksDownAir: 0
-  KnockdownLaunch: 0
-  KnockdownGravity: 0
-  KnockdownGroundFrames: 0
+  AttackData: {fileID: 11400000, guid: ce6b3f4b2cf387b45b6860f17f0501f1, type: 2}
 --- !u!114 &114244168529344984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11356,6 +11344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb2f71825f7aa247865c3ef172b364f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHP: 100
   WalkSpeedForward: 0.1
   WalkSpeedBackward: 0.07
   JumpPower: 0.42
@@ -11465,19 +11454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 0
-  Damage: 1
-  KnockbackHit: 0.5
-  KnockbackBlock: 0.2
-  PushbackHit: 0.2
-  PushbackBlock: 0.2
-  Hitstun: 23
-  Blockstun: 18
-  KnocksDownGround: 0
-  KnocksDownAir: 0
-  KnockdownLaunch: 0
-  KnockdownGravity: 0
-  KnockdownGroundFrames: 0
+  AttackData: {fileID: 11400000, guid: 7fc0d1e55ef7c614699bf8a3ae747199, type: 2}
 --- !u!114 &114521419531912402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11555,19 +11532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 0
-  Damage: 1
-  KnockbackHit: 0.5
-  KnockbackBlock: 0.18
-  PushbackHit: 0.12
-  PushbackBlock: 0.12
-  Hitstun: 26
-  Blockstun: 17
-  KnocksDownGround: 0
-  KnocksDownAir: 0
-  KnockdownLaunch: 0
-  KnockdownGravity: 0
-  KnockdownGroundFrames: 0
+  AttackData: {fileID: 11400000, guid: c930a59ca230a83409d095c6b68a6780, type: 2}
 --- !u!114 &114731573604196824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11579,19 +11544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 2
-  Damage: 1
-  KnockbackHit: 0.3
-  KnockbackBlock: 0.18
-  PushbackHit: 0.12
-  PushbackBlock: 0.12
-  Hitstun: 26
-  Blockstun: 17
-  KnocksDownGround: 0
-  KnocksDownAir: 0
-  KnockdownLaunch: 0
-  KnockdownGravity: 0
-  KnockdownGroundFrames: 0
+  AttackData: {fileID: 11400000, guid: 55de9bc63776ee342baff4bcc0ce5325, type: 2}
 --- !u!114 &114757523841994198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11603,19 +11556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 1
-  Damage: 1
-  KnockbackHit: 0.2
-  KnockbackBlock: 0.2
-  PushbackHit: 0.2
-  PushbackBlock: 0.2
-  Hitstun: 22
-  Blockstun: 18
-  KnocksDownGround: 1
-  KnocksDownAir: 1
-  KnockdownLaunch: 0.2
-  KnockdownGravity: 0.05
-  KnockdownGroundFrames: 30
+  AttackData: {fileID: 11400000, guid: de63956657615dd49a9219aeeedcd10a, type: 2}
 --- !u!114 &114765963057000370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11715,19 +11656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb1b1dea9ec7e5440b298b8a7f1da521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 0
-  Damage: 1
-  KnockbackHit: 0.2
-  KnockbackBlock: 0.2
-  PushbackHit: 0.2
-  PushbackBlock: 0.2
-  Hitstun: 22
-  Blockstun: 18
-  KnocksDownGround: 0
-  KnocksDownAir: 1
-  KnockdownLaunch: 0.41
-  KnockdownGravity: 0.05
-  KnockdownGroundFrames: 30
+  AttackData: {fileID: 11400000, guid: faae1cb49f68fb1489a89d9bd5f4b5a2, type: 2}
 --- !u!212 &212381462591802718
 SpriteRenderer:
   m_ObjectHideFlags: 1
