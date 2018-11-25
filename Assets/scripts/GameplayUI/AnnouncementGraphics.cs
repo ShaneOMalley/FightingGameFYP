@@ -25,7 +25,7 @@ public class AnnouncementGraphics : MonoBehaviour {
     private float _posX;
     private Image _graphic1Img;
     private Image _graphic2Img;
-    private GameplayData.State _prevState;
+    private GameplayData.State? _prevState;
 
     private Dictionary<GameplayData.State, Sprite> spriteMap;
     
@@ -50,7 +50,7 @@ public class AnnouncementGraphics : MonoBehaviour {
         _graphic2Img = Graphic2.GetComponent<Image>();
 
         SetSprite(spriteMap[Data.CurrentState]);
-        _prevState = Data.CurrentState;
+        _prevState = null;
     }
 	
 	void Update ()

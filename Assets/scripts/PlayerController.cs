@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public PlayerController OtherPlayer;
     public GameObject HitSpark;
     public GameObject BlockSpark;
+    public AttackData RoundEndDefault;
 
     public enum PlayerEnum { P1, P2 }
     public PlayerEnum PlayerNum = PlayerEnum.P1;
@@ -105,6 +106,7 @@ public class PlayerController : MonoBehaviour
     private float _knockback_speed = 0;
 
     private bool _currentHitboxHit = false;
+    private Transform _nextBoxesFrame = null;
 
     // Properties
     public int HP
@@ -177,17 +179,17 @@ public class PlayerController : MonoBehaviour
         get { return transform.position.x < OtherPlayer.transform.position.x; }
     }
 
-    private bool _inHitstun
+    public bool InHitStun
     {
         get { return _hitstun_frames > 0; }
     }
 
-    private bool _inBlockStun
+    public bool InBlockStun
     {
         get { return _blockstun_frames > 0; }
     }
 
-    private bool _inAirKnockdown
+    public bool InAirKnockdown
     {
         get { return _state == State.STATE_KNOCKDOWN_AIR; }
     }
@@ -227,7 +229,7 @@ public class PlayerController : MonoBehaviour
                     return true;
 
             // Is the player in hitstun or blockstun?
-            if (_inHitstun || _inBlockStun)
+            if (InHitStun || InBlockStun)
                 return true;
 
             return false;
@@ -310,6 +312,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Set the collision boxes frame
+        UpdateSetCollisionBoxesFrame();
+
         // Jumping
         if (!_isStuck && IsGrounded)
         {
@@ -419,7 +424,6 @@ public class PlayerController : MonoBehaviour
             if (GetButtonDown("Kick"))
             {
                 FireTrigger(TRIGGER_RYU_JUMP_KICK);
-                Debug.Log("air kick fired");
             }
         }
 
@@ -480,7 +484,6 @@ public class PlayerController : MonoBehaviour
         {
             // Hit detection
             Vector3 hitPos;
-            bool contact = false;
             if (!_currentHitboxHit && HitBoxes != null && HitBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
             {
                 hitPos.z -= 0.1f;
@@ -524,7 +527,6 @@ public class PlayerController : MonoBehaviour
                 }
 
                 _currentHitboxHit = true;
-                contact = true;
             }
 
             // Proximity guard detection
@@ -538,7 +540,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Hitstun handling
-        if (_inHitstun)
+        if (InHitStun)
         {
             if (--_hitstun_frames == 0)
             {
@@ -551,7 +553,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Blockstun handling
-        else if (_inBlockStun)
+        else if (InBlockStun)
         {
             if (--_blockstun_frames == 0)
             {
@@ -580,7 +582,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Air knockdown handling
-        else if (_inAirKnockdown)
+        else if (InAirKnockdown)
         {
             transform.Translate(0, _velY, 0);
             _velY -= _gravity;
@@ -714,6 +716,15 @@ public class PlayerController : MonoBehaviour
         _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? 1 : -1);
     }
 
+    private void UpdateSetCollisionBoxesFrame()
+    {
+        if (CurrentBoxesFrame != _nextBoxesFrame)
+        {
+            _currentBoxesFrame = _nextBoxesFrame;
+            _currentHitboxHit = false;
+        }
+    }
+
     private void SetCollisionBoxesFrame(string name)
     {
         string anim_name = name.Substring(0, name.Length - 3);
@@ -725,8 +736,7 @@ public class PlayerController : MonoBehaviour
         {
             if (frame.name == "all" || frame.name == name)
             {
-                _currentBoxesFrame = frame;
-                _currentHitboxHit = false;
+                _nextBoxesFrame = frame;
                 break;
             }
         }

@@ -8,7 +8,7 @@ public class PlayerHealthBar : MonoBehaviour {
     public RectTransform Mask;
     public RectTransform MaskLag;
     public PlayerController Player;
-    public int DelayLagMax = 25;
+    public int LaunchDelayLag = 25;
     public float LerpFactorLag = 0.25f;
 
     private float _height;
@@ -17,6 +17,8 @@ public class PlayerHealthBar : MonoBehaviour {
     private float _widthMaxLag;
     private float _HPScaleLag;
     private float _previousPlayerHP;
+    private bool _playerInHitStunPrevious;
+    private bool _playerInAirKnockdownPrevious;
     private float _delayLag;
 
 	// Use this for initialization
@@ -27,30 +29,43 @@ public class PlayerHealthBar : MonoBehaviour {
         _widthMax = Mask.sizeDelta.x;
         _widthMaxLag = MaskLag.sizeDelta.x;
         _previousPlayerHP = Player.HP;
+        _playerInHitStunPrevious = Player.InHitStun;
+        _playerInAirKnockdownPrevious = Player.InAirKnockdown;
         _delayLag = 0;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        // Update the green bar immediately
+        // Update green bar pos
         float hpScale = (float)Player.HP / Player.MaxHP;
-        Mask.sizeDelta = new Vector2(_widthMax * hpScale, _height);
 
-        // Check to see if player's HP has changed since last frame
-        if (Player.HP != _previousPlayerHP)
+        // Apply an artificial lag to the red bar when player is launched
+        if (Player.InAirKnockdown && !_playerInAirKnockdownPrevious)
         {
-            _delayLag = DelayLagMax;
+            _delayLag = LaunchDelayLag;
         }
 
-        // Update the lagging bar if not in delay
-        if (_delayLag-- <= 0)
+        // Snap red bar to old hp when player has been put into hitstun from
+        // not hitstun
+        if (Player.InHitStun && !_playerInHitStunPrevious)
+        {
+            _HPScaleLag = (float)_previousPlayerHP / Player.MaxHP;
+        }
+
+        // Decrease red bar when not in hitstun, or if not artificially lagging
+        if (_delayLag-- <= 0 && !Player.InHitStun)
         {
             _HPScaleLag = Mathf.Lerp(_HPScaleLag, hpScale, LerpFactorLag);
-            MaskLag.sizeDelta = new Vector2(_widthMax * _HPScaleLag, _height);
         }
 
-        // Store player's previous HP
+        // Update bars
+        Mask.sizeDelta = new Vector2(_widthMax * hpScale, _height);
+        MaskLag.sizeDelta = new Vector2(_widthMax * _HPScaleLag, _height);
+
+        // Store player's previous HP and hitstun state
         _previousPlayerHP = Player.HP;
+        _playerInHitStunPrevious = Player.InHitStun;
+        _playerInAirKnockdownPrevious = Player.InAirKnockdown;
 	}
 }

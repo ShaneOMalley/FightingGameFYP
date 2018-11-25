@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: GameplayData
   m_EditorClassIdentifier: 
   maxFrames: 5940
-  framesLeft: -361
+  framesLeft: 5561
   CurrentState: 8
