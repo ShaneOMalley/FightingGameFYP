@@ -11344,6 +11344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb2f71825f7aa247865c3ef172b364f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: 4d2bb2c48e26fd940937f1d38c79d62d, type: 2}
   MaxHP: 100
   WalkSpeedForward: 0.1
   WalkSpeedBackward: 0.07
@@ -11354,7 +11355,9 @@ MonoBehaviour:
   OtherPlayer: {fileID: 0}
   HitSpark: {fileID: 1664246059475236, guid: 9e160bae55a152241867811503c03a3a, type: 2}
   BlockSpark: {fileID: 1664246059475236, guid: f0bd006af3c79044d8259c62650f4fa6, type: 2}
+  RoundEndDefault: {fileID: 11400000, guid: 35f82452cc6c1684c881c2aa43c364c4, type: 2}
   PlayerNum: 0
+  GameController: {fileID: 0}
 --- !u!114 &114349978762605210
 MonoBehaviour:
   m_ObjectHideFlags: 1

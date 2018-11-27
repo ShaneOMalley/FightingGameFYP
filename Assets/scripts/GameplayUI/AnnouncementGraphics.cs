@@ -27,7 +27,7 @@ public class AnnouncementGraphics : MonoBehaviour {
     private Image _graphic2Img;
     private GameplayData.State? _prevState;
 
-    private Dictionary<GameplayData.State, Sprite> spriteMap;
+    private Dictionary<GameplayData.State, Sprite> _spriteMap;
     
     void Start ()
     {
@@ -35,7 +35,7 @@ public class AnnouncementGraphics : MonoBehaviour {
         Graphic2.localPosition = new Vector3(TravelX, Graphic1.localPosition.y, Graphic1.localPosition.z);
         _posX = TravelX;
 
-        spriteMap = new Dictionary<GameplayData.State, Sprite>{
+        _spriteMap = new Dictionary<GameplayData.State, Sprite>{
             { GameplayData.State.ANNOUNCE_ROUND_1, Round1Sprite },
             { GameplayData.State.ANNOUNCE_ROUND_2, Round2Sprite },
             { GameplayData.State.ANNOUNCE_ROUND_3, Round3Sprite },
@@ -49,7 +49,7 @@ public class AnnouncementGraphics : MonoBehaviour {
         _graphic1Img = Graphic1.GetComponent<Image>();
         _graphic2Img = Graphic2.GetComponent<Image>();
 
-        SetSprite(spriteMap[Data.CurrentState]);
+        SetSprite(Data.CurrentState);
         _prevState = null;
     }
 	
@@ -57,11 +57,10 @@ public class AnnouncementGraphics : MonoBehaviour {
     {
         if (Data.CurrentState != _prevState)
         {
-            Debug.Log("firing with " + Data.CurrentState);
             FireAnnouncement(Data.CurrentState);
         }
 
-        if (Data.CurrentState != GameplayData.State.GAMEPLAY)
+        if (_spriteMap.ContainsKey(Data.CurrentState))
         {
             _posX -= TravelSpeed;
             _posX = Mathf.Clamp(_posX, 0, TravelX);
@@ -77,18 +76,21 @@ public class AnnouncementGraphics : MonoBehaviour {
     {
         _posX = TravelX;
 
-        if (spriteMap.ContainsKey(state))
+        if (_spriteMap.ContainsKey(state))
         {
-            SetSprite(spriteMap[state]);
+            SetSprite(state);
         }
     }
 
-    private void SetSprite(Sprite sprite)
+    private void SetSprite(GameplayData.State state)
     {
-        _graphic1Img.sprite = sprite;
+        if (!_spriteMap.ContainsKey(state))
+            return;
+        
+        _graphic1Img.sprite = _spriteMap[state];
         _graphic1Img.SetNativeSize();
 
-        _graphic2Img.sprite = sprite;
+        _graphic2Img.sprite = _spriteMap[state];
         _graphic2Img.SetNativeSize();
     }
 }

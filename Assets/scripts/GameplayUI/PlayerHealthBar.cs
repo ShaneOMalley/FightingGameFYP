@@ -20,6 +20,8 @@ public class PlayerHealthBar : MonoBehaviour {
     private bool _playerInHitStunPrevious;
     private bool _playerInAirKnockdownPrevious;
     private float _delayLag;
+    private const string GLOBALS_NAME = "Globals";
+    private static Globals _globals;
 
 	// Use this for initialization
 	void Start ()
@@ -32,6 +34,9 @@ public class PlayerHealthBar : MonoBehaviour {
         _playerInHitStunPrevious = Player.InHitStun;
         _playerInAirKnockdownPrevious = Player.InAirKnockdown;
         _delayLag = 0;
+
+        if (_globals == null)
+            _globals = Resources.Load<Globals>(GLOBALS_NAME);
     }
 	
 	// Update is called once per frame
@@ -41,7 +46,13 @@ public class PlayerHealthBar : MonoBehaviour {
         float hpScale = (float)Player.HP / Player.MaxHP;
 
         // Apply an artificial lag to the red bar when player is launched
-        if (Player.InAirKnockdown && !_playerInAirKnockdownPrevious)
+        //if (Player.InAirKnockdown && !_playerInAirKnockdownPrevious)
+        //{
+        //    _delayLag = LaunchDelayLag;
+        //}
+
+        // Apply an artificial lag if player lost health but is not in hitstun
+        if (_previousPlayerHP != Player.HP && !Player.InHitStun)
         {
             _delayLag = LaunchDelayLag;
         }
@@ -54,9 +65,10 @@ public class PlayerHealthBar : MonoBehaviour {
         }
 
         // Decrease red bar when not in hitstun, or if not artificially lagging
-        if (_delayLag-- <= 0 && !Player.InHitStun)
+        _delayLag -= 1f * _globals.TimeScale;
+        if (_delayLag <= 0 && !Player.InHitStun)
         {
-            _HPScaleLag = Mathf.Lerp(_HPScaleLag, hpScale, LerpFactorLag);
+            _HPScaleLag = Mathf.Lerp(_HPScaleLag, hpScale, LerpFactorLag * _globals.TimeScale);
         }
 
         // Update bars

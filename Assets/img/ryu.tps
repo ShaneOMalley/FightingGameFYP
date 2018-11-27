@@ -797,6 +797,45 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.467532</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>10,19,19,39</rect>
+                <key>scale9Paddings</key>
+                <rect>10,19,19,39</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.517647</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>10,21,19,43</rect>
+                <key>scale9Paddings</key>
+                <rect>10,21,19,43</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_03.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.594059</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>10,25,19,51</rect>
+                <key>scale9Paddings</key>
+                <rect>10,25,19,51</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_walk_01.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -908,6 +947,9 @@
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_crouch_punch_02.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_jump_kick_01.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_jump_kick_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_01.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_03.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -164,7 +164,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 57781764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 500, y: 0, z: 0}
+  m_LocalPosition: {x: 600, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405512803}
@@ -172,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: 0}
+  m_AnchoredPosition: {x: 600, y: 0}
   m_SizeDelta: {x: 65, y: 39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57781766
@@ -378,7 +378,7 @@ MonoBehaviour:
   DoubleKOSprite: {fileID: 21300014, guid: d87f83c58ce980f408ba6c62047e16cf, type: 3}
   Graphic1: {fileID: 1457747266}
   Graphic2: {fileID: 57781765}
-  TravelX: 500
+  TravelX: 600
   TravelSpeed: 15
 --- !u!1 &514628240
 GameObject:
@@ -886,7 +886,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 4d2bb2c48e26fd940937f1d38c79d62d, type: 2}
-  GraphicTimerMax: 20
+  GraphicTimerMax: 60
+  KOFreezeTimer: 110
+  DeadPlayerOnGroundTimer: 20
+  CelebrationTimer: 30
+  PostCelebrationTimer: 50
+  SlowdownTimeScale: 0.2
+  TimeScaleSpeedRegen: 0.01
 --- !u!1 &1197237497
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +975,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1197237497}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 411.5, y: 231.5, z: 0}
+  m_LocalPosition: {x: 426, y: 239.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1813853862}
@@ -1109,6 +1115,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11400000, guid: 4d2bb2c48e26fd940937f1d38c79d62d,
         type: 2}
+    - target: {fileID: 114325196394187302, guid: 4828793b3f52f434ba81a6ec3174e543,
+        type: 2}
+      propertyPath: GameController
+      value: 
+      objectReference: {fileID: 1132040603}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4828793b3f52f434ba81a6ec3174e543, type: 2}
   m_IsPrefabParent: 0
@@ -1478,7 +1489,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1457747265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -500, y: 0, z: 0}
+  m_LocalPosition: {x: -600, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 405512803}
@@ -1486,7 +1497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -500, y: 0}
+  m_AnchoredPosition: {x: -600, y: 0}
   m_SizeDelta: {x: 65, y: 39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457747267
@@ -1757,10 +1768,9 @@ Prefab:
       objectReference: {fileID: 130926640}
     - target: {fileID: 114325196394187302, guid: 4828793b3f52f434ba81a6ec3174e543,
         type: 2}
-      propertyPath: Data
+      propertyPath: GameController
       value: 
-      objectReference: {fileID: 11400000, guid: 4d2bb2c48e26fd940937f1d38c79d62d,
-        type: 2}
+      objectReference: {fileID: 1132040603}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4828793b3f52f434ba81a6ec3174e543, type: 2}
   m_IsPrefabParent: 0
@@ -2083,6 +2093,11 @@ Prefab:
       propertyPath: Despawn
       value: 
       objectReference: {fileID: 1985313931}
+    - target: {fileID: 114957307916186502, guid: c9ac5b2c4e81d1d4d9e3f12711433d37,
+        type: 2}
+      propertyPath: AnimSpeedMin
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9ac5b2c4e81d1d4d9e3f12711433d37, type: 2}
   m_IsPrefabParent: 0

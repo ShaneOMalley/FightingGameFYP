@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class CollisionBoxGizmoRenderer : MonoBehaviour
 {
-    private static Sprite BoxSprite;
+    private const string GLOBALS_NAME = "Globals";
+    private static Globals _globals;
+
     private const string SPRITE_NAME = "boxSprite";
+    private static Sprite _boxSprite;
 
     private GameObject _spritesGo;
 
     void Start()
     {
         // Intialize the resource if it hasn't been done yet
-        if (BoxSprite == null)
+        if (_boxSprite == null && _globals == null)
         {
-            BoxSprite = Resources.Load<Sprite>(SPRITE_NAME);
+            _boxSprite = Resources.Load<Sprite>(SPRITE_NAME);
+            _globals = Resources.Load<Globals>(GLOBALS_NAME);
         }
 
         foreach (Transform boxGroup in transform)
@@ -65,7 +69,7 @@ public class CollisionBoxGizmoRenderer : MonoBehaviour
                 GameObject spriteGo = new GameObject("sprite");
                 spriteGo.transform.SetParent(spritesGo.transform);
                 SpriteRenderer sr = spriteGo.AddComponent<SpriteRenderer>();
-                sr.sprite = BoxSprite;
+                sr.sprite = _boxSprite;
                 sr.drawMode = SpriteDrawMode.Sliced;
                 sr.color = color;
                 sr.enabled = false;
@@ -93,6 +97,6 @@ public class CollisionBoxGizmoRenderer : MonoBehaviour
 
     private void Update()
     {
-        setSpriteRenderersActiveRecursively(Globals.DRAW_HITBOXES);
+        setSpriteRenderersActiveRecursively(_globals.DrawHitboxes);
     }
 }

@@ -64,11 +64,12 @@ public class PlayerController : MonoBehaviour
     private const string TRIGGER_RYU_KNOCKDOWN_AIR = "play_knockdown_air";
     private const string TRIGGER_RYU_KNOCKDOWN_GROUND = "play_knockdown_ground";
     private const string TRIGGER_RYU_KNOCKDOWN_GETUP = "play_knockdown_getup";
+    private const string TRIGGER_RYU_VICTORY= "play_victory";
 
     private static string[] StuckAnims = 
     {
         "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_crouch_punch",
-        "ryu_knockdown_air", "ryu_knockdown_ground", "ryu_knockdown_getup"
+        "ryu_knockdown_air", "ryu_knockdown_ground", "ryu_knockdown_getup", "ryu_victory"
     };
 
     private static State[] StuckStates =
@@ -89,6 +90,8 @@ public class PlayerController : MonoBehaviour
         State.STATE_FLIP_OUT
     };
 
+    private bool _victoryFired = false;
+
     private Transform _currentBoxesFrame;
     private Animator _animator;
     private Direction _direction = Direction.RIGHT;
@@ -100,13 +103,20 @@ public class PlayerController : MonoBehaviour
     private State _jumpDecision = State.STATE_NEUTRAL_JUMP;
 
     private const float KNOCKBACK_DECELERATION = 0.05f;
-    private int _hitstun_frames = 0;
-    private int _blockstun_frames = 0;
-    private int _frames_on_ground = 0;
+    private float _hitstun_frames = 0;
+    private float _blockstun_frames = 0;
+    private float _frames_on_ground = 0;
     private float _knockback_speed = 0;
+    private bool _isDead = false;
 
     private bool _currentHitboxHit = false;
     private Transform _nextBoxesFrame = null;
+
+    public GameController GameController;
+
+    private const string GLOBALS_NAME = "Globals";
+    private static Globals _globals;
+
 
     // Properties
     public int HP
@@ -153,7 +163,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     public BoxCollider2D PushBox
     {
         get { return CurrentBoxesFrame.Find("push").GetComponent<BoxCollider2D>(); }
@@ -194,7 +203,7 @@ public class PlayerController : MonoBehaviour
         get { return _state == State.STATE_KNOCKDOWN_AIR; }
     }
 
-    private bool _inGroundKnockdown
+    public bool InGroundKnockdown
     {
         get { return _state == State.STATE_KNOCKDOWN_GROUND; }
     }
@@ -236,7 +245,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    public bool _isAirStuck
+    public bool IsAirStuck
     {
         get
         {
@@ -253,6 +262,11 @@ public class PlayerController : MonoBehaviour
 
             return false;
         }
+    }
+
+    public bool IsDead
+    {
+        get { return _isDead; }
     }
 
     // Holding Directions
@@ -304,6 +318,8 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        _globals = Resources.Load<Globals>(GLOBALS_NAME);
+
         _animator = this.GetComponent<Animator>();
         _initialY = transform.position.y;
         _hp = MaxHP;
@@ -312,8 +328,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Set the animation speed
+        _animator.speed = _globals.TimeScale;
+
         // Set the collision boxes frame
         UpdateSetCollisionBoxesFrame();
+
+        // Play victory animation
+        if (Data.CurrentState == GameplayData.State.CELEBRATION && !_victoryFired && !IsDead)
+        {
+            FireTrigger(TRIGGER_RYU_VICTORY);
+            _victoryFired = true;
+        }
+
+        // Stand up from crouch on not gameplay
+        if (!IsDead && Data.CurrentState != GameplayData.State.GAMEPLAY && IsCrouching)
+        {
+            SetState(State.STATE_IDLE);
+            SetCrouching(_isCrouching);
+        }
 
         // Jumping
         if (!_isStuck && IsGrounded)
@@ -365,7 +398,7 @@ public class PlayerController : MonoBehaviour
                 SetForward(_isFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
-                transform.Translate(speed, 0, 0);
+                transform.Translate(speed * _globals.TimeScale, 0, 0);
             }
             else if (GetAxis("Horizontal") < 0)
             {
@@ -374,7 +407,7 @@ public class PlayerController : MonoBehaviour
                 SetForward(!_isFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
-                transform.Translate(-speed, 0, 0);
+                transform.Translate(-speed * _globals.TimeScale, 0, 0);
             }
             else
             {
@@ -419,7 +452,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Air attacks
-        if (IsAirborne && !_isAirStuck)
+        if (IsAirborne && !IsAirStuck)
         {
             if (GetButtonDown("Kick"))
             {
@@ -491,7 +524,10 @@ public class PlayerController : MonoBehaviour
                 Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
                 AttackData.HitLevel level = hitbox.AttackData.Level;
 
+                // Is player blocking?
                 bool blocked = OtherPlayer.IsBlocking;
+
+                // Check if player blocked incorrectly on mid or low
                 if (blocked)
                 {
                     if (level == AttackData.HitLevel.MID && OtherPlayer.HoldingDown)
@@ -504,25 +540,57 @@ public class PlayerController : MonoBehaviour
                     }
                 }
 
+                // Blocking
                 if (blocked)
                 {
-                    OtherPlayer.Block(hitbox);
+                    // Put other player in grounded blockstun
+                    OtherPlayer.Block(hitbox.AttackData);
+                    // Create block spark
                     Instantiate(BlockSpark, hitPos, Quaternion.identity);
+                    // Apply pushback to this player
                     KnockbackSpeed(hitbox.AttackData.PushbackBlock);
                 }
+                // Hitting
                 else
                 {
+                    // Other player take damage
                     OtherPlayer.TakeDamage(hitbox);
-                    if ((hitbox.AttackData.KnocksDownGround && OtherPlayer.IsGrounded) 
+
+                    // Kill other player
+                    if (OtherPlayer.HP <= 0)
+                    {
+                        // If attack wont knock down, use `RoundEndDefault` to kill other player
+                        AttackData roundEndAttackData;
+                        if (!(hitbox.AttackData.KnocksDownGround && OtherPlayer.IsGrounded)
+                            && !(hitbox.AttackData.KnocksDownAir && OtherPlayer.IsAirborne))
+                        {
+                            roundEndAttackData = RoundEndDefault;
+                        }
+                        else
+                        {
+                            roundEndAttackData = hitbox.AttackData;
+                        }
+                        Debug.Log("ITS GONNA HAPPEN: " + Prefix);
+                        OtherPlayer.Kill(roundEndAttackData);
+                        Debug.Log("IN THE MIDDLE: " + Prefix);
+                        GameController.FireRoundEnd(OtherPlayer);
+                        Debug.Log("IT HAPPENED: " + Prefix);
+                    }
+                    // Knock other player down
+                    else if ((hitbox.AttackData.KnocksDownGround && OtherPlayer.IsGrounded) 
                         || (hitbox.AttackData.KnocksDownAir && OtherPlayer.IsAirborne))
                     {
-                        OtherPlayer.KnockDown(hitbox);
+                        OtherPlayer.KnockDown(hitbox.AttackData);
                     }
+                    // Put other player in grounded hitstun
                     else
                     {
-                        OtherPlayer.Hit(hitbox);
+                        OtherPlayer.Hit(hitbox.AttackData);
                     }
+
+                    // Create hit spark
                     Instantiate(HitSpark, hitPos, Quaternion.identity);
+                    // Apply pushback to this player
                     KnockbackSpeed(hitbox.AttackData.PushbackHit);
                 }
 
@@ -542,7 +610,8 @@ public class PlayerController : MonoBehaviour
         // Hitstun handling
         if (InHitStun)
         {
-            if (--_hitstun_frames == 0)
+            _hitstun_frames -= 1f * _globals.TimeScale;
+            if (_hitstun_frames <= 0)
             {
                 SetState(State.STATE_IDLE);
             }
@@ -555,7 +624,9 @@ public class PlayerController : MonoBehaviour
         // Blockstun handling
         else if (InBlockStun)
         {
-            if (--_blockstun_frames == 0)
+            _blockstun_frames -= 1f * _globals.TimeScale;
+            if (_blockstun_frames <= 0)
+            if (_blockstun_frames <= 0)
             {
                 SetState(State.STATE_IDLE);
             }
@@ -568,8 +639,8 @@ public class PlayerController : MonoBehaviour
         // Airborne handling
         if (IsAirborne)
         {
-            _velY -= JumpGravity;
-            transform.Translate(_jumpVelX, _velY, 0);
+            _velY -= JumpGravity * _globals.TimeScale;
+            transform.Translate(_jumpVelX * _globals.TimeScale, _velY * _globals.TimeScale, 0);
 
             // Check if player touched the ground
             if (_velY <= 0 && transform.position.y <= _initialY)
@@ -584,8 +655,8 @@ public class PlayerController : MonoBehaviour
         // Air knockdown handling
         else if (InAirKnockdown)
         {
-            transform.Translate(0, _velY, 0);
-            _velY -= _gravity;
+            _velY -= _gravity * _globals.TimeScale;
+            transform.Translate(0, _velY * _globals.TimeScale, 0);
 
             // Check if player hit the ground
             if (_velY <= 0 && transform.position.y <= _initialY)
@@ -597,9 +668,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Ground knockdown handling
-        else if (_inGroundKnockdown)
+        else if (InGroundKnockdown)
         {
-            if (--_frames_on_ground == 0)
+            _frames_on_ground -= 1f * _globals.TimeScale;
+            if (_frames_on_ground <= 0 && !IsDead)
             {
                 SetState(State.STATE_KNOCKDOWN_GETUP);
                 FireTrigger(TRIGGER_RYU_KNOCKDOWN_GETUP);
@@ -609,13 +681,13 @@ public class PlayerController : MonoBehaviour
         // Knockback
         if (_knockback_speed != 0)
         {
-            transform.Translate(_knockback_speed, 0, 0);
+            transform.Translate(_knockback_speed * _globals.TimeScale, 0, 0);
 
             // Only decelerate if the player isn't being knocked through the air
             if (_state != State.STATE_KNOCKDOWN_AIR)
             {
                 float prev_speed = _knockback_speed;
-                _knockback_speed -= KNOCKBACK_DECELERATION * Mathf.Sign(_knockback_speed);
+                _knockback_speed -= KNOCKBACK_DECELERATION * Mathf.Sign(_knockback_speed) * _globals.TimeScale;
                 if (Mathf.Sign(_knockback_speed) != Mathf.Sign(prev_speed))
                 {
                     _knockback_speed = 0;
@@ -653,9 +725,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Hit(Hitbox hitbox)
+    public void Hit(AttackData attackData)
     {
-        Hit(hitbox.AttackData.Hitstun, hitbox.AttackData.KnockbackHit);
+        Hit(attackData.Hitstun, attackData.KnockbackHit);
     }
 
     public void KnockDown(float velY, float gravity, float relative_knockback, int frames_on_ground)
@@ -672,10 +744,21 @@ public class PlayerController : MonoBehaviour
         _blockstun_frames = 0;
     }
 
-    public void KnockDown(Hitbox hitbox)
+    public void KnockDown(AttackData attackData)
     {
-        KnockDown(hitbox.AttackData.KnockdownLaunch, hitbox.AttackData.KnockdownGravity, 
-            hitbox.AttackData.KnockbackHit, hitbox.AttackData.KnockdownGroundFrames);
+        KnockDown(attackData.KnockdownLaunch, attackData.KnockdownGravity,
+            attackData.KnockbackHit, attackData.KnockdownGroundFrames);
+    }
+
+    public void Kill(float velY, float gravity, float relative_knockback)
+    {
+        KnockDown(velY, gravity, relative_knockback, -1);
+        _isDead = true;
+    }
+
+    public void Kill(AttackData attackData)
+    {
+        Kill(attackData.KnockdownLaunch, attackData.KnockdownGravity, attackData.KnockbackHit);
     }
 
     public void Block(int num_frames, float relative_knockback = 0)
@@ -685,14 +768,24 @@ public class PlayerController : MonoBehaviour
         FireTrigger(TRIGGER_RYU_BLOCK);
     }
 
-    public void Block(Hitbox hitbox)
+    public void Block(AttackData attackData)
     {
-        Block(hitbox.AttackData.Blockstun, hitbox.AttackData.KnockbackBlock);
+        Block(attackData.Blockstun, attackData.KnockbackBlock);
     }
 
     public void KnockbackSpeed(float relative_knockback)
     {
         _knockback_speed = relative_knockback * (_onLeftSide ? -1 : 1);
+    }
+
+    public bool WillKill(int damage)
+    {
+        return damage > HP;
+    }
+
+    public bool WillKill(Hitbox hitbox)
+    {
+        return WillKill(hitbox.AttackData.Damage);
     }
 
     public void JumpNeutral()
