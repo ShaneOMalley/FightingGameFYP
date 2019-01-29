@@ -12,6 +12,8 @@ TextureImporter:
     21300010: round4
     21300012: round_final
     21300014: double_ko
+    21300016: draw
+    21300018: ryu_wins
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -91,11 +93,25 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
     - serializedVersion: 2
+      name: draw
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 76
+        width: 114
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
       name: fight
       rect:
         serializedVersion: 2
         x: 3
-        y: 75
+        y: 64
         width: 116
         height: 52
       alignment: 0
@@ -108,8 +124,8 @@ TextureImporter:
       name: ko
       rect:
         serializedVersion: 2
-        x: 121
-        y: 88
+        x: 185
+        y: 128
         width: 65
         height: 39
       alignment: 0
@@ -123,7 +139,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 33
+        y: 22
         width: 176
         height: 40
       alignment: 0
@@ -150,8 +166,8 @@ TextureImporter:
       name: round3
       rect:
         serializedVersion: 2
-        x: 264
-        y: 129
+        x: 3
+        y: 127
         width: 180
         height: 40
       alignment: 0
@@ -182,6 +198,20 @@ TextureImporter:
         y: 169
         width: 259
         height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_wins
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 118
+        width: 212
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

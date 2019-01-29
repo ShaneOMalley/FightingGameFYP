@@ -11,10 +11,14 @@ public class AnnouncementGraphics : MonoBehaviour {
     public Sprite Round2Sprite;
     public Sprite Round3Sprite;
     public Sprite Round4Sprite;
+    public Sprite Round5Sprite;
+    public Sprite Round6Sprite;
     public Sprite RoundFinalSprite;
     public Sprite FightSprite;
     public Sprite KOSprite;
     public Sprite DoubleKOSprite;
+    public Sprite RyuWinSprite;
+    public Sprite DrawSprite;
 
     public RectTransform Graphic1;
     public RectTransform Graphic2;
@@ -40,10 +44,14 @@ public class AnnouncementGraphics : MonoBehaviour {
             { GameplayData.State.ANNOUNCE_ROUND_2, Round2Sprite },
             { GameplayData.State.ANNOUNCE_ROUND_3, Round3Sprite },
             { GameplayData.State.ANNOUNCE_ROUND_4, Round4Sprite },
+            { GameplayData.State.ANNOUNCE_ROUND_5, Round5Sprite },
+            { GameplayData.State.ANNOUNCE_ROUND_6, Round6Sprite },
             { GameplayData.State.ANNOUNCE_ROUND_FINAL, RoundFinalSprite },
             { GameplayData.State.ANNOUNCE_FIGHT, FightSprite },
             { GameplayData.State.ANNOUNCE_KO, KOSprite },
             { GameplayData.State.ANNOUNCE_DOUBLE_KO, DoubleKOSprite },
+            { GameplayData.State.ANNOUNCE_RYU_WIN, RyuWinSprite },
+            { GameplayData.State.ANNOUNCE_DRAW, DrawSprite },
         };
 
         _graphic1Img = Graphic1.GetComponent<Image>();

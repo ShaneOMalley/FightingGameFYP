@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8548f5f267960143b39ec50cf87f77a, type: 3}
+  m_Name: RyuFireball
+  m_EditorClassIdentifier: 
+  Level: 0
+  Damage: 10
+  KnockbackHit: 0.25
+  KnockbackBlock: 0.3
+  PushbackHit: 0
+  PushbackBlock: 0
+  Hitstun: 18
+  Blockstun: 10
+  KnocksDownGround: 0
+  KnocksDownAir: 1
+  KnockdownLaunch: 0.12
+  KnockdownGravity: 0.05
+  KnockdownGroundFrames: 5
+  FreezeTime: 0

@@ -132,7 +132,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename></filename>
+                <filename>digits.tpsheet</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -181,6 +181,20 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round_count.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round_count_empty.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9Paddings</key>
+                <rect>8,8,16,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../../../../../git/fyp-test/res/img/sprites/digits/0.png</key>
             <key type="filename">../../../../../git/fyp-test/res/img/sprites/digits/1.png</key>
             <key type="filename">../../../../../git/fyp-test/res/img/sprites/digits/2.png</key>
@@ -228,6 +242,8 @@
             <filename>../../../../../git/fyp-test/res/img/sprites/digits/7.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/digits/8.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/digits/9.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round_count.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round_count_empty.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

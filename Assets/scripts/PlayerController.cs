@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -21,12 +22,24 @@ public class PlayerController : MonoBehaviour
     private float _gravity = 0;
     private float _velY = 0;
     private float _jumpVelX = 0;
+    private Vector3 _spawnPos;
 
-    public GameCamera CurrentGameCamera;
+    public Transform FireballSpawnPos;
+    public Projectile FireballPrefab;
+
+    [HideInInspector]
+    public bool HoldingOpponent = false;
+    public Transform HoldPoint;
+
+    public Vector2 AnimatedDeltaPos;
+    private Vector2 _animatedDeltaPosPrevious;
+
     public PlayerController OtherPlayer;
     public GameObject HitSpark;
     public GameObject BlockSpark;
+
     public AttackData RoundEndDefault;
+    public AttackData ThrowAttackData;
 
     public enum PlayerEnum { P1, P2 }
     public PlayerEnum PlayerNum = PlayerEnum.P1;
@@ -46,6 +59,7 @@ public class PlayerController : MonoBehaviour
         STATE_FORWARD_JUMP = 11,
         STATE_FLIP_OUT = 12,
         STATE_JUMP_ATTACK = 13,
+        STATE_HELD = 14,
 
         STATE_JUMP_NODECISION = 500,
     }
@@ -60,15 +74,25 @@ public class PlayerController : MonoBehaviour
     private const string TRIGGER_RYU_SWEEP = "play_sweep";
     private const string TRIGGER_RYU_CROUCH_PUNCH = "play_crouch_punch";
     private const string TRIGGER_RYU_OVERHEAD = "play_overhead";
+    private const string TRIGGER_RYU_SHORYU = "play_shoryu";
+    private const string TRIGGER_RYU_THROW_FIREBALL = "play_throw_fireball";
+    private const string TRIGGER_RYU_THROW_INITIAL = "play_throw_initial";
+    private const string TRIGGER_RYU_HELD = "play_held";
+    private const string TRIGGER_RYU_THROWN = "play_thrown";
     private const string TRIGGER_RYU_JUMP_KICK = "play_jump_kick";
     private const string TRIGGER_RYU_KNOCKDOWN_AIR = "play_knockdown_air";
     private const string TRIGGER_RYU_KNOCKDOWN_GROUND = "play_knockdown_ground";
     private const string TRIGGER_RYU_KNOCKDOWN_GETUP = "play_knockdown_getup";
     private const string TRIGGER_RYU_VICTORY= "play_victory";
+    private const string TRIGGER_STOP_CELEBRATION = "stop_celebration";
+
+    private const string IDLE_ANIM = "ryu_idle";
 
     private static string[] StuckAnims = 
     {
-        "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_crouch_punch",
+        "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_shoryu",
+        "ryu_throw_fireball", "ryu_throw_initial", "ryu_throw_whiff",
+        "ryu_throw_success", "ryu_throw_back_success", "ryu_thrown", "ryu_crouch_punch",
         "ryu_knockdown_air", "ryu_knockdown_ground", "ryu_knockdown_getup", "ryu_victory"
     };
 
@@ -90,6 +114,16 @@ public class PlayerController : MonoBehaviour
         State.STATE_FLIP_OUT
     };
 
+    private static string[] MovingAnims =
+    {
+        "ryu_shoryu"
+    };
+
+    private static string[] IgnoreGravityAirborneAnims =
+    {
+        "ryu_shoryu"
+    };
+
     private bool _victoryFired = false;
 
     private Transform _currentBoxesFrame;
@@ -98,10 +132,17 @@ public class PlayerController : MonoBehaviour
     private bool _movingForward = true;
 
     private bool _isCrouching = false;
-    
+
     private bool _isAirborne = false;
     private State _jumpDecision = State.STATE_NEUTRAL_JUMP;
 
+    [HideInInspector]
+    public bool InSpecialCancelWindow = false;
+    
+    public bool InThrowTechWindow = false;
+    public bool Holding = false;
+    private bool _throw_success = false;
+    
     private const float KNOCKBACK_DECELERATION = 0.05f;
     private float _hitstun_frames = 0;
     private float _blockstun_frames = 0;
@@ -116,7 +157,6 @@ public class PlayerController : MonoBehaviour
 
     private const string GLOBALS_NAME = "Globals";
     private static Globals _globals;
-
 
     // Properties
     public int HP
@@ -134,9 +174,12 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
+            if (CurrentBoxesFrame == null)
+                return new BoxCollider2D[0];
+
             Transform boxGroup = CurrentBoxesFrame.Find("hit");
             if (boxGroup == null)
-                return null;
+                return new BoxCollider2D[0];
             return boxGroup.GetComponents<BoxCollider2D>();
         }
     }
@@ -145,9 +188,26 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
+            if (CurrentBoxesFrame == null)
+                return new BoxCollider2D[0];
+
             Transform boxGroup = CurrentBoxesFrame.Find("hurt");
             if (boxGroup == null)
-                return null;
+                return new BoxCollider2D[0];
+            return boxGroup.GetComponents<BoxCollider2D>();
+        }
+    }
+
+    public BoxCollider2D[] ThrowBoxes
+    {
+        get
+        {
+            if (CurrentBoxesFrame == null)
+                return new BoxCollider2D[0];
+
+            Transform boxGroup = CurrentBoxesFrame.Find("throw");
+            if (boxGroup == null)
+                return new BoxCollider2D[0];
             return boxGroup.GetComponents<BoxCollider2D>();
         }
     }
@@ -156,16 +216,42 @@ public class PlayerController : MonoBehaviour
     {
         get
         {
+            if (CurrentBoxesFrame == null)
+                return new BoxCollider2D[0];
+
             Transform boxGroup = CurrentBoxesFrame.Find("prox");
             if (boxGroup == null)
-                return null;
+                return new BoxCollider2D[0];
             return boxGroup.GetComponents<BoxCollider2D>();
         }
     }
 
     public BoxCollider2D PushBox
     {
-        get { return CurrentBoxesFrame.Find("push").GetComponent<BoxCollider2D>(); }
+        get
+        {
+            if (CurrentBoxesFrame == null)
+                return null;
+
+            Transform pbTrans = CurrentBoxesFrame.Find("push");
+            if (pbTrans == null)
+                return null;
+            return pbTrans.GetComponent<BoxCollider2D>();
+        }
+    }
+
+    public BoxCollider2D CameraBox
+    {
+        get
+        {
+            if (CurrentBoxesFrame == null)
+                return null;
+
+            Transform cbTrans = CurrentBoxesFrame.Find("camera");
+            if (cbTrans == null)
+                return null;
+            return cbTrans.GetComponent<BoxCollider2D>();
+        }
     }
 
     private bool _isP1
@@ -218,6 +304,17 @@ public class PlayerController : MonoBehaviour
         get { return _state == State.STATE_PRE_JUMP; }
     }
 
+    private bool _isThrowable
+    {
+        get
+        {
+            if (IsAirborne || InHitStun || InBlockStun)
+                return false;
+
+            return true;
+        }
+    }
+
     private bool _isStuck
     {
         get
@@ -258,6 +355,32 @@ public class PlayerController : MonoBehaviour
             // Is the player in a stuck state?
             foreach (State state in AirStuckStates)
                 if (_state == state)
+                    return true;
+
+            return false;
+        }
+    }
+
+    private bool _isInMovingAnimation
+    {
+        get
+        {
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            foreach (string anim_name in MovingAnims)
+                if (stateInfo.IsName(anim_name))
+                    return true;
+
+            return false;
+        }
+    }
+
+    private bool _isInIgnoreGravityAnimation
+    {
+        get
+        {
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            foreach (string anim_name in IgnoreGravityAirborneAnims)
+                if (stateInfo.IsName(anim_name))
                     return true;
 
             return false;
@@ -315,6 +438,15 @@ public class PlayerController : MonoBehaviour
         get { return !IsAirborne; }
     }
 
+    public bool IsIdle
+    {
+        get
+        {
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            return stateInfo.IsName(IDLE_ANIM);
+        }
+    }
+
     // Use this for initialization
     void Start ()
     {
@@ -323,11 +455,29 @@ public class PlayerController : MonoBehaviour
         _animator = this.GetComponent<Animator>();
         _initialY = transform.position.y;
         _hp = MaxHP;
+
+        // Tell the GameplayData instance that this is a player
+        if (_isP1)
+            Data.P1 = (PlayerController)this;
+        else
+            Data.P2 = this as PlayerController;
+
+        _spawnPos = transform.position;
+
+        _animatedDeltaPosPrevious = Vector2.zero;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Update animator flags
+        _animator.SetBool("in_special_cancel_window", InSpecialCancelWindow);
+        _animator.SetBool("throw_success", _throw_success);
+        _animator.SetBool("contact_made", _currentHitboxHit);
+
+        // Update being held?
+        //_animator.SetBool("held", _held);
+
         // Set the animation speed
         _animator.speed = _globals.TimeScale;
 
@@ -346,6 +496,18 @@ public class PlayerController : MonoBehaviour
         {
             SetState(State.STATE_IDLE);
             SetCrouching(_isCrouching);
+        }
+
+        //// Airborne moves which ignore gravity
+        //if (_isInIgnoreGravityAnimation)
+        //{
+        //    SetAirborne(true);
+        //}
+
+        // Being thrown
+        if (OtherPlayer.Holding)
+        {
+            transform.position = OtherPlayer.HoldPoint.position;
         }
 
         // Jumping
@@ -415,7 +577,32 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (!_isStuck)
+        {
+            _animator.ResetTrigger(TRIGGER_RYU_SHORYU);
+            _animator.ResetTrigger(TRIGGER_RYU_THROW_FIREBALL);
+        }
+
         // Attacking
+        if (!_isStuck || true)
+        {
+            // Specials
+            if (GetButtonDown("Special"))
+            {
+                if (HoldingForward)
+                {
+                    FireTrigger(TRIGGER_RYU_SHORYU);
+                }
+                else if (HoldingBack)
+                {
+
+                }
+                else
+                {
+                    FireTrigger(TRIGGER_RYU_THROW_FIREBALL);
+                }
+            }
+        }
         if (!_isStuck)
         {
             // Standing Attacks
@@ -436,17 +623,33 @@ public class PlayerController : MonoBehaviour
                 {
                     FireTrigger(TRIGGER_RYU_KICK);
                 }
+                else if (GetButtonDown("Throw"))
+                {
+                    FireTrigger(TRIGGER_RYU_THROW_INITIAL);
+                    _animator.SetBool("throw_back", HoldingBack);
+                }
             }
             // Crouching Attacks
             else if (IsCrouching)
             {
-                if (GetButtonDown("Attack"))
+                if (GetButtonDown("Special"))
+                {
+                    if (HoldingForward)
+                    {
+                        FireTrigger(TRIGGER_RYU_SHORYU);
+                    }
+                }
+                else if(GetButtonDown("Attack"))
                 {
                     FireTrigger(TRIGGER_RYU_CROUCH_PUNCH);
                 }
                 else if (GetButtonDown("Kick"))
                 {
                     FireTrigger(TRIGGER_RYU_SWEEP);
+                }
+                else if (GetButtonDown("Throw"))
+                {
+                    FireTrigger(TRIGGER_RYU_THROW_INITIAL);
                 }
             }
         }
@@ -477,22 +680,24 @@ public class PlayerController : MonoBehaviour
         }
 
         // Keep the player in the camera
-        BoxCollider2D camera_box = _currentBoxesFrame.Find("camera").GetComponent<BoxCollider2D>();
-        if (camera_box.bounds.min.x < CurrentGameCamera.Left)
+        if (CameraBox != null)
         {
-            float new_x = CurrentGameCamera.Left + camera_box.bounds.extents.x;
-            transform.position = new Vector3(new_x, transform.position.y, transform.position.z);
-            _knockback_speed = 0;
-        }
-        else if (camera_box.bounds.max.x > CurrentGameCamera.Right)
-        {
-            float new_x = CurrentGameCamera.Right - camera_box.bounds.extents.x;
-            transform.position = new Vector3(new_x, transform.position.y, transform.position.z);
-            _knockback_speed = 0;
+            if (CameraBox.bounds.min.x < GameController.CurrentGameCamera.Left)
+            {
+                float new_x = GameController.CurrentGameCamera.Left + CameraBox.bounds.extents.x;
+                transform.position = new Vector3(new_x, transform.position.y, transform.position.z);
+                _knockback_speed = 0;
+            }
+            else if (CameraBox.bounds.max.x > GameController.CurrentGameCamera.Right)
+            {
+                float new_x = GameController.CurrentGameCamera.Right - CameraBox.bounds.extents.x;
+                transform.position = new Vector3(new_x, transform.position.y, transform.position.z);
+                _knockback_speed = 0;
+            }
         }
 
         // Push off other player
-        if (PushBox.IsIntersecting(OtherPlayer.PushBox))
+        if (PushBox != null && OtherPlayer.PushBox != null && PushBox.IsIntersecting(OtherPlayer.PushBox))
         {
             PlayerController left, right;
             if (PushBox.bounds.center.x < OtherPlayer.PushBox.bounds.center.x)
@@ -510,101 +715,6 @@ public class PlayerController : MonoBehaviour
 
             left.transform.Translate(-overlap_amount / 2, 0, 0);
             right.transform.Translate(overlap_amount / 2, 0, 0);
-        }
-
-        // Proximity guard / Hit Detection
-        if (OtherPlayer.Hurtboxes != null)
-        {
-            // Hit detection
-            Vector3 hitPos;
-            if (!_currentHitboxHit && HitBoxes != null && HitBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
-            {
-                hitPos.z -= 0.1f;
-
-                Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
-                AttackData.HitLevel level = hitbox.AttackData.Level;
-
-                // Is player blocking?
-                bool blocked = OtherPlayer.IsBlocking;
-
-                // Check if player blocked incorrectly on mid or low
-                if (blocked)
-                {
-                    if (level == AttackData.HitLevel.MID && OtherPlayer.HoldingDown)
-                    {
-                        blocked = false;
-                    }
-                    else if (level == AttackData.HitLevel.LOW && !OtherPlayer.HoldingDown)
-                    {
-                        blocked = false;
-                    }
-                }
-
-                // Blocking
-                if (blocked)
-                {
-                    // Put other player in grounded blockstun
-                    OtherPlayer.Block(hitbox.AttackData);
-                    // Create block spark
-                    Instantiate(BlockSpark, hitPos, Quaternion.identity);
-                    // Apply pushback to this player
-                    KnockbackSpeed(hitbox.AttackData.PushbackBlock);
-                }
-                // Hitting
-                else
-                {
-                    // Other player take damage
-                    OtherPlayer.TakeDamage(hitbox);
-
-                    // Kill other player
-                    if (OtherPlayer.HP <= 0)
-                    {
-                        // If attack wont knock down, use `RoundEndDefault` to kill other player
-                        AttackData roundEndAttackData;
-                        if (!(hitbox.AttackData.KnocksDownGround && OtherPlayer.IsGrounded)
-                            && !(hitbox.AttackData.KnocksDownAir && OtherPlayer.IsAirborne))
-                        {
-                            roundEndAttackData = RoundEndDefault;
-                        }
-                        else
-                        {
-                            roundEndAttackData = hitbox.AttackData;
-                        }
-                        Debug.Log("ITS GONNA HAPPEN: " + Prefix);
-                        OtherPlayer.Kill(roundEndAttackData);
-                        Debug.Log("IN THE MIDDLE: " + Prefix);
-                        GameController.FireRoundEnd(OtherPlayer);
-                        Debug.Log("IT HAPPENED: " + Prefix);
-                    }
-                    // Knock other player down
-                    else if ((hitbox.AttackData.KnocksDownGround && OtherPlayer.IsGrounded) 
-                        || (hitbox.AttackData.KnocksDownAir && OtherPlayer.IsAirborne))
-                    {
-                        OtherPlayer.KnockDown(hitbox.AttackData);
-                    }
-                    // Put other player in grounded hitstun
-                    else
-                    {
-                        OtherPlayer.Hit(hitbox.AttackData);
-                    }
-
-                    // Create hit spark
-                    Instantiate(HitSpark, hitPos, Quaternion.identity);
-                    // Apply pushback to this player
-                    KnockbackSpeed(hitbox.AttackData.PushbackHit);
-                }
-
-                _currentHitboxHit = true;
-            }
-
-            // Proximity guard detection
-            //if (!contact && ProxBoxes != null && ProxBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
-            //{
-            //    if (OtherPlayer.IsBlocking)
-            //    {
-            //        OtherPlayer.Block(1, 0);
-            //    }
-            //}
         }
 
         // Hitstun handling
@@ -626,7 +736,6 @@ public class PlayerController : MonoBehaviour
         {
             _blockstun_frames -= 1f * _globals.TimeScale;
             if (_blockstun_frames <= 0)
-            if (_blockstun_frames <= 0)
             {
                 SetState(State.STATE_IDLE);
             }
@@ -637,7 +746,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Airborne handling
-        if (IsAirborne)
+        if (IsAirborne && !_isInIgnoreGravityAnimation)
         {
             _velY -= JumpGravity * _globals.TimeScale;
             transform.Translate(_jumpVelX * _globals.TimeScale, _velY * _globals.TimeScale, 0);
@@ -647,7 +756,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, _initialY, transform.position.z);
                 SetState(State.STATE_IDLE);
-                SetAirborne(false);
+                SetAirborne(0);
                 UpdateDirection();
             }
         }
@@ -696,15 +805,154 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void LateUpdate()
+    {
+        // Handle animations which move the player
+        if (_isInMovingAnimation || _globals.DebugPreviewAnimationMovements)
+        {
+            Vector2 deltaDeltaPos = AnimatedDeltaPos - _animatedDeltaPosPrevious;
+            
+            // Flip direciton if player is on P2 side
+            if (_direction == Direction.LEFT)
+                deltaDeltaPos = Vector2.Scale(deltaDeltaPos, new Vector2(-1, 1));
+
+            transform.Translate(deltaDeltaPos.x, deltaDeltaPos.y, 0);
+            _animatedDeltaPosPrevious = AnimatedDeltaPos;
+        }
+        else
+        {
+            _animatedDeltaPosPrevious = Vector2.zero;
+        }
+
+        // Proximity guard / Hit Detection
+        Vector3 hitPos;
+        if (HitBoxes.Length > 0 && HitBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos) && !_currentHitboxHit)
+        {
+            Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
+            OtherPlayer.HandleContact(hitbox.AttackData, hitPos);
+            _currentHitboxHit = true;
+        }
+
+        // Throw detection
+        if (ThrowBoxes.Length > 0 && ThrowBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
+        {
+            Debug.Log("Thrown");
+            bool opponent_held = OtherPlayer._isThrowable;
+            if (opponent_held)
+            {
+                _throw_success = true;
+                Holding = true;
+                OtherPlayer.FireTrigger(TRIGGER_RYU_HELD);
+            }
+        }
+    }
+
+    public void HandleContact(AttackData attackData, Vector3 hitPos)
+    {
+        // Proximity guard / Hit Detection
+        if (Hurtboxes.Length > 0)
+        {                
+            AttackData.HitLevel level = attackData.Level;
+
+            // Is player blocking?
+            bool blocked = IsBlocking;
+
+            // Check if player blocked incorrectly on mid or low
+            if (blocked)
+            {
+                if (level == AttackData.HitLevel.MID && HoldingDown)
+                {
+                    blocked = false;
+                }
+                else if (level == AttackData.HitLevel.LOW && !HoldingDown)
+                {
+                    blocked = false;
+                }
+            }
+
+            // Blocking
+            if (blocked)
+            {
+                // Put other player in grounded blockstun
+                Block(attackData);
+                // Create block spark
+                Instantiate(BlockSpark, hitPos, Quaternion.identity);
+                // Apply pushback to other player
+                OtherPlayer.KnockbackSpeed(attackData.PushbackBlock);
+            }
+            // Hitting
+            else
+            {
+                // Take damage
+                TakeDamage(attackData);
+
+                // Kill player
+                if (HP <= 0)
+                {
+                    // If attack wont knock down, use `RoundEndDefault` to kill player
+                    AttackData roundEndAttackData;
+                    if (!(attackData.KnocksDownGround && IsGrounded)
+                        && !(attackData.KnocksDownAir && IsAirborne))
+                    {
+                        roundEndAttackData = RoundEndDefault;
+                    }
+                    else
+                    {
+                        roundEndAttackData = attackData;
+                    }
+                    Kill(roundEndAttackData);
+                    GameController.FireRoundEnd();
+                }
+                // Knock other player down
+                else if ((attackData.KnocksDownGround && IsGrounded)
+                    || (attackData.KnocksDownAir && IsAirborne))
+                {
+                    KnockDown(attackData);
+                }
+                // Put other player in grounded hitstun
+                else
+                {
+                    Hit(attackData);
+                }
+
+                // Create hit spark
+                Instantiate(HitSpark, hitPos, Quaternion.identity);
+                // Apply pushback to other player
+                OtherPlayer.KnockbackSpeed(attackData.PushbackHit);
+            }
+
+            if (attackData.FreezeTime)
+            {
+                GameController.HitFreeze();
+            }
+        }
+    }
+
+    public void HandleThrow(AttackData attackData)
+    {
+        KnockDown(attackData);
+        TakeDamage(attackData);
+
+        // Kill player
+        if (HP <= 0)
+        {
+            Kill(attackData);
+            GameController.FireRoundEnd();
+        }
+
+        // Push Back Opponent
+        OtherPlayer.KnockbackSpeed(attackData.PushbackHit);
+    }
+
     public void TakeDamage(int damage)
     {
         // Apply damage
         HP -= damage;
     }
 
-    public void TakeDamage(Hitbox hitbox)
+    public void TakeDamage(AttackData attackData)
     {
-        TakeDamage(hitbox.AttackData.Damage);
+        TakeDamage(attackData.Damage);
     }
 
     public void Hit(int num_frames, float relative_knockback = 0)
@@ -739,7 +987,7 @@ public class PlayerController : MonoBehaviour
         FireTrigger(TRIGGER_RYU_KNOCKDOWN_AIR);
 
         SetState(State.STATE_KNOCKDOWN_AIR);
-        SetAirborne(false);
+        SetAirborne(0);
         _hitstun_frames = 0;
         _blockstun_frames = 0;
     }
@@ -766,6 +1014,8 @@ public class PlayerController : MonoBehaviour
         _blockstun_frames = num_frames;
         KnockbackSpeed(relative_knockback);
         FireTrigger(TRIGGER_RYU_BLOCK);
+
+        GameController.HitFreeze();
     }
 
     public void Block(AttackData attackData)
@@ -791,21 +1041,21 @@ public class PlayerController : MonoBehaviour
     public void JumpNeutral()
     {
         _velY = JumpPower;
-        SetAirborne(true);
+        SetAirborne(1);
         _jumpVelX = 0;
     }
 
     public void JumpBack()
     {
         _velY = JumpPower;
-        SetAirborne(true);
+        SetAirborne(1);
         _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? -1 : 1);
     }
 
     public void JumpForward()
     {
         _velY = JumpPower;
-        SetAirborne(true);
+        SetAirborne(1);
         _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? 1 : -1);
     }
 
@@ -820,7 +1070,13 @@ public class PlayerController : MonoBehaviour
 
     private void SetCollisionBoxesFrame(string name)
     {
-        string anim_name = name.Substring(0, name.Length - 3);
+        Match match = Regex.Match(name, @"(.*)_\d\d.*");
+        if (!match.Success)
+        {
+            Debug.LogError("Invalid collision boxes frame name: " + name);
+        }
+
+        string anim_name = match.Groups[1].Value;
 
         Transform collision_boxes = transform.Find("collision_boxes");
         Transform collisionBoxGroup = collision_boxes.Find(anim_name);
@@ -849,6 +1105,7 @@ public class PlayerController : MonoBehaviour
 
     private void FireTrigger(string trigger)
     {
+        Debug.Log(trigger + " fired");
         _animator.SetTrigger(trigger);
     }
 
@@ -868,11 +1125,17 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("is_crouching", IsCrouching);
     }
 
-    private void SetAirborne(bool isAirborne)
+    private void SetAirborne(int isAirborne)
     {
-        _animator.SetBool("grounded", !isAirborne);
-        _isAirborne = isAirborne;
+        _animator.SetBool("grounded", isAirborne == 0);
+        _isAirborne = isAirborne != 0;
     }
+
+    //private void SetInSpecialCancelWindow(int inWindow)
+    //{
+    //    _animator.SetBool("in_special_cancel_window", inWindow != 0);
+    //    InSpecialCancelWindow = inWindow != 0;
+    //}
 
     private void UpdateDirection()
     {
@@ -892,6 +1155,53 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
         }
+    }
+
+    public void ResetRound()
+    {
+        if (this != null)
+        {
+            FireTrigger(TRIGGER_STOP_CELEBRATION);
+            transform.position = _spawnPos;
+            HP = MaxHP;
+            UpdateDirection();
+            _victoryFired = false;
+            _isDead = false;
+            _state = State.STATE_IDLE;
+        }
+    }
+
+    private void ThrowFireball()
+    {
+        // Return if a fireball already exists from this owner
+        foreach (Projectile projectile in GameController.Projectiles)
+        {
+            if (projectile.Owner == this)
+            {
+                return;
+            }
+        }
+
+        Projectile fireball = Instantiate(FireballPrefab, FireballSpawnPos.position, Quaternion.identity);
+
+        fireball.Owner = this;
+        fireball.GameController = GameController;
+        fireball.Opponent = OtherPlayer;
+
+        if (_direction == Direction.LEFT)
+        {
+            fireball.transform.localScale = Vector3.Scale(fireball.transform.localScale, new Vector3(-1, 1, 1));
+            fireball.Velocity.Scale(new Vector3(-1, 1, 1));
+        }
+
+        GameController.Projectiles.Add(fireball);
+    }
+
+    private void ReleaseOpponent()
+    {
+        _throw_success = false;
+        Holding = false;
+        OtherPlayer.HandleThrow(ThrowAttackData);
     }
 
     // InputManager helpers

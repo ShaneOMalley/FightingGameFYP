@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d38395a769bdcd49a6ef1cdf84c023b, type: 3}
   m_Name: GameplayData
   m_EditorClassIdentifier: 
-  maxFrames: 5940
-  framesLeft: 5742
-  CurrentState: 8
+  MaxFrames: 5940
+  P1: {fileID: 0}
+  P2: {fileID: 0}
+  MaxRounds: 2
+  CurrentState: 10

@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>4.10.0</string>
+        <string>4.11.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -295,6 +295,142 @@
                 <rect>10,27,19,53</rect>
                 <key>scale9Paddings</key>
                 <rect>10,27,19,53</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_01.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_07.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_11.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,6,15,11</rect>
+                <key>scale9Paddings</key>
+                <rect>8,6,15,11</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_02.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_04.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,8,21,15</rect>
+                <key>scale9Paddings</key>
+                <rect>11,8,21,15</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_03.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_05.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_09.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,7,16,13</rect>
+                <key>scale9Paddings</key>
+                <rect>8,7,16,13</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_06.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_10.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,7,21,14</rect>
+                <key>scale9Paddings</key>
+                <rect>11,7,21,14</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_08.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,8,21,16</rect>
+                <key>scale9Paddings</key>
+                <rect>11,8,21,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>6,6,12,11</rect>
+                <key>scale9Paddings</key>
+                <rect>6,6,12,11</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>6,9,11,18</rect>
+                <key>scale9Paddings</key>
+                <rect>6,9,11,18</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_03.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,12,16,23</rect>
+                <key>scale9Paddings</key>
+                <rect>8,12,16,23</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_04.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>9,12,18,24</rect>
+                <key>scale9Paddings</key>
+                <rect>9,12,18,24</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_05.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,11,16,23</rect>
+                <key>scale9Paddings</key>
+                <rect>8,11,16,23</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -732,6 +868,84 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_postgame.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>21,39,42,79</rect>
+                <key>scale9Paddings</key>
+                <rect>21,39,42,79</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>12,19,23,37</rect>
+                <key>scale9Paddings</key>
+                <rect>12,19,23,37</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.572727</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>9,28,18,55</rect>
+                <key>scale9Paddings</key>
+                <rect>9,28,18,55</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_03.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.558252</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>8,26,16,51</rect>
+                <key>scale9Paddings</key>
+                <rect>8,26,16,51</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_04.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.561224</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>9,25,18,49</rect>
+                <key>scale9Paddings</key>
+                <rect>9,25,18,49</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_05.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.534884</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>9,22,17,43</rect>
+                <key>scale9Paddings</key>
+                <rect>9,22,17,43</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_sweep_01.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -794,6 +1008,166 @@
                 <rect>10,14,19,28</rect>
                 <key>scale9Paddings</key>
                 <rect>10,14,19,28</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.453333</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>12,19,25,37</rect>
+                <key>scale9Paddings</key>
+                <rect>12,19,25,37</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.938776,0.453333</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>13,20,25,41</rect>
+                <key>scale9Paddings</key>
+                <rect>13,20,25,41</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_02_whiff.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.571429,0.453333</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>12,19,25,37</rect>
+                <key>scale9Paddings</key>
+                <rect>12,19,25,37</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_03.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.88,0.493827</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>13,17,25,35</rect>
+                <key>scale9Paddings</key>
+                <rect>13,17,25,35</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_04.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.509804,0.405797</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,13,22,25</rect>
+                <key>scale9Paddings</key>
+                <rect>11,13,22,25</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_05.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.431818,0.196078</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,13,22,25</rect>
+                <key>scale9Paddings</key>
+                <rect>11,13,22,25</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_03.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.493827</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>13,20,25,41</rect>
+                <key>scale9Paddings</key>
+                <rect>13,20,25,41</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_04.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.784314,0.405797</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>13,17,25,35</rect>
+                <key>scale9Paddings</key>
+                <rect>13,17,25,35</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_05.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.909091,0.196078</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,13,22,25</rect>
+                <key>scale9Paddings</key>
+                <rect>11,13,22,25</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_fireball_01.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.415094,0.452055</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>13,18,27,37</rect>
+                <key>scale9Paddings</key>
+                <rect>13,18,27,37</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_fireball_02.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.38806,0.393939</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>17,17,33,33</rect>
+                <key>scale9Paddings</key>
+                <rect>17,17,33,33</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_01.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_02.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_03.png</key>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_04.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.493827</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>10,20,19,41</rect>
+                <key>scale9Paddings</key>
+                <rect>10,20,19,41</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -950,6 +1324,44 @@
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_01.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_02.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_victory_03.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_01.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_03.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_timeout_04.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_postgame.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_01.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_03.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_04.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_shoryu_05.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_fireball_01.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_fireball_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_01.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_03.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_04.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_05.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_06.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_07.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_08.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_09.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_10.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_11.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_01.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_03.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_04.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_fireball_die_05.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_01.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_03.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_04.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_05.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_02_whiff.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_02.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_03.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_04.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_05.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

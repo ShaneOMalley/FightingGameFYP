@@ -22,4 +22,6 @@ public class AttackData: ScriptableObject
     public float KnockdownLaunch = 0;
     public float KnockdownGravity = 0;
     public int KnockdownGroundFrames = 0;
+
+    public bool FreezeTime = true;
 }

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 0
   Damage: 10
-  KnockbackHit: 0.3
-  KnockbackBlock: 0.2
-  PushbackHit: 0.2
-  PushbackBlock: 0.2
+  KnockbackHit: 0.18
+  KnockbackBlock: 0.13
+  PushbackHit: 0.1
+  PushbackBlock: 0.1
   Hitstun: 22
   Blockstun: 18
   KnocksDownGround: 0
@@ -24,3 +24,4 @@ MonoBehaviour:
   KnockdownLaunch: 0
   KnockdownGravity: 0
   KnockdownGroundFrames: 0
+  FreezeTime: 1

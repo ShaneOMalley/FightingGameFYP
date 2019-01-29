@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour {
     public Sprite[] Digits;
 
     public Image LeftDigit;
-    public Image  RightDigit;
+    public Image RightDigit;
 
     // Use this for initialization
     void Start ()
@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        int secondsLeft = GameplayData.framesLeft > 0 ? (GameplayData.framesLeft - 1) / 60 + 1 : 0;
+        int secondsLeft = GameplayData.FramesLeft > 0 ? (GameplayData.FramesLeft - 1) / 60 + 1 : 0;
             
         secondsLeft = (int)Mathf.Clamp(secondsLeft, 0, 99);
         int ldigit = secondsLeft / 10;
@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour {
 
         if (GameplayData.CurrentState == GameplayData.State.GAMEPLAY)
         {
-            GameplayData.framesLeft--;
+            GameplayData.FramesLeft--;
         }
 	}
 }

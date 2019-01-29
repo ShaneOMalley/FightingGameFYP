@@ -194,6 +194,19 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/draw.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>29,10,57,20</rect>
+                <key>scale9Paddings</key>
+                <rect>29,10,57,20</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/fight.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -273,6 +286,19 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/ryu_wins.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>53,13,106,25</rect>
+                <key>scale9Paddings</key>
+                <rect>53,13,106,25</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>
@@ -284,6 +310,8 @@
             <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round3.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round4.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/double_ko.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/ryu_wins.png</filename>
+            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/draw.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

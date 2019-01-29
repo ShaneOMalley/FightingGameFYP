@@ -13,4 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetFrameRate: 60
   DrawHitboxes: 0
+  DebugPreviewAnimationMovements: 0
   TimeScale: 1
+  HitFreezeLength: 8
+  MasterVolume: 1

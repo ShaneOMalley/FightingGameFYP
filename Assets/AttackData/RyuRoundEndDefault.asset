@@ -24,3 +24,4 @@ MonoBehaviour:
   KnockdownLaunch: 0.16
   KnockdownGravity: 0.04
   KnockdownGroundFrames: 12
+  FreezeTime: 1

@@ -22,10 +22,19 @@ public static class ExtensionMethods
         return false;
     }
 
+
+    public static bool IsIntersecting(this BoxCollider2D collider, BoxCollider2D[] other, out Vector3 hitPos)
+    {
+        BoxCollider2D[] temp = new BoxCollider2D[] { collider };
+        bool result = temp.IsIntersecting(other, out hitPos);
+        return result;
+    }
+
     public static bool IsIntersecting(this BoxCollider2D collider, BoxCollider2D other)
     {
         return collider.bounds.Intersects(other.bounds);
     }
+
 
     public static float NormalDeltaTime(this Time time)
     {
