@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool HoldingOpponent = false;
     public Transform HoldPoint;
+    public Transform TechReleasePosition;
 
     public Vector2 AnimatedDeltaPos;
     private Vector2 _animatedDeltaPosPrevious;
@@ -41,8 +42,86 @@ public class PlayerController : MonoBehaviour
     public AttackData RoundEndDefault;
     public AttackData ThrowAttackData;
 
+    [HideInInspector]
+    public float HitShakeScaleX;
+    //private float _hitShakeDistance = 0.1f;
+
     public enum PlayerEnum { P1, P2 }
     public PlayerEnum PlayerNum = PlayerEnum.P1;
+
+    public int ControllerNum = 1;
+    public Dictionary<string, string> ActionToAxis = new Dictionary<string, string>
+    {
+        { "Horizontal", "Horizontal" },
+        { "Vertical", "Vertical" },
+        { "Throw", "A" },
+        { "Special", "B" },
+        { "Attack", "X" },
+        { "Kick", "Y" },
+        { "Select", "Select" },
+        { "Start", "Start" },
+    };
+
+    // A map of actions to the number of frames to repeat the action
+    private Dictionary<string, int> _actionBuffers = new Dictionary<string, int>
+    {
+        { "Horizontal", 0 },
+        { "Vertical", 0 },
+        { "Throw", 0 },
+        { "Special", 0 },
+        { "Attack", 0 },
+        { "Kick", 0 },
+        { "Select", 0 },
+        { "Start", 0 },
+    };
+
+    private static string[] actionsToRecord =
+    {
+        "Horizontal", "Vertical", "Throw", "Special", "Attack", "Kick"
+    };
+
+    // Specifies one frame of a recording of actions
+    private class ActionRecordingFrame
+    {
+        private Dictionary<string, float> _axes;
+        private Dictionary<string, bool> _button;
+        private Dictionary<string, bool> _buttonDown;
+        private Dictionary<string, bool> _buttonDownWithBuffer;
+        private Direction _direction;
+
+        public float GetAxis(Direction direction, string action)
+        {
+            float factor = (action == "Horizontal" && direction != _direction) ? -1 : 1;
+            return _axes[action] * factor;
+        }
+        public bool GetButton(string action) { return _button[action]; }
+        public bool GetButtonDown(string action) { return _buttonDown[action]; }
+        public bool GetButtonDownWithBuffer(string action) { return _buttonDownWithBuffer[action]; }
+
+        public ActionRecordingFrame(PlayerController player)
+        {
+            _axes = new Dictionary<string, float>();
+            _button = new Dictionary<string, bool>();
+            _buttonDown = new Dictionary<string, bool>();
+            _buttonDownWithBuffer = new Dictionary<string, bool>();
+            
+            _direction = player._direction;
+            
+            foreach (string action in actionsToRecord)
+            {
+                _axes[action] = player.GetAxis(action);
+                _button[action] = player.GetButton(action);
+                _buttonDown[action] = player.GetButtonDown(action);
+                _buttonDownWithBuffer[action] = player.GetButtonDownWithBuffer(action);
+            }
+        }
+    }
+
+    // An array of button inputs per frame. Record inputs to this and replay later
+    private List<ActionRecordingFrame> _actionRecording = new List<ActionRecordingFrame>();
+    private int _recordingFrames = 0;
+    private bool isRecordingActions = false;
+    private int _actionPlaybackFrame = -1;
 
     private enum State {
         STATE_IDLE = 0,
@@ -78,6 +157,7 @@ public class PlayerController : MonoBehaviour
     private const string TRIGGER_RYU_THROW_FIREBALL = "play_throw_fireball";
     private const string TRIGGER_RYU_THROW_INITIAL = "play_throw_initial";
     private const string TRIGGER_RYU_HELD = "play_held";
+    private const string TRIGGER_RYU_THROW_TECH = "play_throw_tech";
     private const string TRIGGER_RYU_THROWN = "play_thrown";
     private const string TRIGGER_RYU_JUMP_KICK = "play_jump_kick";
     private const string TRIGGER_RYU_KNOCKDOWN_AIR = "play_knockdown_air";
@@ -92,8 +172,9 @@ public class PlayerController : MonoBehaviour
     {
         "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_shoryu",
         "ryu_throw_fireball", "ryu_throw_initial", "ryu_throw_whiff",
-        "ryu_throw_success", "ryu_throw_back_success", "ryu_thrown", "ryu_crouch_punch",
-        "ryu_knockdown_air", "ryu_knockdown_ground", "ryu_knockdown_getup", "ryu_victory"
+        "ryu_throw_success", "ryu_throw_back_success", "ryu_thrown", "ryu_throw_tech",
+        "ryu_crouch_punch", "ryu_knockdown_air", "ryu_knockdown_ground",
+        "ryu_knockdown_getup", "ryu_victory"
     };
 
     private static State[] StuckStates =
@@ -127,7 +208,10 @@ public class PlayerController : MonoBehaviour
     private bool _victoryFired = false;
 
     private Transform _currentBoxesFrame;
+
     private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
+
     private Direction _direction = Direction.RIGHT;
     private bool _movingForward = true;
 
@@ -140,12 +224,14 @@ public class PlayerController : MonoBehaviour
     public bool InSpecialCancelWindow = false;
     
     public bool InThrowTechWindow = false;
+    private bool _throwTechSuccess = false;
     public bool Holding = false;
     private bool _throw_success = false;
     
     private const float KNOCKBACK_DECELERATION = 0.05f;
     private float _hitstun_frames = 0;
     private float _blockstun_frames = 0;
+    private float _freeze_time_frames = 0;
     private float _frames_on_ground = 0;
     private float _knockback_speed = 0;
     private bool _isDead = false;
@@ -415,7 +501,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsBlocking
     {
-        get { return HoldingBack && !_isStuck; }
+        get { return HoldingBack && (InBlockStun || !_isStuck); }
     }
 
     public bool IsCrouching
@@ -453,14 +539,16 @@ public class PlayerController : MonoBehaviour
         _globals = Resources.Load<Globals>(GLOBALS_NAME);
 
         _animator = this.GetComponent<Animator>();
+        _spriteRenderer = this.GetComponent<SpriteRenderer>();
+
         _initialY = transform.position.y;
         _hp = MaxHP;
 
         // Tell the GameplayData instance that this is a player
         if (_isP1)
-            Data.P1 = (PlayerController)this;
+            Data.P1 = this;
         else
-            Data.P2 = this as PlayerController;
+            Data.P2 = this;
 
         _spawnPos = transform.position;
 
@@ -470,19 +558,53 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Update recovery color
+        if (_globals.ShowRecoveryColor && _isStuck && Data.CurrentState == GameplayData.State.GAMEPLAY)
+        {
+            _spriteRenderer.color = Color.blue;
+        }
+        else
+        {
+            _spriteRenderer.color = Color.white;
+        }
+
+        // Record / Replay actions
+        if (GetButtonDown("Start"))
+        {
+            if (!isRecordingActions)
+            {
+                StartActionRecording();
+            }
+            else if (isRecordingActions)
+            {
+                StopActionRecording();
+            }
+        }
+        else if (GetButtonDown("Select"))
+        {
+            if (_recordingFrames > 0 && !isRecordingActions)
+            {
+                StartActionPlayback();
+            }
+        }
+
+        if (isRecordingActions)
+        {
+            RecordActions();
+        }
+
+        // Update buffered inputs
+        UpdateBufferedInputs();
+
         // Update animator flags
         _animator.SetBool("in_special_cancel_window", InSpecialCancelWindow);
         _animator.SetBool("throw_success", _throw_success);
         _animator.SetBool("contact_made", _currentHitboxHit);
 
-        // Update being held?
-        //_animator.SetBool("held", _held);
-
         // Set the animation speed
-        _animator.speed = _globals.TimeScale;
-
-        // Set the collision boxes frame
-        UpdateSetCollisionBoxesFrame();
+        float playerTimeScale = _freeze_time_frames-- <= 0 ? _globals.TimeScale : 0;
+        _animator.speed = playerTimeScale;
 
         // Play victory animation
         if (Data.CurrentState == GameplayData.State.CELEBRATION && !_victoryFired && !IsDead)
@@ -498,16 +620,26 @@ public class PlayerController : MonoBehaviour
             SetCrouching(_isCrouching);
         }
 
-        //// Airborne moves which ignore gravity
-        //if (_isInIgnoreGravityAnimation)
-        //{
-        //    SetAirborne(true);
-        //}
+        // Throw teching
+        if (OtherPlayer.InThrowTechWindow)
+        {
+            if (GetButtonDownWithBuffer("Throw"))
+                _throwTechSuccess = true;
+        }
+        else
+        {
+            _throwTechSuccess = false;
+        }
 
         // Being thrown
         if (OtherPlayer.Holding)
         {
             transform.position = OtherPlayer.HoldPoint.position;
+
+            if (_throwTechSuccess)
+            {
+                BothTech();
+            }
         }
 
         // Jumping
@@ -560,7 +692,7 @@ public class PlayerController : MonoBehaviour
                 SetForward(_isFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
-                transform.Translate(speed * _globals.TimeScale, 0, 0);
+                transform.Translate(speed * playerTimeScale, 0, 0);
             }
             else if (GetAxis("Horizontal") < 0)
             {
@@ -569,7 +701,7 @@ public class PlayerController : MonoBehaviour
                 SetForward(!_isFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
-                transform.Translate(-speed * _globals.TimeScale, 0, 0);
+                transform.Translate(-speed * playerTimeScale, 0, 0);
             }
             else
             {
@@ -584,10 +716,10 @@ public class PlayerController : MonoBehaviour
         }
 
         // Attacking
-        if (!_isStuck || true)
+        if (!_isStuck || InSpecialCancelWindow)
         {
             // Specials
-            if (GetButtonDown("Special"))
+            if (GetButtonDownWithBuffer("Special"))
             {
                 if (HoldingForward)
                 {
@@ -608,7 +740,7 @@ public class PlayerController : MonoBehaviour
             // Standing Attacks
             if (IsStanding)
             {
-                if (GetButtonDown("Attack"))
+                if (GetButtonDownWithBuffer("Attack"))
                 {
                     if (HoldingForward)
                     {
@@ -619,11 +751,11 @@ public class PlayerController : MonoBehaviour
                         FireTrigger(TRIGGER_RYU_ATTACK);
                     }
                 }
-                else if (GetButtonDown("Kick"))
+                else if (GetButtonDownWithBuffer("Kick"))
                 {
                     FireTrigger(TRIGGER_RYU_KICK);
                 }
-                else if (GetButtonDown("Throw"))
+                else if (GetButtonDownWithBuffer("Throw"))
                 {
                     FireTrigger(TRIGGER_RYU_THROW_INITIAL);
                     _animator.SetBool("throw_back", HoldingBack);
@@ -632,22 +764,22 @@ public class PlayerController : MonoBehaviour
             // Crouching Attacks
             else if (IsCrouching)
             {
-                if (GetButtonDown("Special"))
+                if (GetButtonDownWithBuffer("Special"))
                 {
                     if (HoldingForward)
                     {
                         FireTrigger(TRIGGER_RYU_SHORYU);
                     }
                 }
-                else if(GetButtonDown("Attack"))
+                else if(GetButtonDownWithBuffer("Attack"))
                 {
                     FireTrigger(TRIGGER_RYU_CROUCH_PUNCH);
                 }
-                else if (GetButtonDown("Kick"))
+                else if (GetButtonDownWithBuffer("Kick"))
                 {
                     FireTrigger(TRIGGER_RYU_SWEEP);
                 }
-                else if (GetButtonDown("Throw"))
+                else if (GetButtonDownWithBuffer("Throw"))
                 {
                     FireTrigger(TRIGGER_RYU_THROW_INITIAL);
                 }
@@ -657,26 +789,16 @@ public class PlayerController : MonoBehaviour
         // Air attacks
         if (IsAirborne && !IsAirStuck)
         {
-            if (GetButtonDown("Kick"))
+            if (GetButtonDownWithBuffer("Kick"))
             {
                 FireTrigger(TRIGGER_RYU_JUMP_KICK);
             }
         }
 
         // Update direction to face the other player
-        if (!_isStuck)
+        if (!_isStuck || (Data.CurrentState >= GameplayData.State.ANNOUNCE_ROUND_1 && Data.CurrentState <= GameplayData.State.ANNOUNCE_ROUND_FINAL))
         {
             UpdateDirection();
-        }
-
-        // Handle enabling of collision boxes
-        foreach (Transform group in transform.Find("collision_boxes"))
-        {
-            foreach (Transform frame in group)
-            {
-                bool isActive = (frame == _currentBoxesFrame);
-                frame.gameObject.SetActive(isActive);
-            }
         }
 
         // Keep the player in the camera
@@ -720,7 +842,7 @@ public class PlayerController : MonoBehaviour
         // Hitstun handling
         if (InHitStun)
         {
-            _hitstun_frames -= 1f * _globals.TimeScale;
+            _hitstun_frames -= 1f * playerTimeScale;
             if (_hitstun_frames <= 0)
             {
                 SetState(State.STATE_IDLE);
@@ -734,7 +856,7 @@ public class PlayerController : MonoBehaviour
         // Blockstun handling
         else if (InBlockStun)
         {
-            _blockstun_frames -= 1f * _globals.TimeScale;
+            _blockstun_frames -= 1f * playerTimeScale;
             if (_blockstun_frames <= 0)
             {
                 SetState(State.STATE_IDLE);
@@ -748,8 +870,8 @@ public class PlayerController : MonoBehaviour
         // Airborne handling
         if (IsAirborne && !_isInIgnoreGravityAnimation)
         {
-            _velY -= JumpGravity * _globals.TimeScale;
-            transform.Translate(_jumpVelX * _globals.TimeScale, _velY * _globals.TimeScale, 0);
+            _velY -= JumpGravity * playerTimeScale;
+            transform.Translate(_jumpVelX * playerTimeScale, _velY * playerTimeScale, 0);
 
             // Check if player touched the ground
             if (_velY <= 0 && transform.position.y <= _initialY)
@@ -764,8 +886,8 @@ public class PlayerController : MonoBehaviour
         // Air knockdown handling
         else if (InAirKnockdown)
         {
-            _velY -= _gravity * _globals.TimeScale;
-            transform.Translate(0, _velY * _globals.TimeScale, 0);
+            _velY -= _gravity * playerTimeScale;
+            transform.Translate(0, _velY * playerTimeScale, 0);
 
             // Check if player hit the ground
             if (_velY <= 0 && transform.position.y <= _initialY)
@@ -779,7 +901,7 @@ public class PlayerController : MonoBehaviour
         // Ground knockdown handling
         else if (InGroundKnockdown)
         {
-            _frames_on_ground -= 1f * _globals.TimeScale;
+            _frames_on_ground -= 1f * playerTimeScale;
             if (_frames_on_ground <= 0 && !IsDead)
             {
                 SetState(State.STATE_KNOCKDOWN_GETUP);
@@ -790,13 +912,13 @@ public class PlayerController : MonoBehaviour
         // Knockback
         if (_knockback_speed != 0)
         {
-            transform.Translate(_knockback_speed * _globals.TimeScale, 0, 0);
+            transform.Translate(_knockback_speed * playerTimeScale, 0, 0);
 
             // Only decelerate if the player isn't being knocked through the air
             if (_state != State.STATE_KNOCKDOWN_AIR)
             {
                 float prev_speed = _knockback_speed;
-                _knockback_speed -= KNOCKBACK_DECELERATION * Mathf.Sign(_knockback_speed) * _globals.TimeScale;
+                _knockback_speed -= KNOCKBACK_DECELERATION * Mathf.Sign(_knockback_speed) * playerTimeScale;
                 if (Mathf.Sign(_knockback_speed) != Mathf.Sign(prev_speed))
                 {
                     _knockback_speed = 0;
@@ -807,6 +929,19 @@ public class PlayerController : MonoBehaviour
 
     public void LateUpdate()
     {
+        // Set the collision boxes frame
+        UpdateSetCollisionBoxesFrame();
+
+        // Handle enabling of collision boxes
+        foreach (Transform group in transform.Find("collision_boxes"))
+        {
+            foreach (Transform frame in group)
+            {
+                bool isActive = (frame == CurrentBoxesFrame);
+                frame.gameObject.SetActive(isActive);
+            }
+        }
+
         // Handle animations which move the player
         if (_isInMovingAnimation || _globals.DebugPreviewAnimationMovements)
         {
@@ -836,7 +971,6 @@ public class PlayerController : MonoBehaviour
         // Throw detection
         if (ThrowBoxes.Length > 0 && ThrowBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos))
         {
-            Debug.Log("Thrown");
             bool opponent_held = OtherPlayer._isThrowable;
             if (opponent_held)
             {
@@ -845,10 +979,22 @@ public class PlayerController : MonoBehaviour
                 OtherPlayer.FireTrigger(TRIGGER_RYU_HELD);
             }
         }
+
+        // Advance in recording
+        if (_actionPlaybackFrame > -1)
+        {
+            _actionPlaybackFrame++;
+            if (_actionPlaybackFrame >= _recordingFrames)
+            {
+                _actionPlaybackFrame = -1;
+            }
+        }
     }
 
     public void HandleContact(AttackData attackData, Vector3 hitPos)
     {
+        hitPos = new Vector3(hitPos.x, hitPos.y, -2);
+
         // Proximity guard / Hit Detection
         if (Hurtboxes.Length > 0)
         {                
@@ -921,10 +1067,15 @@ public class PlayerController : MonoBehaviour
                 OtherPlayer.KnockbackSpeed(attackData.PushbackHit);
             }
 
-            if (attackData.FreezeTime)
+            if (attackData.FreezeDefender)
             {
-                GameController.HitFreeze();
+                HitFreeze(attackData.FreezeTimeFrames);
             }
+            if (attackData.FreezeAttacker)
+            {
+                OtherPlayer.HitFreeze(attackData.FreezeTimeFrames);
+            }
+            GameController.CameraShake(attackData.FreezeTimeFrames);
         }
     }
 
@@ -1014,8 +1165,6 @@ public class PlayerController : MonoBehaviour
         _blockstun_frames = num_frames;
         KnockbackSpeed(relative_knockback);
         FireTrigger(TRIGGER_RYU_BLOCK);
-
-        GameController.HitFreeze();
     }
 
     public void Block(AttackData attackData)
@@ -1023,9 +1172,12 @@ public class PlayerController : MonoBehaviour
         Block(attackData.Blockstun, attackData.KnockbackBlock);
     }
 
-    public void KnockbackSpeed(float relative_knockback)
+    public void KnockbackSpeed(float relative_knockback, bool use_direction_facing = false)
     {
-        _knockback_speed = relative_knockback * (_onLeftSide ? -1 : 1);
+        if (use_direction_facing)
+            _knockback_speed = relative_knockback * (_direction == Direction.RIGHT ? -1 : 1);
+        else
+            _knockback_speed = relative_knockback * (_onLeftSide ? -1 : 1);
     }
 
     public bool WillKill(int damage)
@@ -1036,6 +1188,27 @@ public class PlayerController : MonoBehaviour
     public bool WillKill(Hitbox hitbox)
     {
         return WillKill(hitbox.AttackData.Damage);
+    }
+
+    public void BothTech()
+    {
+        ThrowTech();
+        OtherPlayer.ThrowTech();
+    }
+
+    public void ThrowTech()
+    {
+        Holding = false;
+        _throw_success = false;
+        FireTrigger(TRIGGER_RYU_THROW_TECH);
+
+        transform.position = new Vector3(OtherPlayer.TechReleasePosition.position.x, 0, transform.position.z);
+        KnockbackSpeed(ThrowAttackData.PushbackBlock);
+    }
+
+    public void HitFreeze(int frames)
+    {
+        _freeze_time_frames = frames;
     }
 
     public void JumpNeutral()
@@ -1061,7 +1234,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateSetCollisionBoxesFrame()
     {
-        if (CurrentBoxesFrame != _nextBoxesFrame)
+        if (_currentBoxesFrame != _nextBoxesFrame)
         {
             _currentBoxesFrame = _nextBoxesFrame;
             _currentHitboxHit = false;
@@ -1131,12 +1304,6 @@ public class PlayerController : MonoBehaviour
         _isAirborne = isAirborne != 0;
     }
 
-    //private void SetInSpecialCancelWindow(int inWindow)
-    //{
-    //    _animator.SetBool("in_special_cancel_window", inWindow != 0);
-    //    InSpecialCancelWindow = inWindow != 0;
-    //}
-
     private void UpdateDirection()
     {
         // Update the player's direction
@@ -1164,7 +1331,6 @@ public class PlayerController : MonoBehaviour
             FireTrigger(TRIGGER_STOP_CELEBRATION);
             transform.position = _spawnPos;
             HP = MaxHP;
-            UpdateDirection();
             _victoryFired = false;
             _isDead = false;
             _state = State.STATE_IDLE;
@@ -1184,8 +1350,8 @@ public class PlayerController : MonoBehaviour
 
         Projectile fireball = Instantiate(FireballPrefab, FireballSpawnPos.position, Quaternion.identity);
 
-        fireball.Owner = this;
         fireball.GameController = GameController;
+        fireball.Owner = this;
         fireball.Opponent = OtherPlayer;
 
         if (_direction == Direction.LEFT)
@@ -1205,18 +1371,80 @@ public class PlayerController : MonoBehaviour
     }
 
     // InputManager helpers
-    private float GetAxis(string axis)
+    private float GetAxis(string action)
     {
-        return Input.GetAxisRaw(Prefix + axis);
+        if (Array.IndexOf(actionsToRecord, action) > -1 && _actionPlaybackFrame >= 0)
+        {
+            return _actionRecording[_actionPlaybackFrame].GetAxis(_direction, action);
+        }
+        return Input.GetAxis(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
     }
 
-    private bool GetButton(string button)
+    private bool GetButton(string action)
     {
-        return Input.GetButton(Prefix + button);
+        if (Array.IndexOf(actionsToRecord, action) > -1 && _actionPlaybackFrame >= 0)
+        {
+            return _actionRecording[_actionPlaybackFrame].GetButton(action);
+        }
+        return Input.GetButton(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
     }
 
-    private bool GetButtonDown(string button)
+    private bool GetButtonDown(string action)
     {
-        return Input.GetButtonDown(Prefix + button);
+        if (Array.IndexOf(actionsToRecord, action) > -1 && _actionPlaybackFrame >= 0)
+        {
+            return _actionRecording[_actionPlaybackFrame].GetButtonDown(action);
+        }
+        return Input.GetButtonDown(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
+    }
+
+    private void UpdateBufferedInputs()
+    {
+        string[] keys = new string[_actionBuffers.Keys.Count];
+        _actionBuffers.Keys.CopyTo(keys, 0);
+
+        foreach (string action in keys)
+        {
+            if (GetButtonDown(action))
+            {
+                _actionBuffers[action] = _globals.InputBufferFrames;
+            }
+            else
+            {
+                _actionBuffers[action]--;
+            }
+        }
+    }
+
+    private bool GetButtonDownWithBuffer(string action)
+    {
+        if (Array.IndexOf(actionsToRecord, action) > -1 && _actionPlaybackFrame >= 0)
+        {
+            return _actionRecording[_actionPlaybackFrame].GetButtonDownWithBuffer(action);
+        }
+        return _actionBuffers[action] > 0;
+    }
+
+    private void StartActionRecording()
+    {
+        _actionRecording.Clear();
+        _recordingFrames = 0;
+        isRecordingActions = true;
+    }
+
+    private void RecordActions()
+    {        
+        _actionRecording.Add(new ActionRecordingFrame(this));
+        _recordingFrames++;
+    }
+
+    private void StopActionRecording()
+    {
+        isRecordingActions = false;
+    }
+
+    private void StartActionPlayback()
+    {
+        _actionPlaybackFrame = 0;
     }
 }

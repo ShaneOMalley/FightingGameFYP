@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     private bool _nextRoundFired;
     private bool _awardedRound;
 
-    private int _timeFreezeLeft;
+    private int _cameraShakeLeft;
 
     private const string GLOBALS_NAME = "Globals";
     private static Globals _globals;
@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour
         ResetGame();
         Data.ResetAll();
 
-        _timeFreezeLeft = 0;
+        _cameraShakeLeft = 0;
 
         Projectiles = new List<Projectile>();
     }
@@ -176,17 +176,18 @@ public class GameController : MonoBehaviour
         }
 
         // Handle time freezing
-        if (Data.CurrentState == GameplayData.State.GAMEPLAY)
-        {
-            if (_timeFreezeLeft-- > 0)
-            {
-                _globals.TimeScale = 0;
-            }
-            else
-            {
-                _globals.TimeScale = 1;
-            }
-        }
+        //if (Data.CurrentState == GameplayData.State.GAMEPLAY)
+        //{
+        //    if (_cameraShakeLeft > 0)
+        //    {
+        //        _globals.TimeScale = 0;
+        //    }
+        //    else
+        //    {
+        //        _globals.TimeScale = 1;
+        //    }
+        //}
+        _cameraShakeLeft--;
     }
 
     public void FireRoundEnd()
@@ -272,8 +273,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void HitFreeze()
+    //public void HitFreeze(int hitFreezeLength)
+    //{
+    //    _cameraShakeLeft = hitFreezeLength;
+    //}
+
+    public void CameraShake(int frames)
     {
-        _timeFreezeLeft = _globals.HitFreezeLength;
+        _cameraShakeLeft = frames;
+    }
+
+    public bool InHitFreeze()
+    {
+        return _cameraShakeLeft > 0;
+            //&& (Data.P1.InHitStun || Data.P1.InBlockStun || Data.P1.InAirKnockdown 
+            //|| Data.P2.InHitStun || Data.P2.InBlockStun || Data.P2.InAirKnockdown);
     }
 }

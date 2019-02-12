@@ -225,7 +225,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 0.16666667
+  - time: 0.25
     functionName: SetCollisionBoxesFrame
     data: ryu_shoryu_02_vuln
     objectReferenceParameter: {fileID: 0}

@@ -16,10 +16,12 @@ public class Projectile : MonoBehaviour {
 
     private Animator _animator;
     private BoxCollider2D _bounds;
-
     private bool _dissapated;
 
     private const string PLAY_DISSAPATE = "play_dissapate";
+
+    private const string GLOBALS_NAME = "Globals";
+    private Globals _globals;
 
 	// Use this for initialization
 	void Start ()
@@ -28,11 +30,15 @@ public class Projectile : MonoBehaviour {
         _animator = this.GetComponent<Animator>();
 
         _dissapated = false;
+
+        _globals = Resources.Load<Globals>(GLOBALS_NAME);
     }
 
     // Update is called once per frame
     void Update()
     {
+        _animator.speed = _globals.TimeScale;
+
         if (!_dissapated)
         {
             transform.Translate(Velocity);

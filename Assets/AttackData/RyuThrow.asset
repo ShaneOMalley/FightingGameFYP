@@ -16,7 +16,7 @@ MonoBehaviour:
   KnockbackHit: 0.15
   KnockbackBlock: 0.3
   PushbackHit: 0.4
-  PushbackBlock: -1
+  PushbackBlock: 0.2
   Hitstun: -1
   Blockstun: -1
   KnocksDownGround: 1
