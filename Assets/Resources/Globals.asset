@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Globals
   m_EditorClassIdentifier: 
   TargetFrameRate: 60
-  DrawHitboxes: 0
+  DrawHitboxes: 1
   ShowRecoveryColor: 0
   DebugPreviewAnimationMovements: 0
   TimeScale: 1

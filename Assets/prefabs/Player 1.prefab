@@ -1308,6 +1308,8 @@ GameObject:
   - component: {fileID: 212381462591802718}
   - component: {fileID: 95511623465969704}
   - component: {fileID: 114325196394187302}
+  - component: {fileID: 114646065893060734}
+  - component: {fileID: 114772558962486790}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -28972,7 +28974,7 @@ MonoBehaviour:
   ThrowAttackData: {fileID: 11400000, guid: 23d2766606e805e4fb8b924f7aeb99ae, type: 2}
   HitShakeScaleX: 0
   PlayerNum: 0
-  ControllerNum: 2
+  ControllerNum: 1
   InSpecialCancelWindow: 0
   InThrowTechWindow: 0
   Holding: 0
@@ -29155,6 +29157,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackData: {fileID: 11400000, guid: c930a59ca230a83409d095c6b68a6780, type: 2}
+--- !u!114 &114646065893060734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114887481756330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f40379d42c11343a4b843ea18a8074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StuckAnims: []
+  AirStuckAnims: []
+  MovingAnims: []
+  IgnoreGravityAirborneAnims: []
 --- !u!114 &114731573604196824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29190,6 +29207,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c89d45fb6f5574fbd171b50170d545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114772558962486790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1114887481756330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f40379d42c11343a4b843ea18a8074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StuckAnims: []
+  AirStuckAnims: []
+  MovingAnims: []
+  IgnoreGravityAirborneAnims: []
 --- !u!114 &114788517766181886
 MonoBehaviour:
   m_ObjectHideFlags: 1

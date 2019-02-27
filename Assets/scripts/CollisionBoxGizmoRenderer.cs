@@ -49,7 +49,8 @@ public class CollisionBoxGizmoRenderer : MonoBehaviour
                     relZ = -0.15f;
                     break;
                 case "camera":
-                    color = new Color(0, 0, 0, 0);
+                    //color = new Color(0, 0, 0, 0);
+                    color = Color.black;
                     relZ = 0.0f;
                     break;
                 default:

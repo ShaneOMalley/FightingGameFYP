@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8548f5f267960143b39ec50cf87f77a, type: 3}
+  m_Name: ZangiefCrouchPunch
+  m_EditorClassIdentifier: 
+  Level: 0
+  Damage: 10
+  KnockbackHit: 0.18
+  KnockbackBlock: 0.13
+  PushbackHit: 0.1
+  PushbackBlock: 0.1
+  Hitstun: 22
+  Blockstun: 18
+  KnocksDownGround: 0
+  KnocksDownAir: 0
+  KnockdownLaunch: 0
+  KnockdownGravity: 0
+  KnockdownGroundFrames: 0
+  FreezeTimeFrames: 10
+  FreezeAttacker: 1
+  FreezeDefender: 1

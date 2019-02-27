@@ -99,8 +99,6 @@ public class GameCamera : MonoBehaviour
             //float left = _centerPos.x - CameraWidth / 2;
             //float right = _centerPos.x + CameraWidth / 2;
 
-            Debug.Log(Left);
-
             if (Left < CameraBoundsLeft.position.x)
             {
                 _centerPos = new Vector3(CameraBoundsLeft.position.x + CameraWidth / 2, _centerPos.y, _centerPos.z);

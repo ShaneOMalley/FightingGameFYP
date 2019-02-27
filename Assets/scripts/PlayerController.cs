@@ -145,37 +145,40 @@ public class PlayerController : MonoBehaviour
     private State _state = State.STATE_IDLE;
     private enum Direction { RIGHT, LEFT }
 
-    private const string TRIGGER_RYU_ATTACK = "play_attack";
-    private const string TRIGGER_RYU_KICK = "play_kick";
-    private const string TRIGGER_RYU_HIT = "play_hit";
-    private const string TRIGGER_RYU_BLOCK = "play_block";
-    private const string TRIGGER_RYU_CROUCH = "play_crouch";
-    private const string TRIGGER_RYU_SWEEP = "play_sweep";
-    private const string TRIGGER_RYU_CROUCH_PUNCH = "play_crouch_punch";
-    private const string TRIGGER_RYU_OVERHEAD = "play_overhead";
-    private const string TRIGGER_RYU_SHORYU = "play_shoryu";
-    private const string TRIGGER_RYU_THROW_FIREBALL = "play_throw_fireball";
-    private const string TRIGGER_RYU_THROW_INITIAL = "play_throw_initial";
-    private const string TRIGGER_RYU_HELD = "play_held";
-    private const string TRIGGER_RYU_THROW_TECH = "play_throw_tech";
-    private const string TRIGGER_RYU_THROWN = "play_thrown";
-    private const string TRIGGER_RYU_JUMP_KICK = "play_jump_kick";
-    private const string TRIGGER_RYU_KNOCKDOWN_AIR = "play_knockdown_air";
-    private const string TRIGGER_RYU_KNOCKDOWN_GROUND = "play_knockdown_ground";
-    private const string TRIGGER_RYU_KNOCKDOWN_GETUP = "play_knockdown_getup";
-    private const string TRIGGER_RYU_VICTORY= "play_victory";
-    private const string TRIGGER_STOP_CELEBRATION = "stop_celebration";
+    // Generic
+    public const string TRIGGER_PLAYER_HIT = "play_hit";
+    public const string TRIGGER_PLAYER_BLOCK = "play_block";
+    public const string TRIGGER_PLAYER_CROUCH = "play_crouch";
+    public const string TRIGGER_PLAYER_THROW_INITIAL = "play_throw_initial";
+    public const string TRIGGER_PLAYER_HELD = "play_held";
+    public const string TRIGGER_PLAYER_THROW_TECH = "play_throw_tech";
+    public const string TRIGGER_PLAYER_THROWN = "play_thrown";
+    public const string TRIGGER_PLAYER_KNOCKDOWN_AIR = "play_knockdown_air";
+    public const string TRIGGER_PLAYER_KNOCKDOWN_GROUND = "play_knockdown_ground";
+    public const string TRIGGER_PLAYER_KNOCKDOWN_GETUP = "play_knockdown_getup";
+    public const string TRIGGER_PLAYER_VICTORY= "play_victory";
+    public const string TRIGGER_PLAYER_STOP_CELEBRATION = "stop_celebration";
 
-    private const string IDLE_ANIM = "ryu_idle";
+    private CharacterSpecificController _characterSpecificController;
 
-    private static string[] StuckAnims = 
-    {
-        "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_shoryu",
-        "ryu_throw_fireball", "ryu_throw_initial", "ryu_throw_whiff",
-        "ryu_throw_success", "ryu_throw_back_success", "ryu_thrown", "ryu_throw_tech",
-        "ryu_crouch_punch", "ryu_knockdown_air", "ryu_knockdown_ground",
-        "ryu_knockdown_getup", "ryu_victory"
-    };
+    // Ryu-specific
+    //private const string TRIGGER_RYU_ATTACK = "play_attack";
+    //private const string TRIGGER_RYU_KICK = "play_kick";
+    //private const string TRIGGER_RYU_SWEEP = "play_sweep";
+    //private const string TRIGGER_RYU_CROUCH_PUNCH = "play_crouch_punch";
+    //private const string TRIGGER_RYU_OVERHEAD = "play_overhead";
+    //private const string TRIGGER_RYU_SHORYU = "play_shoryu";
+    //private const string TRIGGER_RYU_THROW_FIREBALL = "play_throw_fireball";
+    //private const string TRIGGER_RYU_JUMP_KICK = "play_jump_kick";
+
+    //private static string[] StuckAnims =
+    //{
+    //    "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_shoryu",
+    //    "ryu_throw_fireball", "ryu_throw_initial", "ryu_throw_whiff",
+    //    "ryu_throw_success", "ryu_throw_back_success", "ryu_thrown", "ryu_throw_tech",
+    //    "ryu_crouch_punch", "ryu_knockdown_air", "ryu_knockdown_ground",
+    //    "ryu_knockdown_getup", "ryu_victory"
+    //};
 
     private static State[] StuckStates =
     {
@@ -185,25 +188,25 @@ public class PlayerController : MonoBehaviour
         State.STATE_FORWARD_JUMP, State.STATE_FLIP_OUT,
     };
 
-    private static string[] AirStuckAnims =
-    {
-        "ryu_jump_kick", "ryu_flip_out"
-    };
+    //private static string[] AirStuckAnims =
+    //{
+    //    "ryu_jump_kick", "ryu_flip_out"
+    //};
 
     private static State[] AirStuckStates =
     {
         State.STATE_FLIP_OUT
     };
 
-    private static string[] MovingAnims =
-    {
-        "ryu_shoryu"
-    };
+    //private static string[] MovingAnims =
+    //{
+    //    "ryu_shoryu"
+    //};
 
-    private static string[] IgnoreGravityAirborneAnims =
-    {
-        "ryu_shoryu"
-    };
+    //private static string[] IgnoreGravityAirborneAnims =
+    //{
+    //    "ryu_shoryu"
+    //};
 
     private bool _victoryFired = false;
 
@@ -237,6 +240,7 @@ public class PlayerController : MonoBehaviour
     private bool _isDead = false;
 
     private bool _currentHitboxHit = false;
+    private bool _currentAnimHit = false;
     private Transform _nextBoxesFrame = null;
 
     public GameController GameController;
@@ -350,7 +354,7 @@ public class PlayerController : MonoBehaviour
         get { return _isP1 ? "P1_" : "P2_"; }
     }
 
-    private bool _isFacingRight
+    public bool IsFacingRight
     {
         get { return _direction == Direction.RIGHT; }
     }
@@ -401,7 +405,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool _isStuck
+    public bool IsStuck
     {
         get
         {
@@ -411,7 +415,7 @@ public class PlayerController : MonoBehaviour
 
             // Is the player attacking?
             AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            foreach (string anim_name in StuckAnims)
+            foreach (string anim_name in _characterSpecificController.StuckAnims)
                 if (stateInfo.IsName(anim_name))
                     return true;
 
@@ -434,7 +438,7 @@ public class PlayerController : MonoBehaviour
         {
             // Is the player attacking?
             AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            foreach (string anim_name in AirStuckAnims)
+            foreach (string anim_name in _characterSpecificController.AirStuckAnims)
                 if (stateInfo.IsName(anim_name))
                     return true;
 
@@ -452,7 +456,7 @@ public class PlayerController : MonoBehaviour
         get
         {
             AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            foreach (string anim_name in MovingAnims)
+            foreach (string anim_name in _characterSpecificController.MovingAnims)
                 if (stateInfo.IsName(anim_name))
                     return true;
 
@@ -465,7 +469,7 @@ public class PlayerController : MonoBehaviour
         get
         {
             AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            foreach (string anim_name in IgnoreGravityAirborneAnims)
+            foreach (string anim_name in _characterSpecificController.IgnoreGravityAirborneAnims)
                 if (stateInfo.IsName(anim_name))
                     return true;
 
@@ -479,13 +483,13 @@ public class PlayerController : MonoBehaviour
     }
 
     // Holding Directions
-    private bool HoldingBack
+    public bool HoldingBack
     {
         get
         {
             float horizontal = GetAxis("Horizontal");
-            return (_isFacingRight && horizontal < 0)
-                || (!_isFacingRight && horizontal > 0);
+            return (IsFacingRight && horizontal < 0)
+                || (!IsFacingRight && horizontal > 0);
         }
     }
 
@@ -501,7 +505,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsBlocking
     {
-        get { return HoldingBack && (InBlockStun || !_isStuck); }
+        get { return HoldingBack && (InBlockStun || !IsStuck); }
     }
 
     public bool IsCrouching
@@ -524,15 +528,6 @@ public class PlayerController : MonoBehaviour
         get { return !IsAirborne; }
     }
 
-    public bool IsIdle
-    {
-        get
-        {
-            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            return stateInfo.IsName(IDLE_ANIM);
-        }
-    }
-
     // Use this for initialization
     void Start ()
     {
@@ -553,14 +548,14 @@ public class PlayerController : MonoBehaviour
         _spawnPos = transform.position;
 
         _animatedDeltaPosPrevious = Vector2.zero;
+        _characterSpecificController = GetComponent<CharacterSpecificController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // Update recovery color
-        if (_globals.ShowRecoveryColor && _isStuck && Data.CurrentState == GameplayData.State.GAMEPLAY)
+        if (_globals.ShowRecoveryColor && IsStuck && Data.CurrentState == GameplayData.State.GAMEPLAY)
         {
             _spriteRenderer.color = Color.blue;
         }
@@ -609,7 +604,7 @@ public class PlayerController : MonoBehaviour
         // Play victory animation
         if (Data.CurrentState == GameplayData.State.CELEBRATION && !_victoryFired && !IsDead)
         {
-            FireTrigger(TRIGGER_RYU_VICTORY);
+            FireTrigger(TRIGGER_PLAYER_VICTORY);
             _victoryFired = true;
         }
 
@@ -643,7 +638,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Jumping
-        if (!_isStuck && IsGrounded)
+        if (!IsStuck && IsGrounded)
         {
             if (GetAxis("Vertical") > 0)
             {
@@ -655,18 +650,18 @@ public class PlayerController : MonoBehaviour
         // Branch from Pre-jump to one of three jumping options: neutral, back, forward
         if (_inPreJump && _jumpDecision == State.STATE_JUMP_NODECISION)
         {
-            if (GetAxis("Horizontal") * (_isFacingRight ? 1 : -1) < 0)
+            if (GetAxis("Horizontal") * (IsFacingRight ? 1 : -1) < 0)
             {
                 SetJumpDecision(State.STATE_BACK_JUMP);
             }
-            else if (GetAxis("Horizontal") * (_isFacingRight ? 1 : -1) > 0)
+            else if (GetAxis("Horizontal") * (IsFacingRight ? 1 : -1) > 0)
             {
                 SetJumpDecision(State.STATE_FORWARD_JUMP);
             }
         }
 
         // Crouching
-        if (!_isStuck)
+        if (!IsStuck)
         {
             if (GetAxis("Vertical") < 0)
             {
@@ -683,13 +678,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Movement
-        if (!_isStuck && !_isCrouching)
+        if (!IsStuck && !_isCrouching)
         {
             if (GetAxis("Horizontal") > 0)
             {
                 SetState(State.STATE_WALK);
 
-                SetForward(_isFacingRight);
+                SetForward(IsFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
                 transform.Translate(speed * playerTimeScale, 0, 0);
@@ -698,7 +693,7 @@ public class PlayerController : MonoBehaviour
             {
                 SetState(State.STATE_WALK);
 
-                SetForward(!_isFacingRight);
+                SetForward(!IsFacingRight);
                 float speed = (_movingForward ? WalkSpeedForward : WalkSpeedBackward);
 
                 transform.Translate(-speed * playerTimeScale, 0, 0);
@@ -709,94 +704,10 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (!_isStuck)
-        {
-            _animator.ResetTrigger(TRIGGER_RYU_SHORYU);
-            _animator.ResetTrigger(TRIGGER_RYU_THROW_FIREBALL);
-        }
-
-        // Attacking
-        if (!_isStuck || InSpecialCancelWindow)
-        {
-            // Specials
-            if (GetButtonDownWithBuffer("Special"))
-            {
-                if (HoldingForward)
-                {
-                    FireTrigger(TRIGGER_RYU_SHORYU);
-                }
-                else if (HoldingBack)
-                {
-
-                }
-                else
-                {
-                    FireTrigger(TRIGGER_RYU_THROW_FIREBALL);
-                }
-            }
-        }
-        if (!_isStuck)
-        {
-            // Standing Attacks
-            if (IsStanding)
-            {
-                if (GetButtonDownWithBuffer("Attack"))
-                {
-                    if (HoldingForward)
-                    {
-                        FireTrigger(TRIGGER_RYU_OVERHEAD);
-                    }
-                    else
-                    {
-                        FireTrigger(TRIGGER_RYU_ATTACK);
-                    }
-                }
-                else if (GetButtonDownWithBuffer("Kick"))
-                {
-                    FireTrigger(TRIGGER_RYU_KICK);
-                }
-                else if (GetButtonDownWithBuffer("Throw"))
-                {
-                    FireTrigger(TRIGGER_RYU_THROW_INITIAL);
-                    _animator.SetBool("throw_back", HoldingBack);
-                }
-            }
-            // Crouching Attacks
-            else if (IsCrouching)
-            {
-                if (GetButtonDownWithBuffer("Special"))
-                {
-                    if (HoldingForward)
-                    {
-                        FireTrigger(TRIGGER_RYU_SHORYU);
-                    }
-                }
-                else if(GetButtonDownWithBuffer("Attack"))
-                {
-                    FireTrigger(TRIGGER_RYU_CROUCH_PUNCH);
-                }
-                else if (GetButtonDownWithBuffer("Kick"))
-                {
-                    FireTrigger(TRIGGER_RYU_SWEEP);
-                }
-                else if (GetButtonDownWithBuffer("Throw"))
-                {
-                    FireTrigger(TRIGGER_RYU_THROW_INITIAL);
-                }
-            }
-        }
-
-        // Air attacks
-        if (IsAirborne && !IsAirStuck)
-        {
-            if (GetButtonDownWithBuffer("Kick"))
-            {
-                FireTrigger(TRIGGER_RYU_JUMP_KICK);
-            }
-        }
+        _characterSpecificController.HandleAttacking(this, playerTimeScale);
 
         // Update direction to face the other player
-        if (!_isStuck || (Data.CurrentState >= GameplayData.State.ANNOUNCE_ROUND_1 && Data.CurrentState <= GameplayData.State.ANNOUNCE_ROUND_FINAL))
+        if (!IsStuck || (Data.CurrentState >= GameplayData.State.ANNOUNCE_ROUND_1 && Data.CurrentState <= GameplayData.State.ANNOUNCE_ROUND_FINAL))
         {
             UpdateDirection();
         }
@@ -894,7 +805,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, _initialY, transform.position.z);
                 SetState(State.STATE_KNOCKDOWN_GROUND);
-                FireTrigger(TRIGGER_RYU_KNOCKDOWN_GROUND);
+                FireTrigger(TRIGGER_PLAYER_KNOCKDOWN_GROUND);
             }
         }
 
@@ -905,7 +816,7 @@ public class PlayerController : MonoBehaviour
             if (_frames_on_ground <= 0 && !IsDead)
             {
                 SetState(State.STATE_KNOCKDOWN_GETUP);
-                FireTrigger(TRIGGER_RYU_KNOCKDOWN_GETUP);
+                FireTrigger(TRIGGER_PLAYER_KNOCKDOWN_GETUP);
             }
         }
 
@@ -964,8 +875,13 @@ public class PlayerController : MonoBehaviour
         if (HitBoxes.Length > 0 && HitBoxes.IsIntersecting(OtherPlayer.Hurtboxes, out hitPos) && !_currentHitboxHit)
         {
             Hitbox hitbox = HitBoxes[0].GetComponent<Hitbox>();
-            OtherPlayer.HandleContact(hitbox.AttackData, hitPos);
+
+            if (!_currentAnimHit || !hitbox.AnimationHitOnce)
+            {
+                OtherPlayer.HandleContact(hitbox.AttackData, hitPos);
+            }
             _currentHitboxHit = true;
+            _currentAnimHit = true;
         }
 
         // Throw detection
@@ -976,7 +892,7 @@ public class PlayerController : MonoBehaviour
             {
                 _throw_success = true;
                 Holding = true;
-                OtherPlayer.FireTrigger(TRIGGER_RYU_HELD);
+                OtherPlayer.FireTrigger(TRIGGER_PLAYER_HELD);
             }
         }
 
@@ -1084,6 +1000,17 @@ public class PlayerController : MonoBehaviour
         KnockDown(attackData);
         TakeDamage(attackData);
 
+        // Freeze time
+        if (attackData.FreezeDefender)
+        {
+            HitFreeze(attackData.FreezeTimeFrames);
+        }
+        if (attackData.FreezeAttacker)
+        {
+            OtherPlayer.HitFreeze(attackData.FreezeTimeFrames);
+        }
+        GameController.CameraShake(attackData.FreezeTimeFrames);
+
         // Kill player
         if (HP <= 0)
         {
@@ -1112,7 +1039,7 @@ public class PlayerController : MonoBehaviour
         if (IsAirborne)
         {
             _velY = Math.Abs(_velY);
-            _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? -1 : 1);
+            _jumpVelX = JumpSpeedHorizontal * (IsFacingRight ? -1 : 1);
             SetState(State.STATE_FLIP_OUT);
         }
         // Apply hit as normal if player is grounded
@@ -1120,7 +1047,7 @@ public class PlayerController : MonoBehaviour
         {
             KnockbackSpeed(relative_knockback);
             _hitstun_frames = num_frames;
-            FireTrigger(TRIGGER_RYU_HIT);
+            FireTrigger(TRIGGER_PLAYER_HIT);
         }
     }
 
@@ -1135,7 +1062,7 @@ public class PlayerController : MonoBehaviour
         KnockbackSpeed(relative_knockback);
         _velY = velY;
         _gravity = gravity;
-        FireTrigger(TRIGGER_RYU_KNOCKDOWN_AIR);
+        FireTrigger(TRIGGER_PLAYER_KNOCKDOWN_AIR);
 
         SetState(State.STATE_KNOCKDOWN_AIR);
         SetAirborne(0);
@@ -1164,7 +1091,7 @@ public class PlayerController : MonoBehaviour
     {
         _blockstun_frames = num_frames;
         KnockbackSpeed(relative_knockback);
-        FireTrigger(TRIGGER_RYU_BLOCK);
+        FireTrigger(TRIGGER_PLAYER_BLOCK);
     }
 
     public void Block(AttackData attackData)
@@ -1200,7 +1127,7 @@ public class PlayerController : MonoBehaviour
     {
         Holding = false;
         _throw_success = false;
-        FireTrigger(TRIGGER_RYU_THROW_TECH);
+        FireTrigger(TRIGGER_PLAYER_THROW_TECH);
 
         transform.position = new Vector3(OtherPlayer.TechReleasePosition.position.x, 0, transform.position.z);
         KnockbackSpeed(ThrowAttackData.PushbackBlock);
@@ -1222,14 +1149,14 @@ public class PlayerController : MonoBehaviour
     {
         _velY = JumpPower;
         SetAirborne(1);
-        _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? -1 : 1);
+        _jumpVelX = JumpSpeedHorizontal * (IsFacingRight ? -1 : 1);
     }
 
     public void JumpForward()
     {
         _velY = JumpPower;
         SetAirborne(1);
-        _jumpVelX = JumpSpeedHorizontal * (_isFacingRight ? 1 : -1);
+        _jumpVelX = JumpSpeedHorizontal * (IsFacingRight ? 1 : -1);
     }
 
     private void UpdateSetCollisionBoxesFrame()
@@ -1243,6 +1170,9 @@ public class PlayerController : MonoBehaviour
 
     private void SetCollisionBoxesFrame(string name)
     {
+        if (_isP1)
+            Debug.Log("hurtboxes length: " + Hurtboxes.Length);
+
         Match match = Regex.Match(name, @"(.*)_\d\d.*");
         if (!match.Success)
         {
@@ -1276,13 +1206,13 @@ public class PlayerController : MonoBehaviour
         _jumpDecision = state;
     }
 
-    private void FireTrigger(string trigger)
+    public void FireTrigger(string trigger)
     {
-        Debug.Log(trigger + " fired");
+        _currentAnimHit = false;
         _animator.SetTrigger(trigger);
     }
 
-    private void ResetTrigger(string trigger)
+    public void ResetTrigger(string trigger)
     {
         _animator.ResetTrigger(trigger);
     }
@@ -1318,7 +1248,7 @@ public class PlayerController : MonoBehaviour
 
         // Update the direction (x-scale of the transform)
         float scaleX = transform.localScale.x;
-        if ((_isFacingRight && scaleX < 0) || (!_isFacingRight && scaleX > 0))
+        if ((IsFacingRight && scaleX < 0) || (!IsFacingRight && scaleX > 0))
         {
             transform.localScale = Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
         }
@@ -1328,7 +1258,7 @@ public class PlayerController : MonoBehaviour
     {
         if (this != null)
         {
-            FireTrigger(TRIGGER_STOP_CELEBRATION);
+            FireTrigger(TRIGGER_PLAYER_STOP_CELEBRATION);
             transform.position = _spawnPos;
             HP = MaxHP;
             _victoryFired = false;
@@ -1416,7 +1346,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool GetButtonDownWithBuffer(string action)
+    public bool GetButtonDownWithBuffer(string action)
     {
         if (Array.IndexOf(actionsToRecord, action) > -1 && _actionPlaybackFrame >= 0)
         {
