@@ -19,15 +19,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300044, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300010, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300046, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300012, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.25
-      value: {fileID: 21300048, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300014, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.41666666
-      value: {fileID: 21300054, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300016, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.5
-      value: {fileID: 21300054, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300018, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -47,11 +47,11 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300044, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300046, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300048, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300054, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300054, guid: b37f60547dfd81540804976263d0c970, type: 3}
+    - {fileID: 21300010, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300012, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300014, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300016, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300018, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -80,14 +80,14 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: SetCollisionBoxesFrame
-    data: ryu_sweep_02
+    data: ryu_sweep_01
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.083333336
     functionName: SetCollisionBoxesFrame
-    data: ryu_sweep_03
+    data: ryu_sweep_02
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -101,7 +101,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.41666666
     functionName: SetCollisionBoxesFrame
-    data: ryu_sweep_05
+    data: ryu_sweep_06
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

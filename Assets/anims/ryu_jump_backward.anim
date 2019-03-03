@@ -19,21 +19,21 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300096, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300098, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300106, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300100, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300104, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300102, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.25
-      value: {fileID: 21300102, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300104, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300100, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300106, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.41666666
-      value: {fileID: 21300098, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300108, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.5
-      value: {fileID: 21300096, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300110, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.5833333
-      value: {fileID: 21300108, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300112, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -53,14 +53,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300096, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300106, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300104, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300102, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300100, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300098, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300096, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300108, guid: b37f60547dfd81540804976263d0c970, type: 3}
+    - {fileID: 21300098, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300100, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300102, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300104, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300106, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300108, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300110, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300112, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -103,7 +103,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.083333336
     functionName: SetCollisionBoxesFrame
-    data: ryu_jump_backward_06
+    data: ryu_jump_backward_02
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -124,7 +124,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.33333334
     functionName: SetCollisionBoxesFrame
-    data: ryu_jump_backward_03
+    data: ryu_jump_backward_05
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -132,6 +132,13 @@ AnimationClip:
   - time: 0.41666666
     functionName: SetCollisionBoxesFrame
     data: ryu_jump_backward_01
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: SetCollisionBoxesFrame
+    data: ryu_jump_backward_07
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

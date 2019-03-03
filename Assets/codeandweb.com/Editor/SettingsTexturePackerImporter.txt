@@ -7,6 +7,7 @@ tpsheetFileNames:
 - Assets/img/digits.tpsheet
 - Assets/img/hit.tpsheet
 - Assets/img/ryu.tpsheet
+- Assets/img/ryu_new.tpsheet
 - Assets/img/ui.tpsheet
 - Assets/img/zangief.tpsheet
 textureFileNames:
@@ -16,10 +17,12 @@ textureFileNames:
 - Assets/img/digits.png
 - Assets/img/hit.png
 - Assets/img/ryu.png
+- Assets/img/ryu_new.png
 - Assets/img/ui.png
 - Assets/img/zangief.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
 - 
 - 
 - 

@@ -23,6 +23,12 @@ AnimationClip:
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
+      - serializedVersion: 2
+        time: 0.13333334
+        value: {x: 0.23, y: 0.205, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -38,6 +44,12 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
+      - serializedVersion: 2
+        time: 0.13333334
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -48,9 +60,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300180, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300302, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - time: 0.06666667
+      value: {fileID: 21300304, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - time: 0.13333334
+      value: {fileID: 21300306, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.26666668
-      value: {fileID: 21300180, guid: b37f60547dfd81540804976263d0c970, type: 3}
+      value: {fileID: 21300306, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -84,8 +100,10 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300180, guid: b37f60547dfd81540804976263d0c970, type: 3}
-    - {fileID: 21300180, guid: b37f60547dfd81540804976263d0c970, type: 3}
+    - {fileID: 21300302, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300304, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300306, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
+    - {fileID: 21300306, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -116,6 +134,12 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 136
+      - serializedVersion: 2
+        time: 0.13333334
+        value: 0.23
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -128,6 +152,12 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
+        value: 0.205
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 0.13333334
         value: 0.205
         inSlope: 0
         outSlope: 0
@@ -148,6 +178,12 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 136
+      - serializedVersion: 2
+        time: 0.13333334
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -160,6 +196,12 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+      - serializedVersion: 2
+        time: 0.13333334
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -183,9 +225,9 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.1
+  - time: 0.13333334
     functionName: SetCollisionBoxesFrame
-    data: ryu_throw_initial_02
+    data: ryu_throw_initial_03
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
