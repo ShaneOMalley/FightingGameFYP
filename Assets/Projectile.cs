@@ -41,7 +41,7 @@ public class Projectile : MonoBehaviour {
 
         if (!_dissapated)
         {
-            transform.Translate(Velocity);
+            transform.Translate(Velocity * Utils.TimeCorrection);
         }
     }
 
@@ -49,8 +49,8 @@ public class Projectile : MonoBehaviour {
     {
         if (!_dissapated)
         {
-            if (_bounds.bounds.max.x < GameController.CurrentGameCamera.Left
-                || _bounds.bounds.min.x > GameController.CurrentGameCamera.Right)
+            if (_bounds.bounds.max.x < GameController.Camera.Left
+                || _bounds.bounds.min.x > GameController.Camera.Right)
             {
                 GameController.Projectiles.Remove(this);
                 Destroy(gameObject);
@@ -71,21 +71,29 @@ public class Projectile : MonoBehaviour {
                 if (otherProjectile._dissapated)
                     continue;
 
+                // Skip if either projectile has no bounds
+                if (_bounds == null || otherProjectile._bounds == null)
+                    continue;
+
                 // Dissapate on collision with another projectile
                 if (_bounds.bounds.Intersects(otherProjectile._bounds.bounds))
                 {
                     Dissapate();
                     otherProjectile.Dissapate();
+                    break;
                 }
             }
 
             // Collision with opponent
-            Vector3 hitPos;
-            Debug.Log(_bounds.IsIntersecting(Opponent.Hurtboxes, out hitPos));
-            if (_bounds.IsIntersecting(Opponent.Hurtboxes, out hitPos))
+            if (GameController.Data.FramesLeft > 0)
             {
-                Opponent.HandleContact(AttackData, hitPos);
-                Dissapate();
+                Vector3 hitPos;
+                Debug.Log(_bounds.IsIntersecting(Opponent.Hurtboxes, out hitPos));
+                if (_bounds.IsIntersecting(Opponent.Hurtboxes, out hitPos))
+                {
+                    Opponent.HandleContact(AttackData, hitPos);
+                    Dissapate();
+                }
             }
         }
     }

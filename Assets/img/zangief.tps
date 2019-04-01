@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>4.12.0</string>
+        <string>4.12.1</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -191,6 +191,32 @@
                 <rect>16,16,32,32</rect>
                 <key>scale9Paddings</key>
                 <rect>16,16,32,32</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/victory_zangief.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>76,40,151,80</rect>
+                <key>scale9Paddings</key>
+                <rect>76,40,151,80</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/victory_zangief_upscaled.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>151,80,302,160</rect>
+                <key>scale9Paddings</key>
+                <rect>151,80,302,160</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -587,6 +613,11 @@
             <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_lariat_13.png</key>
             <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_lariat_14.png</key>
             <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_lariat_15.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_01.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_02.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_03.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_04.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_05.png</key>
             <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_victory_01.png</key>
             <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_victory_02.png</key>
             <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_victory_03.png</key>
@@ -840,6 +871,32 @@
                 <rect>29,20,57,39</rect>
                 <key>scale9Paddings</key>
                 <rect>29,20,57,39</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_portrait.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,38,102,75</rect>
+                <key>scale9Paddings</key>
+                <rect>51,38,102,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Zangief/zangief_portrait_cropped.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>25,38,50,75</rect>
+                <key>scale9Paddings</key>
+                <rect>25,38,50,75</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -1804,6 +1861,15 @@
             <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_jab_05.png</filename>
             <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_jab_06.png</filename>
             <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_jab_07.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_portrait.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_portrait_cropped.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/victory_zangief.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_01.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_02.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_03.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_04.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/zangief_timeout_05.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Zangief/victory_zangief_upscaled.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

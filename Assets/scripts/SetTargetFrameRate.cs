@@ -6,7 +6,6 @@ public class SetTargetFrameRate : MonoBehaviour
 
     private void Awake()
     {
-        Screen.SetResolution(300, 200, false);
         QualitySettings.vSyncCount = 0;
     }
 

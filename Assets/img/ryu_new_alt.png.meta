@@ -1,0 +1,3130 @@
+fileFormatVersion: 2
+guid: 48ba753615aaf69439b7c5e4867d6a06
+timeCreated: 1553560980
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ryu_block_01
+    21300002: ryu_block_02
+    21300004: ryu_crouch_01
+    21300006: ryu_crouch_block_01
+    21300008: ryu_crouch_block_02
+    21300010: ryu_crouch_kick_01
+    21300012: ryu_crouch_kick_02
+    21300014: ryu_crouch_kick_03
+    21300016: ryu_crouch_kick_04
+    21300018: ryu_crouch_kick_05
+    21300020: ryu_crouch_punch_01
+    21300022: ryu_crouch_punch_02
+    21300024: ryu_crouch_punch_03
+    21300026: ryu_crouch_punch_04
+    21300028: ryu_crouch_punch_05
+    21300030: ryu_crouch_punch_06
+    21300032: ryu_crouch_punch_07
+    21300034: ryu_fireball_01
+    21300036: ryu_fireball_02
+    21300038: ryu_fireball_03
+    21300040: ryu_fireball_04
+    21300042: ryu_fireball_05
+    21300044: ryu_fireball_06
+    21300046: ryu_fireball_07
+    21300048: ryu_fireball_08
+    21300050: ryu_fireball_09
+    21300052: ryu_fireball_10
+    21300054: ryu_fireball_11
+    21300056: ryu_fireball_12
+    21300058: ryu_fireball_13
+    21300060: ryu_flip_out_01
+    21300062: ryu_flip_out_02
+    21300064: ryu_flip_out_03
+    21300066: ryu_flip_out_04
+    21300068: ryu_flip_out_05
+    21300070: ryu_flip_out_06
+    21300072: ryu_hit_01
+    21300074: ryu_hit_02
+    21300076: ryu_hit_crouch_01
+    21300078: ryu_hit_crouch_02
+    21300080: ryu_idle_01
+    21300082: ryu_idle_02
+    21300084: ryu_idle_03
+    21300086: ryu_idle_04
+    21300088: ryu_idle_05
+    21300090: ryu_idle_06
+    21300092: ryu_intro_01
+    21300094: ryu_intro_02
+    21300096: ryu_intro_03
+    21300098: ryu_intro_04
+    21300100: ryu_intro_05
+    21300102: ryu_intro_06
+    21300104: ryu_intro_07
+    21300106: ryu_intro_08
+    21300108: ryu_intro_09
+    21300110: ryu_intro_10
+    21300112: ryu_intro_11
+    21300114: ryu_intro_12
+    21300116: ryu_intro_13
+    21300118: ryu_intro_14
+    21300120: ryu_intro_15
+    21300122: ryu_intro_16
+    21300124: ryu_intro_17
+    21300126: ryu_intro_18
+    21300128: ryu_intro_19
+    21300130: ryu_intro_20
+    21300132: ryu_intro_21
+    21300134: ryu_jump_back_01
+    21300136: ryu_jump_back_02
+    21300138: ryu_jump_back_03
+    21300140: ryu_jump_back_04
+    21300142: ryu_jump_back_05
+    21300144: ryu_jump_back_06
+    21300146: ryu_jump_back_07
+    21300148: ryu_jump_back_08
+    21300150: ryu_jump_back_09
+    21300152: ryu_jump_forward_01
+    21300154: ryu_jump_forward_02
+    21300156: ryu_jump_forward_03
+    21300158: ryu_jump_forward_04
+    21300160: ryu_jump_forward_05
+    21300162: ryu_jump_forward_06
+    21300164: ryu_jump_forward_07
+    21300166: ryu_jump_forward_08
+    21300168: ryu_jump_forward_09
+    21300170: ryu_jump_kick_01
+    21300172: ryu_jump_kick_02
+    21300174: ryu_jump_kick_03
+    21300176: ryu_jump_kick_04
+    21300178: ryu_jump_kick_05
+    21300180: ryu_jump_kick_06
+    21300182: ryu_jump_kick_07
+    21300184: ryu_jump_neutral_01
+    21300186: ryu_jump_neutral_02
+    21300188: ryu_jump_neutral_03
+    21300190: ryu_jump_neutral_04
+    21300192: ryu_jump_neutral_05
+    21300194: ryu_jump_neutral_06
+    21300196: ryu_jump_punch_01
+    21300198: ryu_jump_punch_02
+    21300200: ryu_jump_punch_03
+    21300202: ryu_knockdown_01
+    21300204: ryu_knockdown_02
+    21300206: ryu_knockdown_03
+    21300208: ryu_knockdown_04
+    21300210: ryu_knockdown_05
+    21300212: ryu_knockdown_06
+    21300214: ryu_knockdown_07
+    21300216: ryu_knockdown_getup_01
+    21300218: ryu_knockdown_getup_02
+    21300220: ryu_knockdown_getup_03
+    21300222: ryu_knockdown_getup_04
+    21300224: ryu_knockdown_getup_05
+    21300226: ryu_knockdown_getup_06
+    21300228: ryu_knockdown_getup_07
+    21300230: ryu_knockdown_getup_08
+    21300232: ryu_overhead_01
+    21300234: ryu_overhead_02
+    21300236: ryu_overhead_03
+    21300238: ryu_overhead_04
+    21300240: ryu_overhead_05
+    21300242: ryu_overhead_06
+    21300244: ryu_overhead_07
+    21300246: ryu_overhead_08
+    21300248: ryu_overhead_09
+    21300250: ryu_overhead_10
+    21300252: ryu_overhead_11
+    21300254: ryu_overhead_12
+    21300256: ryu_portrait
+    21300258: ryu_portrait_cropped
+    21300260: ryu_shoryu_01
+    21300262: ryu_shoryu_02
+    21300264: ryu_shoryu_03
+    21300266: ryu_shoryu_04
+    21300268: ryu_shoryu_05
+    21300270: ryu_shoryu_06
+    21300272: ryu_shoryu_07
+    21300274: ryu_shoryu_08
+    21300276: ryu_stand_kick_01
+    21300278: ryu_stand_kick_02
+    21300280: ryu_stand_kick_03
+    21300282: ryu_stand_kick_04
+    21300284: ryu_stand_kick_05
+    21300286: ryu_stand_kick_06
+    21300288: ryu_stand_kick_07
+    21300290: ryu_stand_punch_01
+    21300292: ryu_stand_punch_02
+    21300294: ryu_stand_punch_03
+    21300296: ryu_stand_punch_04
+    21300298: ryu_stand_punch_05
+    21300300: ryu_stand_punch_06
+    21300302: ryu_throw_01
+    21300304: ryu_throw_02
+    21300306: ryu_throw_03
+    21300308: ryu_throw_04
+    21300310: ryu_throw_05
+    21300312: ryu_throw_06
+    21300314: ryu_throw_back_01
+    21300316: ryu_throw_back_02
+    21300318: ryu_throw_back_03
+    21300320: ryu_throw_back_04
+    21300322: ryu_throw_back_05
+    21300324: ryu_throw_back_06
+    21300326: ryu_throw_fireball_01
+    21300328: ryu_throw_fireball_02
+    21300330: ryu_throw_fireball_03
+    21300332: ryu_throw_fireball_04
+    21300334: ryu_throw_fireball_05
+    21300336: ryu_throw_fireball_06
+    21300338: ryu_throw_fireball_07
+    21300340: ryu_throw_fireball_08
+    21300342: ryu_throw_fireball_09
+    21300344: ryu_throw_initial_01
+    21300346: ryu_throw_initial_02
+    21300348: ryu_throw_initial_03
+    21300350: ryu_throw_whiff_01
+    21300352: ryu_throw_whiff_02
+    21300354: ryu_throw_whiff_03
+    21300356: ryu_timeout_01
+    21300358: ryu_timeout_02
+    21300360: ryu_timeout_03
+    21300362: ryu_timeout_04
+    21300364: ryu_timeout_05
+    21300366: ryu_timeout_06
+    21300368: ryu_timeout_07
+    21300370: ryu_timeout_08
+    21300372: ryu_victory_01
+    21300374: ryu_victory_02
+    21300376: ryu_victory_03
+    21300378: ryu_victory_04
+    21300380: ryu_victory_05
+    21300382: ryu_walk_backward_01
+    21300384: ryu_walk_backward_02
+    21300386: ryu_walk_backward_03
+    21300388: ryu_walk_backward_04
+    21300390: ryu_walk_backward_05
+    21300392: ryu_walk_forward_01
+    21300394: ryu_walk_forward_02
+    21300396: ryu_walk_forward_03
+    21300398: ryu_walk_forward_04
+    21300400: ryu_walk_forward_05
+    21300402: ryu_walk_forward_06
+    21300404: victory_ryu
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ryu_block_01
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 779
+        width: 70
+        height: 99
+      alignment: 9
+      pivot: {x: 0.47142857, y: 0.4848485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_block_02
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1250
+        width: 77
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5194805, y: 0.50526315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_01
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 625
+        width: 65
+        height: 75
+      alignment: 9
+      pivot: {x: 0.4923077, y: 0.6533333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_block_01
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 702
+        width: 68
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5147059, y: 0.62666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_block_02
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1166
+        width: 73
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5068493, y: 0.71014494}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_kick_01
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1981
+        width: 56
+        height: 66
+      alignment: 9
+      pivot: {x: 0.16071428, y: 0.72727275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_kick_02
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1968
+        width: 135
+        height: 79
+      alignment: 9
+      pivot: {x: 0.25185186, y: 0.65822786}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_kick_03
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 983
+        width: 72
+        height: 65
+      alignment: 9
+      pivot: {x: 0.097222224, y: 0.75384617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_kick_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 696
+        width: 70
+        height: 67
+      alignment: 9
+      pivot: {x: 0.41428572, y: 0.70149255}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_kick_05
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 970
+        width: 71
+        height: 74
+      alignment: 9
+      pivot: {x: 0.46478873, y: 0.6621622}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_punch_01
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1193
+        width: 79
+        height: 83
+      alignment: 9
+      pivot: {x: 0.4050633, y: 0.56626505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_punch_02
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1500
+        width: 100
+        height: 95
+      alignment: 9
+      pivot: {x: 0.31, y: 0.49473685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_punch_03
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1500
+        width: 100
+        height: 95
+      alignment: 9
+      pivot: {x: 0.31, y: 0.49473685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_punch_04
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 1141
+        width: 76
+        height: 135
+      alignment: 9
+      pivot: {x: 0.43421054, y: 0.37037036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_punch_05
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 936
+        width: 73
+        height: 135
+      alignment: 9
+      pivot: {x: 0.47945204, y: 0.35555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_punch_06
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1500
+        width: 100
+        height: 95
+      alignment: 9
+      pivot: {x: 0.31, y: 0.49473685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_crouch_punch_07
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 1193
+        width: 79
+        height: 83
+      alignment: 9
+      pivot: {x: 0.4050633, y: 0.56626505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_01
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1347
+        width: 81
+        height: 21
+      alignment: 9
+      pivot: {x: 1.0987654, y: 4.6666665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_02
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 970
+        width: 72
+        height: 30
+      alignment: 9
+      pivot: {x: 1.0972222, y: 3.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_03
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1322
+        width: 80
+        height: 23
+      alignment: 9
+      pivot: {x: 1.1, y: 4.347826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 664
+        width: 67
+        height: 30
+      alignment: 9
+      pivot: {x: 1.1044776, y: 3.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_05
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1644
+        width: 113
+        height: 29
+      alignment: 9
+      pivot: {x: 1.0619469, y: 3.586207}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_06
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1007
+        width: 71
+        height: 29
+      alignment: 9
+      pivot: {x: 1.0985916, y: 3.5172415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_07
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1116
+        width: 72
+        height: 30
+      alignment: 9
+      pivot: {x: 1.0972222, y: 3.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_08
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1343
+        width: 92
+        height: 49
+      alignment: 9
+      pivot: {x: 1.1304348, y: 2.2653062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_09
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 1109
+        width: 72
+        height: 30
+      alignment: 9
+      pivot: {x: 1.0972222, y: 3.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_10
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1621
+        width: 94
+        height: 22
+      alignment: 9
+      pivot: {x: 0.9361702, y: 4.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_11
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 1148
+        width: 73
+        height: 29
+      alignment: 9
+      pivot: {x: 1.0958904, y: 3.5172415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_12
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1881
+        width: 45
+        height: 34
+      alignment: 9
+      pivot: {x: 1.3555555, y: 3.0882354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_fireball_13
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 577
+        width: 58
+        height: 30
+      alignment: 9
+      pivot: {x: 1.2586207, y: 3.4333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_flip_out_01
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1580
+        width: 98
+        height: 98
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.45918366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_flip_out_02
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1927
+        width: 133
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5037594, y: 0.4915254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_flip_out_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 765
+        width: 73
+        height: 93
+      alignment: 9
+      pivot: {x: 0.4520548, y: 0.39784947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_flip_out_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1724
+        width: 105
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6, y: 0.3220339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_flip_out_05
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 838
+        width: 69
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4057971, y: 0.4846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_flip_out_06
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 913
+        width: 70
+        height: 122
+      alignment: 9
+      pivot: {x: 0.44285715, y: 0.5163934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_hit_01
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 819
+        width: 73
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5479452, y: 0.54867256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_hit_02
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 1259
+        width: 80
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5625, y: 0.54464287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_hit_crouch_01
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 1278
+        width: 77
+        height: 73
+      alignment: 9
+      pivot: {x: 0.58441556, y: 0.65753424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_hit_crouch_02
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 1396
+        width: 95
+        height: 72
+      alignment: 9
+      pivot: {x: 0.6526316, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_01
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1046
+        width: 72
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4722222, y: 0.55932206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_02
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 720
+        width: 70
+        height: 97
+      alignment: 9
+      pivot: {x: 0.4857143, y: 0.5051546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_03
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1046
+        width: 72
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4722222, y: 0.55932206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_04
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1023
+        width: 71
+        height: 116
+      alignment: 9
+      pivot: {x: 0.47887325, y: 0.46551725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_05
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 746
+        width: 66
+        height: 115
+      alignment: 9
+      pivot: {x: 0.4848485, y: 0.42608696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_idle_06
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 1023
+        width: 71
+        height: 116
+      alignment: 9
+      pivot: {x: 0.47887325, y: 0.46551725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_01
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 865
+        width: 70
+        height: 103
+      alignment: 9
+      pivot: {x: 0.4, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_02
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 918
+        width: 71
+        height: 103
+      alignment: 9
+      pivot: {x: 0.3802817, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_03
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 865
+        width: 70
+        height: 103
+      alignment: 9
+      pivot: {x: 0.4, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_04
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 918
+        width: 71
+        height: 103
+      alignment: 9
+      pivot: {x: 0.3802817, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_05
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 865
+        width: 70
+        height: 103
+      alignment: 9
+      pivot: {x: 0.4, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_06
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 918
+        width: 71
+        height: 103
+      alignment: 9
+      pivot: {x: 0.3802817, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1077
+        width: 82
+        height: 114
+      alignment: 9
+      pivot: {x: 0.3902439, y: 0.4122807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_08
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1470
+        width: 97
+        height: 106
+      alignment: 9
+      pivot: {x: 0.4329897, y: 0.44339624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_09
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1077
+        width: 82
+        height: 114
+      alignment: 9
+      pivot: {x: 0.3902439, y: 0.4122807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_10
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1470
+        width: 97
+        height: 106
+      alignment: 9
+      pivot: {x: 0.4329897, y: 0.44339624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_11
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 877
+        width: 70
+        height: 104
+      alignment: 9
+      pivot: {x: 0.4, y: 0.46153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_12
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 714
+        width: 68
+        height: 115
+      alignment: 9
+      pivot: {x: 0.42647058, y: 0.42608696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_13
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1000
+        width: 71
+        height: 107
+      alignment: 9
+      pivot: {x: 0.4084507, y: 0.45794392}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 714
+        width: 68
+        height: 115
+      alignment: 9
+      pivot: {x: 0.42647058, y: 0.42608696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_15
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1000
+        width: 71
+        height: 107
+      alignment: 9
+      pivot: {x: 0.4084507, y: 0.45794392}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_16
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 808
+        width: 69
+        height: 103
+      alignment: 9
+      pivot: {x: 0.4057971, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_17
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1360
+        width: 67
+        height: 105
+      alignment: 9
+      pivot: {x: 0.41791046, y: 0.44761905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_18
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 808
+        width: 69
+        height: 103
+      alignment: 9
+      pivot: {x: 0.4057971, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_19
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1360
+        width: 67
+        height: 105
+      alignment: 9
+      pivot: {x: 0.41791046, y: 0.44761905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_20
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1142
+        width: 74
+        height: 106
+      alignment: 9
+      pivot: {x: 0.44594595, y: 0.46226415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_intro_21
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1046
+        width: 72
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4722222, y: 0.55932206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_01
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 863
+        width: 69
+        height: 142
+      alignment: 9
+      pivot: {x: 0.42028984, y: 0.43661973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_02
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1680
+        width: 82
+        height: 117
+      alignment: 9
+      pivot: {x: 0.34146342, y: 0.51282054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1193
+        width: 89
+        height: 120
+      alignment: 9
+      pivot: {x: 0.74157304, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_04
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1927
+        width: 133
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5037594, y: 0.4915254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 765
+        width: 73
+        height: 93
+      alignment: 9
+      pivot: {x: 0.4520548, y: 0.39784947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1724
+        width: 105
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6, y: 0.3220339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 860
+        width: 74
+        height: 110
+      alignment: 9
+      pivot: {x: 0.3918919, y: 0.43636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_08
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 838
+        width: 69
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4057971, y: 0.4846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_back_09
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 913
+        width: 70
+        height: 122
+      alignment: 9
+      pivot: {x: 0.44285715, y: 0.5163934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_01
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 913
+        width: 70
+        height: 122
+      alignment: 9
+      pivot: {x: 0.44285715, y: 0.5163934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_02
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 838
+        width: 69
+        height: 130
+      alignment: 9
+      pivot: {x: 0.4057971, y: 0.4846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 860
+        width: 74
+        height: 110
+      alignment: 9
+      pivot: {x: 0.3918919, y: 0.43636364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1724
+        width: 105
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6, y: 0.3220339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 765
+        width: 73
+        height: 93
+      alignment: 9
+      pivot: {x: 0.4520548, y: 0.39784947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_06
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1927
+        width: 133
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5037594, y: 0.4915254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1193
+        width: 89
+        height: 120
+      alignment: 9
+      pivot: {x: 0.74157304, y: 0.48333332}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_08
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 863
+        width: 69
+        height: 142
+      alignment: 9
+      pivot: {x: 0.42028984, y: 0.43661973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_forward_09
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 863
+        width: 69
+        height: 142
+      alignment: 9
+      pivot: {x: 0.42028984, y: 0.43661973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_kick_01
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1037
+        width: 72
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25373134}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_kick_02
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1037
+        width: 72
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25373134}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_kick_03
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 916
+        width: 71
+        height: 69
+      alignment: 9
+      pivot: {x: 0.57746476, y: 0.28985506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_kick_04
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1939
+        width: 139
+        height: 69
+      alignment: 9
+      pivot: {x: 0.37410071, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_kick_05
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1939
+        width: 139
+        height: 69
+      alignment: 9
+      pivot: {x: 0.37410071, y: 0.2173913}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_kick_06
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 916
+        width: 71
+        height: 69
+      alignment: 9
+      pivot: {x: 0.57746476, y: 0.28985506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_kick_07
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1037
+        width: 72
+        height: 67
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25373134}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_neutral_01
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 913
+        width: 70
+        height: 122
+      alignment: 9
+      pivot: {x: 0.44285715, y: 0.5163934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_neutral_02
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1680
+        width: 82
+        height: 117
+      alignment: 9
+      pivot: {x: 0.34146342, y: 0.51282054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_neutral_03
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 640
+        width: 67
+        height: 78
+      alignment: 9
+      pivot: {x: 0.46268657, y: 0.35897437}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_neutral_04
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 834
+        width: 71
+        height: 82
+      alignment: 9
+      pivot: {x: 0.53521127, y: 0.25609756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_neutral_05
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 1218
+        width: 79
+        height: 102
+      alignment: 9
+      pivot: {x: 0.37974682, y: 0.44117647}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_neutral_06
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 863
+        width: 69
+        height: 142
+      alignment: 9
+      pivot: {x: 0.42028984, y: 0.43661973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_punch_01
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1370
+        width: 82
+        height: 95
+      alignment: 9
+      pivot: {x: 0.5731707, y: 0.5368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_punch_02
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1595
+        width: 117
+        height: 91
+      alignment: 9
+      pivot: {x: 0.32478634, y: 0.3956044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_jump_punch_03
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 531
+        width: 64
+        height: 92
+      alignment: 9
+      pivot: {x: 0.4375, y: 0.54347825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_01
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1580
+        width: 98
+        height: 98
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.45918366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_02
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 1876
+        width: 132
+        height: 61
+      alignment: 9
+      pivot: {x: 0.41666666, y: 0.6229508}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_03
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 1353
+        width: 77
+        height: 90
+      alignment: 9
+      pivot: {x: 0.74025977, y: 0.7222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_04
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 1917
+        width: 132
+        height: 49
+      alignment: 9
+      pivot: {x: 0.42424244, y: 1.1428572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_05
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 1988
+        width: 152
+        height: 59
+      alignment: 9
+      pivot: {x: 0.46052632, y: 0.8135593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_06
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1882
+        width: 132
+        height: 43
+      alignment: 9
+      pivot: {x: 0.37878788, y: 1.1860465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_07
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 2010
+        width: 162
+        height: 37
+      alignment: 9
+      pivot: {x: 0.37037036, y: 1.3783784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_01
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 2010
+        width: 162
+        height: 37
+      alignment: 9
+      pivot: {x: 0.37037036, y: 1.3783784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1430
+        width: 96
+        height: 42
+      alignment: 9
+      pivot: {x: 0.48958334, y: 1.1190476}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_03
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 905
+        width: 71
+        height: 93
+      alignment: 9
+      pivot: {x: 0.53521127, y: 0.5268817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_04
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1868
+        width: 50
+        height: 111
+      alignment: 9
+      pivot: {x: 0.68, y: 0.44144145}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_05
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 1325
+        width: 82
+        height: 77
+      alignment: 9
+      pivot: {x: 0.68292683, y: 0.36363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1724
+        width: 105
+        height: 59
+      alignment: 9
+      pivot: {x: 0.6, y: 0.3220339}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_07
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1680
+        width: 82
+        height: 117
+      alignment: 9
+      pivot: {x: 0.34146342, y: 0.51282054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_knockdown_getup_08
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 707
+        width: 66
+        height: 99
+      alignment: 9
+      pivot: {x: 0.46969697, y: 0.4949495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_01
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 1768
+        width: 85
+        height: 117
+      alignment: 9
+      pivot: {x: 0.3882353, y: 0.5726496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_02
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 1373
+        width: 85
+        height: 117
+      alignment: 9
+      pivot: {x: 0.3882353, y: 0.5726496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_03
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1347
+        width: 85
+        height: 117
+      alignment: 9
+      pivot: {x: 0.3882353, y: 0.5726496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_04
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1679
+        width: 102
+        height: 117
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_05
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1590
+        width: 116
+        height: 108
+      alignment: 9
+      pivot: {x: 0.23275863, y: 0.5648148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_06
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 1590
+        width: 116
+        height: 108
+      alignment: 9
+      pivot: {x: 0.23275863, y: 0.5648148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_07
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1798
+        width: 118
+        height: 96
+      alignment: 9
+      pivot: {x: 0.09322034, y: 0.5104167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_08
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 1781
+        width: 118
+        height: 93
+      alignment: 9
+      pivot: {x: 0.09322034, y: 0.5268817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_09
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1688
+        width: 118
+        height: 91
+      alignment: 9
+      pivot: {x: 0.09322034, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_10
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1675
+        width: 118
+        height: 91
+      alignment: 9
+      pivot: {x: 0.09322034, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_11
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1688
+        width: 118
+        height: 91
+      alignment: 9
+      pivot: {x: 0.09322034, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_overhead_12
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 1511
+        width: 93
+        height: 108
+      alignment: 9
+      pivot: {x: 0.38709676, y: 0.44444445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_portrait
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1896
+        width: 204
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_portrait_cropped
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1474
+        width: 100
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_01
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1799
+        width: 83
+        height: 95
+      alignment: 9
+      pivot: {x: 0.45783132, y: 0.49473685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_02
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1394
+        width: 96
+        height: 104
+      alignment: 9
+      pivot: {x: 0.40625, y: 0.48076922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_03
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1179
+        width: 76
+        height: 167
+      alignment: 9
+      pivot: {x: 0.36842105, y: 0.39520958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_04
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1179
+        width: 76
+        height: 167
+      alignment: 9
+      pivot: {x: 0.36842105, y: 0.39520958}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_05
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 624
+        width: 65
+        height: 146
+      alignment: 9
+      pivot: {x: 0.47692308, y: 0.369863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 539
+        width: 66
+        height: 123
+      alignment: 9
+      pivot: {x: 0.43939394, y: 0.36585367}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_07
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 772
+        width: 69
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0.4368932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_shoryu_08
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 772
+        width: 69
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5072464, y: 0.4368932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_kick_01
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1002
+        width: 74
+        height: 94
+      alignment: 9
+      pivot: {x: 0.2837838, y: 0.4893617}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_kick_02
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1300
+        width: 93
+        height: 99
+      alignment: 9
+      pivot: {x: 0.30107528, y: 0.4848485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_kick_03
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1768
+        width: 123
+        height: 112
+      alignment: 9
+      pivot: {x: 0.22764228, y: 0.44642857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_kick_04
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1768
+        width: 123
+        height: 112
+      alignment: 9
+      pivot: {x: 0.22764228, y: 0.44642857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_kick_05
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 1768
+        width: 123
+        height: 112
+      alignment: 9
+      pivot: {x: 0.22764228, y: 0.44642857}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_kick_06
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1453
+        width: 107
+        height: 100
+      alignment: 9
+      pivot: {x: 0.25233644, y: 0.48}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_kick_07
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 541
+        width: 63
+        height: 108
+      alignment: 9
+      pivot: {x: 0.34920636, y: 0.5277778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_punch_01
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1222
+        width: 91
+        height: 119
+      alignment: 9
+      pivot: {x: 0.41758242, y: 0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_punch_02
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 1792
+        width: 129
+        height: 123
+      alignment: 9
+      pivot: {x: 0.21705426, y: 0.5365854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_punch_03
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 1792
+        width: 129
+        height: 123
+      alignment: 9
+      pivot: {x: 0.21705426, y: 0.5365854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_punch_04
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1645
+        width: 89
+        height: 121
+      alignment: 9
+      pivot: {x: 0.35955057, y: 0.56198347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_punch_05
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1278
+        width: 85
+        height: 116
+      alignment: 9
+      pivot: {x: 0.32941177, y: 0.55172414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_stand_punch_06
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1154
+        width: 76
+        height: 103
+      alignment: 9
+      pivot: {x: 0.43421054, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1315
+        width: 95
+        height: 113
+      alignment: 9
+      pivot: {x: 0.3263158, y: 0.5221239}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1627
+        width: 103
+        height: 95
+      alignment: 9
+      pivot: {x: 0.36893204, y: 0.49473685}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_03
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1466
+        width: 97
+        height: 112
+      alignment: 9
+      pivot: {x: 0.34020618, y: 0.53571427}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_04
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1195
+        width: 85
+        height: 103
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5339806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_05
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1597
+        width: 101
+        height: 84
+      alignment: 9
+      pivot: {x: 0.64356434, y: 0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_06
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1117
+        width: 79
+        height: 76
+      alignment: 9
+      pivot: {x: 0.8227848, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_back_01
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1781
+        width: 106
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5377358, y: 0.4903846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_back_02
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1578
+        width: 101
+        height: 99
+      alignment: 9
+      pivot: {x: 0.5148515, y: 0.47474748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_back_03
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1746
+        width: 113
+        height: 120
+      alignment: 9
+      pivot: {x: 0.53097343, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_back_04
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1683
+        width: 104
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_back_05
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 1555
+        width: 112
+        height: 94
+      alignment: 9
+      pivot: {x: 0.22321428, y: 0.5425532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_back_06
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1143
+        width: 85
+        height: 77
+      alignment: 9
+      pivot: {x: 0.03529412, y: 0.7532467}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_01
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 1038
+        width: 72
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5138889, y: 0.46078432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_02
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1030
+        width: 78
+        height: 111
+      alignment: 9
+      pivot: {x: 0.42307693, y: 0.5765766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_03
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1492
+        width: 99
+        height: 101
+      alignment: 9
+      pivot: {x: 0.34343433, y: 0.56435645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1785
+        width: 107
+        height: 100
+      alignment: 9
+      pivot: {x: 0.37383178, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_05
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1700
+        width: 122
+        height: 90
+      alignment: 9
+      pivot: {x: 0.24590164, y: 0.6333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_06
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1651
+        width: 121
+        height: 93
+      alignment: 9
+      pivot: {x: 0.24793388, y: 0.61290324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_07
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1700
+        width: 122
+        height: 90
+      alignment: 9
+      pivot: {x: 0.24590164, y: 0.6333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_08
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1651
+        width: 121
+        height: 93
+      alignment: 9
+      pivot: {x: 0.24793388, y: 0.61290324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_fireball_09
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1700
+        width: 122
+        height: 90
+      alignment: 9
+      pivot: {x: 0.24590164, y: 0.6333333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_initial_01
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1404
+        width: 87
+        height: 120
+      alignment: 9
+      pivot: {x: 0.35632184, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_initial_02
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1401
+        width: 96
+        height: 108
+      alignment: 9
+      pivot: {x: 0.32291666, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_initial_03
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1526
+        width: 112
+        height: 116
+      alignment: 9
+      pivot: {x: 0.2857143, y: 0.54310346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_whiff_01
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 1467
+        width: 108
+        height: 121
+      alignment: 9
+      pivot: {x: 0.28703704, y: 0.56198347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_whiff_02
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1404
+        width: 87
+        height: 120
+      alignment: 9
+      pivot: {x: 0.35632184, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_throw_whiff_03
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 880
+        width: 73
+        height: 126
+      alignment: 9
+      pivot: {x: 0.5205479, y: 0.53968257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_01
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1046
+        width: 72
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4722222, y: 0.55932206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_02
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1106
+        width: 74
+        height: 104
+      alignment: 9
+      pivot: {x: 0.47297296, y: 0.46153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 972
+        width: 78
+        height: 103
+      alignment: 9
+      pivot: {x: 0.46153846, y: 0.47572815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_04
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1348
+        width: 78
+        height: 103
+      alignment: 9
+      pivot: {x: 0.46153846, y: 0.47572815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_05
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 1050
+        width: 74
+        height: 102
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0.48039216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_06
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1098
+        width: 75
+        height: 118
+      alignment: 9
+      pivot: {x: 0.48, y: 0.55932206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_07
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1073
+        width: 75
+        height: 118
+      alignment: 9
+      pivot: {x: 0.48, y: 0.55932206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_timeout_08
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1237
+        width: 77
+        height: 121
+      alignment: 9
+      pivot: {x: 0.48051947, y: 0.553719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_victory_01
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1046
+        width: 72
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4722222, y: 0.55932206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_victory_02
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 707
+        width: 66
+        height: 99
+      alignment: 9
+      pivot: {x: 0.46969697, y: 0.4949495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_victory_03
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 764
+        width: 69
+        height: 99
+      alignment: 9
+      pivot: {x: 0.4347826, y: 0.4848485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_victory_04
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 831
+        width: 70
+        height: 103
+      alignment: 9
+      pivot: {x: 0.42857143, y: 0.46601942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_victory_05
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 987
+        width: 71
+        height: 127
+      alignment: 9
+      pivot: {x: 0.45070422, y: 0.37795275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_backward_01
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 934
+        width: 75
+        height: 94
+      alignment: 9
+      pivot: {x: 0.41333333, y: 0.5212766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_backward_02
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 609
+        width: 65
+        height: 103
+      alignment: 9
+      pivot: {x: 0.47692308, y: 0.4563107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_backward_03
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 901
+        width: 58
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5689655, y: 0.46153846}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_backward_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 433
+        width: 64
+        height: 104
+      alignment: 9
+      pivot: {x: 0.53125, y: 0.45192307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_backward_05
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 529
+        width: 64
+        height: 109
+      alignment: 9
+      pivot: {x: 0.609375, y: 0.51376146}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_forward_01
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 707
+        width: 66
+        height: 99
+      alignment: 9
+      pivot: {x: 0.46969697, y: 0.4949495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_forward_02
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 1212
+        width: 76
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5131579, y: 0.5405405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_forward_03
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 1008
+        width: 75
+        height: 107
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5233645}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_forward_04
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 651
+        width: 65
+        height: 111
+      alignment: 9
+      pivot: {x: 0.44615385, y: 0.4864865}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_forward_05
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1445
+        width: 61
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4262295, y: 0.4814815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ryu_walk_forward_06
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 804
+        width: 58
+        height: 95
+      alignment: 9
+      pivot: {x: 0.43103448, y: 0.48421052}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: victory_ryu
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1887
+        width: 302
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -4,24 +4,33 @@ tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 - Assets/img/announcement_graphics.tpsheet
 - Assets/img/bird_fly.tpsheet
+- Assets/img/charlie.tpsheet
 - Assets/img/digits.tpsheet
+- Assets/img/guy.tpsheet
 - Assets/img/hit.tpsheet
 - Assets/img/ryu.tpsheet
 - Assets/img/ryu_new.tpsheet
+- Assets/img/ryu_new_alt.tpsheet
 - Assets/img/ui.tpsheet
 - Assets/img/zangief.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
 - Assets/img/announcement_graphics.png
 - Assets/img/bird_fly.png
+- Assets/img/charlie.png
 - Assets/img/digits.png
+- Assets/img/guy.png
 - Assets/img/hit.png
 - Assets/img/ryu.png
 - Assets/img/ryu_new.png
+- Assets/img/ryu_new_alt.png
 - Assets/img/ui.png
 - Assets/img/zangief.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+- 
 - 
 - 
 - 

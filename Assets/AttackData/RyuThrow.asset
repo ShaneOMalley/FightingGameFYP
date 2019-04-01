@@ -16,7 +16,7 @@ MonoBehaviour:
   KnockbackHit: 0.15
   KnockbackBlock: 0.3
   PushbackHit: 0.4
-  PushbackBlock: 0.2
+  PushbackBlock: 0.4
   Hitstun: -1
   Blockstun: -1
   KnocksDownGround: 1
@@ -24,4 +24,6 @@ MonoBehaviour:
   KnockdownLaunch: 0.16
   KnockdownGravity: 0.04
   KnockdownGroundFrames: 8
-  FreezeTime: 1
+  FreezeTimeFrames: 4
+  FreezeAttacker: 1
+  FreezeDefender: 1

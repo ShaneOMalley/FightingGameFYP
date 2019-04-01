@@ -28,7 +28,7 @@ AnimationClip:
       value: {fileID: 21300292, guid: 8f7437f1837726f49a5c34d3bedc1f26, type: 3}
     - time: 0.2
       value: {fileID: 21300294, guid: 8f7437f1837726f49a5c34d3bedc1f26, type: 3}
-    - time: 0.25
+    - time: 0.3
       value: {fileID: 21300296, guid: 8f7437f1837726f49a5c34d3bedc1f26, type: 3}
     attribute: m_Sprite
     path: 
@@ -60,7 +60,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -116,7 +116,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0.3
     functionName: SetCollisionBoxesFrame
     data: zangief_stand_punch_06
     objectReferenceParameter: {fileID: 0}

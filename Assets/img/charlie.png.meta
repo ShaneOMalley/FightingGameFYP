@@ -1,0 +1,2997 @@
+fileFormatVersion: 2
+guid: 0b0e705c2d68292429c8217f9089996c
+timeCreated: 1552316974
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: charlie_block_01
+    21300002: charlie_crouch_01
+    21300004: charlie_crouch_block_01
+    21300006: charlie_flip_out_01
+    21300008: charlie_flip_out_02
+    21300010: charlie_flip_out_03
+    21300012: charlie_flip_out_04
+    21300014: charlie_flip_out_05
+    21300016: charlie_flip_out_06
+    21300018: charlie_hit_01
+    21300020: charlie_hit_02
+    21300022: charlie_hit_crouch_01
+    21300024: charlie_hit_crouch_02
+    21300026: charlie_idle_01
+    21300028: charlie_idle_02
+    21300030: charlie_idle_03
+    21300032: charlie_idle_04
+    21300034: charlie_idle_05
+    21300036: charlie_idle_06
+    21300038: charlie_jump_backward_01
+    21300040: charlie_jump_backward_02
+    21300042: charlie_jump_backward_03
+    21300044: charlie_jump_backward_04
+    21300046: charlie_jump_backward_05
+    21300048: charlie_jump_backward_06
+    21300050: charlie_jump_backward_07
+    21300052: charlie_jump_forward_01
+    21300054: charlie_jump_forward_02
+    21300056: charlie_jump_forward_03
+    21300058: charlie_jump_forward_04
+    21300060: charlie_jump_forward_05
+    21300062: charlie_jump_forward_06
+    21300064: charlie_jump_forward_07
+    21300066: charlie_jump_forward_08
+    21300068: charlie_jump_neutral_01
+    21300070: charlie_jump_neutral_02
+    21300072: charlie_jump_neutral_03
+    21300074: charlie_jump_neutral_04
+    21300076: charlie_jump_neutral_05
+    21300078: charlie_jump_neutral_06
+    21300080: charlie_jump_neutral_07
+    21300082: charlie_knockdown_01
+    21300084: charlie_knockdown_02
+    21300086: charlie_knockdown_03
+    21300088: charlie_knockdown_04
+    21300090: charlie_knockdown_05
+    21300092: charlie_knockdown_06
+    21300094: charlie_knockdown_getup_01
+    21300096: charlie_knockdown_getup_02
+    21300098: charlie_knockdown_getup_03
+    21300100: charlie_knockdown_getup_04
+    21300102: charlie_knockdown_getup_05
+    21300104: charlie_throw_fireball_01
+    21300106: charlie_throw_fireball_02
+    21300108: charlie_throw_fireball_03
+    21300110: charlie_throw_fireball_04
+    21300112: charlie_throw_fireball_05
+    21300114: charlie_throw_fireball_06
+    21300116: charlie_throw_success_01
+    21300118: charlie_throw_success_02
+    21300120: charlie_throw_success_03
+    21300122: charlie_throw_success_04
+    21300124: charlie_throw_success_05
+    21300126: charlie_throw_success_06
+    21300128: charlie_throw_success_07
+    21300130: charlie_throw_success_08
+    21300132: charlie_throw_success_09
+    21300134: charlie_throw_success_10
+    21300136: charlie_throw_success_11
+    21300138: charlie_throw_success_12
+    21300140: charlie_throw_success_13
+    21300142: charlie_throw_whiff_01
+    21300144: charlie_throw_whiff_02
+    21300146: charlie_throw_whiff_03
+    21300148: charlie_victory_01
+    21300150: charlie_victory_02
+    21300152: charlie_victory_03
+    21300154: charlie_victory_04
+    21300156: charlie_victory_05
+    21300158: charlie_victory_06
+    21300160: charlie_victory_07
+    21300162: charlie_victory_08
+    21300164: charlie_victory_09
+    21300166: charlie_victory_10
+    21300168: charlie_victory_11
+    21300170: charlie_walk_backward_01
+    21300172: charlie_walk_backward_02
+    21300174: charlie_walk_backward_03
+    21300176: charlie_walk_backward_04
+    21300178: charlie_walk_backward_05
+    21300180: charlie_walk_backward_06
+    21300182: charlie_walk_forward_01
+    21300184: charlie_walk_forward_02
+    21300186: charlie_walk_forward_03
+    21300188: charlie_walk_forward_04
+    21300190: charlie_walk_forward_05
+    21300192: charlie_walk_forward_06
+    21300194: fireball_01
+    21300196: fireball_02
+    21300198: fireball_03
+    21300200: fireball_04
+    21300202: fireball_05
+    21300204: fireball_06
+    21300206: fireball_07
+    21300208: fireball_08
+    21300210: fireball_09
+    21300212: fireball_10
+    21300214: fireball_11
+    21300216: fireball_12
+    21300218: charlie_throw_initial_01
+    21300220: charlie_throw_initial_02
+    21300222: charlie_throw_back_success_01
+    21300224: charlie_throw_back_success_02
+    21300226: charlie_throw_back_success_03
+    21300228: charlie_throw_back_success_04
+    21300230: charlie_throw_back_success_05
+    21300232: charlie_throw_back_success_06
+    21300234: charlie_throw_back_success_07
+    21300236: charlie_throw_back_success_08
+    21300238: charlie_throw_back_success_09
+    21300240: charlie_throw_back_success_10
+    21300242: charlie_throw_back_success_11
+    21300244: charlie_stand_kick_01
+    21300246: charlie_stand_kick_02
+    21300248: charlie_stand_kick_03
+    21300250: charlie_stand_kick_04
+    21300252: charlie_stand_kick_05
+    21300254: charlie_stand_kick_06
+    21300256: charlie_stand_punch_01
+    21300258: charlie_stand_punch_02
+    21300260: charlie_stand_punch_03
+    21300262: charlie_stand_punch_04
+    21300264: charlie_stand_punch_05
+    21300266: charlie_crouch_kick_01
+    21300268: charlie_crouch_kick_02
+    21300270: charlie_crouch_kick_03
+    21300272: charlie_crouch_kick_04
+    21300274: charlie_crouch_kick_05
+    21300276: charlie_crouch_kick_06
+    21300278: charlie_crouch_kick_07
+    21300280: charlie_crouch_kick_08
+    21300282: charlie_crouch_kick_09
+    21300284: charlie_crouch_punch_01
+    21300286: charlie_crouch_punch_02
+    21300288: charlie_crouch_punch_03
+    21300290: charlie_crouch_punch_04
+    21300292: charlie_crouch_punch_05
+    21300294: charlie_crouch_punch_06
+    21300296: charlie_crouch_punch_07
+    21300298: charlie_crouch_punch_08
+    21300300: charlie_crouch_punch_09
+    21300302: charlie_jump_fierce_01
+    21300304: charlie_jump_fierce_02
+    21300306: charlie_jump_fierce_03
+    21300308: charlie_jump_fierce_04
+    21300310: charlie_jump_fierce_05
+    21300312: charlie_jump_kick_01
+    21300314: charlie_jump_kick_02
+    21300316: charlie_jump_kick_03
+    21300318: charlie_jump_kick_04
+    21300320: charlie_jump_kick_05
+    21300322: charlie_jump_kick_06
+    21300324: charlie_jump_strong_01
+    21300326: charlie_jump_strong_02
+    21300328: charlie_jump_strong_03
+    21300330: charlie_jump_strong_04
+    21300332: charlie_throw_fireball_turn_01
+    21300334: charlie_throw_fireball_turn_02
+    21300336: charlie_throw_fireball_turn_03
+    21300338: charlie_throw_fireball_turn_04
+    21300340: charlie_throw_fireball_turn_05
+    21300342: charlie_throw_fireball_turn_06
+    21300344: charlie_throw_fireball_turn_07
+    21300346: charlie_throw_fireball_turn_08
+    21300348: charlie_throw_fireball_upper_01
+    21300350: charlie_throw_fireball_upper_02
+    21300352: charlie_throw_fireball_upper_03
+    21300354: charlie_throw_fireball_upper_04
+    21300356: charlie_throw_fireball_upper_05
+    21300358: charlie_throw_fireball_upper_06
+    21300360: charlie_throw_fireball_upper_07
+    21300362: charlie_throw_fireball_upper_08
+    21300364: charlie_portrait
+    21300366: charlie_portrait_cropped
+    21300368: victory_charlie
+    21300370: charlie_timeout_01
+    21300372: charlie_timeout_02
+    21300374: charlie_timeout_03
+    21300376: charlie_timeout_04
+    21300378: charlie_timeout_05
+    21300380: charlie_timeout_06
+    21300382: charlie_timeout_07
+    21300384: charlie_timeout_08
+    21300386: charlie_timeout_09
+    21300388: charlie_timeout_10
+    21300390: victory_charlie_upscaled
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: charlie_block_01
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 597
+        width: 91
+        height: 120
+      alignment: 9
+      pivot: {x: 0.4945055, y: 0.59166664}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_01
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 625
+        width: 97
+        height: 67
+      alignment: 9
+      pivot: {x: 0.44329897, y: 0.74626863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_block_01
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 521
+        width: 91
+        height: 75
+      alignment: 9
+      pivot: {x: 0.45054945, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_01
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 931
+        width: 107
+        height: 73
+      alignment: 9
+      pivot: {x: 0.34579438, y: 0.7808219}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_02
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 410
+        width: 90
+        height: 93
+      alignment: 9
+      pivot: {x: 0.3, y: 0.7741935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_03
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1577
+        width: 156
+        height: 65
+      alignment: 9
+      pivot: {x: 0.102564104, y: 0.86153847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_04
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1577
+        width: 156
+        height: 65
+      alignment: 9
+      pivot: {x: 0.102564104, y: 0.86153847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_05
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1577
+        width: 156
+        height: 65
+      alignment: 9
+      pivot: {x: 0.102564104, y: 0.86153847}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_06
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 410
+        width: 90
+        height: 93
+      alignment: 9
+      pivot: {x: 0.3, y: 0.7741935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_07
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 931
+        width: 107
+        height: 73
+      alignment: 9
+      pivot: {x: 0.34579438, y: 0.7808219}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_08
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 645
+        width: 93
+        height: 73
+      alignment: 9
+      pivot: {x: 0.47311828, y: 0.75342464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_kick_09
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 625
+        width: 97
+        height: 67
+      alignment: 9
+      pivot: {x: 0.44329897, y: 0.74626863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_01
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 873
+        width: 107
+        height: 85
+      alignment: 9
+      pivot: {x: 0.34579438, y: 0.7058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_02
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1567
+        width: 109
+        height: 124
+      alignment: 9
+      pivot: {x: 0.14678898, y: 0.516129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_03
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1567
+        width: 109
+        height: 124
+      alignment: 9
+      pivot: {x: 0.14678898, y: 0.516129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_04
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 744
+        width: 100
+        height: 167
+      alignment: 9
+      pivot: {x: 0.21, y: 0.41916168}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_05
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 744
+        width: 100
+        height: 167
+      alignment: 9
+      pivot: {x: 0.21, y: 0.41916168}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_06
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1567
+        width: 109
+        height: 124
+      alignment: 9
+      pivot: {x: 0.14678898, y: 0.516129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_07
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 873
+        width: 107
+        height: 85
+      alignment: 9
+      pivot: {x: 0.34579438, y: 0.7058824}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_08
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 913
+        width: 107
+        height: 72
+      alignment: 9
+      pivot: {x: 0.42056075, y: 0.7083333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_crouch_punch_09
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 625
+        width: 97
+        height: 67
+      alignment: 9
+      pivot: {x: 0.44329897, y: 0.74626863}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_flip_out_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1402
+        width: 152
+        height: 120
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_flip_out_02
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1319
+        width: 149
+        height: 84
+      alignment: 9
+      pivot: {x: 0.39597315, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_flip_out_03
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1925
+        width: 111
+        height: 122
+      alignment: 9
+      pivot: {x: 0.5315315, y: 0.14754099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_flip_out_04
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1417
+        width: 146
+        height: 95
+      alignment: 9
+      pivot: {x: 0.53424656, y: 0.11578947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_flip_out_05
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1072
+        width: 121
+        height: 102
+      alignment: 9
+      pivot: {x: 0.42975205, y: 0.4019608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_flip_out_06
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 539
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_hit_01
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 719
+        width: 102
+        height: 119
+      alignment: 9
+      pivot: {x: 0.39215687, y: 0.53781515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_hit_02
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1335
+        width: 115
+        height: 121
+      alignment: 9
+      pivot: {x: 0.4347826, y: 0.57024795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_hit_crouch_01
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 1249
+        width: 115
+        height: 77
+      alignment: 9
+      pivot: {x: 0.3478261, y: 0.66233766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_hit_crouch_02
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 840
+        width: 105
+        height: 71
+      alignment: 9
+      pivot: {x: 0.47619048, y: 0.7183099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_idle_01
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 538
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_idle_02
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 624
+        width: 93
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4408602, y: 0.58474576}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_idle_03
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 694
+        width: 98
+        height: 116
+      alignment: 9
+      pivot: {x: 0.4489796, y: 0.54310346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_idle_04
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 1638
+        width: 95
+        height: 123
+      alignment: 9
+      pivot: {x: 0.43157893, y: 0.5691057}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_idle_05
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 694
+        width: 98
+        height: 116
+      alignment: 9
+      pivot: {x: 0.4489796, y: 0.54310346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_idle_06
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 624
+        width: 93
+        height: 118
+      alignment: 9
+      pivot: {x: 0.4408602, y: 0.58474576}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_backward_01
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 539
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_backward_02
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 521
+        width: 92
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_backward_03
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1319
+        width: 149
+        height: 84
+      alignment: 9
+      pivot: {x: 0.39597315, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_backward_04
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1925
+        width: 111
+        height: 122
+      alignment: 9
+      pivot: {x: 0.5315315, y: 0.14754099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_backward_05
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1417
+        width: 146
+        height: 95
+      alignment: 9
+      pivot: {x: 0.53424656, y: 0.11578947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_backward_06
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1072
+        width: 121
+        height: 102
+      alignment: 9
+      pivot: {x: 0.42975205, y: 0.4019608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_backward_07
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 28
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_fierce_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 581
+        width: 92
+        height: 123
+      alignment: 9
+      pivot: {x: 0.3478261, y: 0.17886178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_fierce_02
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 51
+        width: 75
+        height: 112
+      alignment: 9
+      pivot: {x: 0.24, y: 0.22321428}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_fierce_03
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1369
+        width: 150
+        height: 76
+      alignment: 9
+      pivot: {x: 0.27333334, y: 0.31578946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_fierce_04
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1369
+        width: 150
+        height: 76
+      alignment: 9
+      pivot: {x: 0.27333334, y: 0.31578946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_fierce_05
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 300
+        width: 81
+        height: 75
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.30666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_01
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 539
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_02
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1072
+        width: 121
+        height: 102
+      alignment: 9
+      pivot: {x: 0.42975205, y: 0.4019608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_03
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1417
+        width: 146
+        height: 95
+      alignment: 9
+      pivot: {x: 0.53424656, y: 0.11578947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_04
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1925
+        width: 111
+        height: 122
+      alignment: 9
+      pivot: {x: 0.5315315, y: 0.14754099}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_05
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 1319
+        width: 149
+        height: 84
+      alignment: 9
+      pivot: {x: 0.39597315, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_06
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 521
+        width: 92
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_07
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 28
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_forward_08
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 28
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_kick_01
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 910
+        width: 106
+        height: 75
+      alignment: 9
+      pivot: {x: 0.4716981, y: 0.21333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_kick_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 825
+        width: 107
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5794392, y: 0.3452381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_kick_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1524
+        width: 156
+        height: 67
+      alignment: 9
+      pivot: {x: 0.2820513, y: 0.20895523}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_kick_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1524
+        width: 156
+        height: 67
+      alignment: 9
+      pivot: {x: 0.2820513, y: 0.20895523}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_kick_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 825
+        width: 107
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5794392, y: 0.3452381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_kick_06
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 4
+        width: 74
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4189189, y: 0.41666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_neutral_01
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 539
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_neutral_02
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 4
+        width: 74
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4189189, y: 0.41666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_neutral_03
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 514
+        width: 90
+        height: 81
+      alignment: 9
+      pivot: {x: 0.47777778, y: 0.32098764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_neutral_04
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 354
+        width: 87
+        height: 82
+      alignment: 9
+      pivot: {x: 0.47126436, y: 0.34146342}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_neutral_05
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 438
+        width: 90
+        height: 81
+      alignment: 9
+      pivot: {x: 0.47777778, y: 0.32098764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_neutral_06
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 4
+        width: 74
+        height: 108
+      alignment: 9
+      pivot: {x: 0.4189189, y: 0.41666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_neutral_07
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 28
+        width: 68
+        height: 139
+      alignment: 9
+      pivot: {x: 0.3970588, y: 0.41007194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_strong_01
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 610
+        width: 98
+        height: 92
+      alignment: 9
+      pivot: {x: 0.36734694, y: 0.33695653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_strong_02
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 1447
+        width: 153
+        height: 123
+      alignment: 9
+      pivot: {x: 0.4509804, y: 0.3902439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_strong_03
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 610
+        width: 98
+        height: 92
+      alignment: 9
+      pivot: {x: 0.36734694, y: 0.33695653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_jump_strong_04
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 300
+        width: 81
+        height: 75
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.30666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1402
+        width: 152
+        height: 120
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1323
+        width: 149
+        height: 77
+      alignment: 9
+      pivot: {x: 0.44295302, y: 0.24675325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_03
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1138
+        width: 126
+        height: 91
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.6043956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1323
+        width: 149
+        height: 77
+      alignment: 9
+      pivot: {x: 0.44295302, y: 0.7922078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_05
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1572
+        width: 162
+        height: 43
+      alignment: 9
+      pivot: {x: 0.46296296, y: 1.4186046}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_06
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1410
+        width: 152
+        height: 46
+      alignment: 9
+      pivot: {x: 0.45394737, y: 1.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_getup_01
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1410
+        width: 152
+        height: 46
+      alignment: 9
+      pivot: {x: 0.45394737, y: 1.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_getup_02
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 1074
+        width: 126
+        height: 90
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_getup_03
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 139
+        width: 72
+        height: 66
+      alignment: 9
+      pivot: {x: 0.4027778, y: 0.530303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_getup_04
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 442
+        width: 90
+        height: 62
+      alignment: 9
+      pivot: {x: 0.51111114, y: 0.24193548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_knockdown_getup_05
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 419
+        width: 82
+        height: 77
+      alignment: 9
+      pivot: {x: 0.47560975, y: 0.3116883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_portrait
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1736
+        width: 204
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_portrait_cropped
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 720
+        width: 100
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_kick_01
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 987
+        width: 86
+        height: 111
+      alignment: 9
+      pivot: {x: 0.41860464, y: 0.4954955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_kick_02
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1810
+        width: 111
+        height: 113
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0.40707964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_kick_03
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1644
+        width: 181
+        height: 90
+      alignment: 9
+      pivot: {x: 0.19337016, y: 0.22222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_kick_04
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1525
+        width: 157
+        height: 88
+      alignment: 9
+      pivot: {x: 0.32484075, y: 0.19318181}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_kick_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 9
+        width: 82
+        height: 96
+      alignment: 9
+      pivot: {x: 0.15853658, y: 0.32291666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_kick_06
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 4
+        width: 74
+        height: 108
+      alignment: 9
+      pivot: {x: 0.35135135, y: 0.5092593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_punch_01
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 538
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_punch_02
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 419
+        width: 94
+        height: 117
+      alignment: 9
+      pivot: {x: 0.43617022, y: 0.5641026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_punch_03
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1290
+        width: 144
+        height: 125
+      alignment: 9
+      pivot: {x: 0.27083334, y: 0.576}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_punch_04
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 824
+        width: 104
+        height: 119
+      alignment: 9
+      pivot: {x: 0.41346154, y: 0.48739496}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_stand_punch_05
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1328
+        width: 114
+        height: 126
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.4920635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_01
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 320
+        width: 84
+        height: 115
+      alignment: 9
+      pivot: {x: 0.9047619, y: 0.5043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_02
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 274
+        width: 83
+        height: 123
+      alignment: 9
+      pivot: {x: 0.79518074, y: 0.57723576}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_03
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 320
+        width: 84
+        height: 115
+      alignment: 9
+      pivot: {x: 0.9047619, y: 0.5043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_04
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 229
+        width: 83
+        height: 123
+      alignment: 9
+      pivot: {x: 0.79518074, y: 0.5934959}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 911
+        width: 118
+        height: 121
+      alignment: 9
+      pivot: {x: 0.88135594, y: 0.5289256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 911
+        width: 118
+        height: 121
+      alignment: 9
+      pivot: {x: 0.88135594, y: 0.5289256}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_07
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1593
+        width: 173
+        height: 138
+      alignment: 9
+      pivot: {x: 0.83815026, y: 0.44927537}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_08
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1405
+        width: 153
+        height: 118
+      alignment: 9
+      pivot: {x: 0.7385621, y: 0.59322035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_09
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 506
+        width: 91
+        height: 116
+      alignment: 9
+      pivot: {x: 0.9230769, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_10
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 680
+        width: 99
+        height: 101
+      alignment: 9
+      pivot: {x: 0.57575756, y: 0.4950495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_back_success_11
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 1763
+        width: 95
+        height: 124
+      alignment: 9
+      pivot: {x: 0.55789477, y: 0.57258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_01
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1176
+        width: 130
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5692308, y: 0.509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_02
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 1176
+        width: 130
+        height: 106
+      alignment: 9
+      pivot: {x: 0.5692308, y: 0.509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_03
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1006
+        width: 121
+        height: 120
+      alignment: 9
+      pivot: {x: 0.57024795, y: 0.55}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_04
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1219
+        width: 140
+        height: 114
+      alignment: 9
+      pivot: {x: 0.37142858, y: 0.5614035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_05
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 1617
+        width: 165
+        height: 114
+      alignment: 9
+      pivot: {x: 0.26060605, y: 0.5614035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_06
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 960
+        width: 120
+        height: 112
+      alignment: 9
+      pivot: {x: 0.35833332, y: 0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_01
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 987
+        width: 86
+        height: 111
+      alignment: 9
+      pivot: {x: 0.41860464, y: 0.4954955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 706
+        width: 100
+        height: 117
+      alignment: 9
+      pivot: {x: 0, y: 0.52991456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_03
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1615
+        width: 167
+        height: 116
+      alignment: 9
+      pivot: {x: 0, y: 0.5862069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_04
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1458
+        width: 154
+        height: 117
+      alignment: 9
+      pivot: {x: -0.09090909, y: 0.5811966}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_05
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 1169
+        width: 139
+        height: 119
+      alignment: 9
+      pivot: {x: -0.05755396, y: 0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_06
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 207
+        width: 83
+        height: 119
+      alignment: 9
+      pivot: {x: -0.12048193, y: 0.5126051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_07
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 598
+        width: 91
+        height: 117
+      alignment: 9
+      pivot: {x: 0.45054945, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_turn_08
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 538
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_01
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 505
+        width: 94
+        height: 118
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.5762712}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_02
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 1100
+        width: 125
+        height: 117
+      alignment: 9
+      pivot: {x: 0.272, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_03
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1166
+        width: 137
+        height: 151
+      alignment: 9
+      pivot: {x: 0.16058394, y: 0.4437086}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1034
+        width: 136
+        height: 165
+      alignment: 9
+      pivot: {x: 0.15441176, y: 0.42424244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_05
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 769
+        width: 99
+        height: 153
+      alignment: 9
+      pivot: {x: 0.21212122, y: 0.45751634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_06
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 769
+        width: 99
+        height: 153
+      alignment: 9
+      pivot: {x: 0.21212122, y: 0.45751634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_07
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1019
+        width: 120
+        height: 117
+      alignment: 9
+      pivot: {x: 0.28333333, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_fireball_upper_08
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 660
+        width: 97
+        height: 107
+      alignment: 9
+      pivot: {x: 0.4226804, y: 0.5046729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_initial_01
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 1128
+        width: 126
+        height: 119
+      alignment: 9
+      pivot: {x: 0.32539684, y: 0.52100843}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_initial_02
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1693
+        width: 113
+        height: 115
+      alignment: 9
+      pivot: {x: 0.36283186, y: 0.53913045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_01
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 305
+        width: 81
+        height: 112
+      alignment: 9
+      pivot: {x: 0.074074075, y: 0.51785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_02
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1604
+        width: 93
+        height: 127
+      alignment: 9
+      pivot: {x: 0.22580644, y: 0.5590551}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_03
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 305
+        width: 81
+        height: 112
+      alignment: 9
+      pivot: {x: 0.074074075, y: 0.51785713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_04
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 498
+        width: 90
+        height: 110
+      alignment: 9
+      pivot: {x: 0.24444444, y: 0.46363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1201
+        width: 148
+        height: 120
+      alignment: 9
+      pivot: {x: 0.1554054, y: 0.41666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1201
+        width: 148
+        height: 120
+      alignment: 9
+      pivot: {x: 0.1554054, y: 0.41666666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_07
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1231
+        width: 138
+        height: 136
+      alignment: 9
+      pivot: {x: 0.18115942, y: 0.45588234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_08
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1284
+        width: 144
+        height: 124
+      alignment: 9
+      pivot: {x: 0.1736111, y: 0.58870965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_09
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 169
+        width: 83
+        height: 116
+      alignment: 9
+      pivot: {x: 0.072289154, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_10
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 598
+        width: 91
+        height: 117
+      alignment: 9
+      pivot: {x: 0.45054945, y: 0.53846157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_success_11
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 538
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_whiff_01
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 717
+        width: 94
+        height: 117
+      alignment: 9
+      pivot: {x: 0.43617022, y: 0.5641026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_whiff_02
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1056
+        width: 125
+        height: 111
+      alignment: 9
+      pivot: {x: 0.344, y: 0.5765766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_throw_whiff_03
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 987
+        width: 114
+        height: 111
+      alignment: 9
+      pivot: {x: 0.37719297, y: 0.5765766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_01
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 538
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 458
+        width: 92
+        height: 121
+      alignment: 9
+      pivot: {x: 0.4456522, y: 0.553719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_03
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 552
+        width: 90
+        height: 126
+      alignment: 9
+      pivot: {x: 0.51111114, y: 0.53174603}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_04
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 211
+        width: 76
+        height: 107
+      alignment: 9
+      pivot: {x: 0.40789473, y: 0.46728972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_05
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 165
+        width: 76
+        height: 107
+      alignment: 9
+      pivot: {x: 0.40789473, y: 0.46728972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_06
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 114
+        width: 75
+        height: 113
+      alignment: 9
+      pivot: {x: 0.4, y: 0.44247788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_07
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 211
+        width: 76
+        height: 107
+      alignment: 9
+      pivot: {x: 0.40789473, y: 0.46728972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_08
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 165
+        width: 76
+        height: 107
+      alignment: 9
+      pivot: {x: 0.40789473, y: 0.46728972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_09
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 114
+        width: 75
+        height: 113
+      alignment: 9
+      pivot: {x: 0.4, y: 0.44247788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_timeout_10
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 211
+        width: 76
+        height: 107
+      alignment: 9
+      pivot: {x: 0.40789473, y: 0.46728972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_01
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 538
+        width: 94
+        height: 120
+      alignment: 9
+      pivot: {x: 0.44680852, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_02
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 913
+        width: 108
+        height: 104
+      alignment: 9
+      pivot: {x: 0.37962964, y: 0.5192308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_03
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 169
+        width: 83
+        height: 116
+      alignment: 9
+      pivot: {x: 0.072289154, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_04
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 437
+        width: 87
+        height: 113
+      alignment: 9
+      pivot: {x: 0.3448276, y: 0.49557522}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_05
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 328
+        width: 89
+        height: 112
+      alignment: 9
+      pivot: {x: 0.40449437, y: 0.45535713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_06
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 399
+        width: 87
+        height: 113
+      alignment: 9
+      pivot: {x: 0.37931034, y: 0.45132744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_07
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 962
+        width: 108
+        height: 108
+      alignment: 9
+      pivot: {x: 0.30555555, y: 0.46296296}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_08
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1456
+        width: 109
+        height: 109
+      alignment: 9
+      pivot: {x: 0.29357797, y: 0.4678899}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_09
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 945
+        width: 109
+        height: 109
+      alignment: 9
+      pivot: {x: 0.29357797, y: 0.4678899}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_10
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 945
+        width: 109
+        height: 109
+      alignment: 9
+      pivot: {x: 0.29357797, y: 0.4678899}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_victory_11
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 945
+        width: 109
+        height: 109
+      alignment: 9
+      pivot: {x: 0.29357797, y: 0.4678899}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_backward_01
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 287
+        width: 88
+        height: 114
+      alignment: 9
+      pivot: {x: 0.36363637, y: 0.55263156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_backward_02
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1458
+        width: 94
+        height: 128
+      alignment: 9
+      pivot: {x: 0.39361703, y: 0.53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_backward_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 107
+        width: 82
+        height: 115
+      alignment: 9
+      pivot: {x: 0.3902439, y: 0.45217392}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_backward_04
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 704
+        width: 99
+        height: 118
+      alignment: 9
+      pivot: {x: 0.5050505, y: 0.5169492}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_backward_05
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 783
+        width: 102
+        height: 125
+      alignment: 9
+      pivot: {x: 0.50980395, y: 0.536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_backward_06
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 1514
+        width: 95
+        height: 122
+      alignment: 9
+      pivot: {x: 0.42105263, y: 0.58196723}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_forward_01
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 836
+        width: 106
+        height: 124
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5403226}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_forward_02
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 812
+        width: 100
+        height: 117
+      alignment: 9
+      pivot: {x: 0.47, y: 0.50427353}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_forward_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 224
+        width: 88
+        height: 114
+      alignment: 9
+      pivot: {x: 0.32954547, y: 0.4385965}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_forward_04
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 377
+        width: 85
+        height: 126
+      alignment: 9
+      pivot: {x: 0.32941177, y: 0.53968257}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_forward_05
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 403
+        width: 91
+        height: 116
+      alignment: 9
+      pivot: {x: 0.35164836, y: 0.54310346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: charlie_walk_forward_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 340
+        width: 91
+        height: 116
+      alignment: 9
+      pivot: {x: 0.4065934, y: 0.57758623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_01
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 1588
+        width: 95
+        height: 14
+      alignment: 9
+      pivot: {x: 0.58947366, y: -0.071428575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_02
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1154
+        width: 38
+        height: 18
+      alignment: 9
+      pivot: {x: 0.28947368, y: 0.3888889}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_03
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1547
+        width: 43
+        height: 22
+      alignment: 9
+      pivot: {x: 0.37209302, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_04
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 924
+        width: 56
+        height: 16
+      alignment: 9
+      pivot: {x: 0.51785713, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_05
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1571
+        width: 46
+        height: 21
+      alignment: 9
+      pivot: {x: 0.6304348, y: 0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_06
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 505
+        width: 86
+        height: 32
+      alignment: 9
+      pivot: {x: 0.627907, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_07
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 942
+        width: 56
+        height: 23
+      alignment: 9
+      pivot: {x: 0.51785713, y: 0.5217391}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_08
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 700
+        width: 55
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5090909, y: 0.3529412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_09
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1594
+        width: 46
+        height: 48
+      alignment: 9
+      pivot: {x: 0.17391305, y: 0.47916666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_10
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 1174
+        width: 41
+        height: 43
+      alignment: 9
+      pivot: {x: 0.07317073, y: 0.4883721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_11
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1517
+        width: 36
+        height: 28
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fireball_12
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 967
+        width: 58
+        height: 37
+      alignment: 9
+      pivot: {x: 0.13793103, y: 0.5135135}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: victory_charlie
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1889
+        width: 302
+        height: 158
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5063291}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: victory_charlie_upscaled
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1733
+        width: 604
+        height: 314
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50955415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

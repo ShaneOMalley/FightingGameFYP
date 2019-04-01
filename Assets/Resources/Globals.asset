@@ -19,3 +19,9 @@ MonoBehaviour:
   HitFreezeLength: 12
   InputBufferFrames: 7
   MasterVolume: 1
+  Player1Character: 2
+  Player2Character: 1
+  Player1Controller: 1
+  BackupP1Controller: 1
+  Player2Controller: 2
+  PlayerWinning: 0

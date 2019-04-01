@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class RoundCounters : MonoBehaviour {
     
     public GameplayData Data;
+
+    [HideInInspector]
     public PlayerController Player;
 
     private const string COUNT_ROUND = "count_round";
@@ -22,14 +24,8 @@ public class RoundCounters : MonoBehaviour {
 	
 	void Update ()
     {
-        bool isP1 = Player.PlayerNum == PlayerController.PlayerEnum.P1;
+        bool isP1 = Player.PlayerNum == Globals.Player.P1;
         int roundsWon = isP1 ? Data.P1Rounds : Data.P2Rounds;
-
-        // Set the round counters to be visible
-        //for (int i = 0; i < roundsWon; i++)
-        //{
-        //    transform.GetChild(i).GetComponentInChildren<Animator>().SetBool(COUNT_ROUND, true);
-        //}
 
         for (int i = 0; i < transform.childCount; i++)
         {

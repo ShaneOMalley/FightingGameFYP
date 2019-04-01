@@ -1,0 +1,2155 @@
+fileFormatVersion: 2
+guid: 0b0f42d2edcafa54ab76760f6bcae376
+timeCreated: 1551979762
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: guy_crouch_01
+    21300002: guy_flip_out_01
+    21300004: guy_flip_out_02
+    21300006: guy_flip_out_03
+    21300008: guy_flip_out_04
+    21300010: guy_flip_out_05
+    21300012: guy_hit_01
+    21300014: guy_hit_02
+    21300016: guy_hit_03
+    21300018: guy_hit_crouch_01
+    21300020: guy_hit_crouch_02
+    21300022: guy_hit_crouch_03
+    21300024: guy_hozanto_01
+    21300026: guy_hozanto_02
+    21300028: guy_hozanto_03
+    21300030: guy_hozanto_04
+    21300032: guy_hozanto_05
+    21300034: guy_hozanto_06
+    21300036: guy_hozanto_07
+    21300038: guy_hozanto_08
+    21300040: guy_hozanto_09
+    21300042: guy_hozanto_10
+    21300044: guy_hozanto_11
+    21300046: guy_idle_01
+    21300048: guy_idle_02
+    21300050: guy_idle_03
+    21300052: guy_idle_04
+    21300054: guy_idle_05
+    21300056: guy_idle_06
+    21300058: guy_jump_backward_01
+    21300060: guy_jump_backward_02
+    21300062: guy_jump_backward_03
+    21300064: guy_jump_backward_04
+    21300066: guy_jump_backward_05
+    21300068: guy_jump_forward_01
+    21300070: guy_jump_forward_02
+    21300072: guy_jump_forward_03
+    21300074: guy_jump_forward_04
+    21300076: guy_jump_forward_05
+    21300078: guy_jump_forward_06
+    21300080: guy_jump_neutral_01
+    21300082: guy_jump_neutral_02
+    21300084: guy_jump_neutral_03
+    21300086: guy_jump_neutral_04
+    21300088: guy_jump_neutral_05
+    21300090: guy_jump_neutral_06
+    21300092: guy_jump_neutral_07
+    21300094: guy_knockdown_01
+    21300096: guy_knockdown_02
+    21300098: guy_knockdown_03
+    21300100: guy_knockdown_04
+    21300102: guy_knockdown_05
+    21300104: guy_knockdown_06
+    21300106: guy_knockdown_getup_01
+    21300108: guy_knockdown_getup_02
+    21300110: guy_knockdown_getup_03
+    21300112: guy_knockdown_getup_04
+    21300114: guy_knockdown_getup_05
+    21300116: guy_knockdown_getup_06
+    21300118: guy_knockdown_getup_07
+    21300120: guy_run_01
+    21300122: guy_run_02
+    21300124: guy_run_03
+    21300126: guy_run_04
+    21300128: guy_run_05
+    21300130: guy_run_06
+    21300132: guy_run_07
+    21300134: guy_run_08
+    21300136: guy_run_kick_01
+    21300138: guy_run_kick_02
+    21300140: guy_run_kick_03
+    21300142: guy_run_kick_04
+    21300144: guy_run_kick_05
+    21300146: guy_run_kick_06
+    21300148: guy_run_kick_07
+    21300150: guy_run_kick_08
+    21300152: guy_run_slide_01
+    21300154: guy_run_slide_02
+    21300156: guy_run_slide_03
+    21300158: guy_run_slide_04
+    21300160: guy_run_slide_05
+    21300162: guy_run_slide_06
+    21300164: guy_run_slide_07
+    21300166: guy_run_slide_08
+    21300168: guy_run_slide_09
+    21300170: guy_run_slide_10
+    21300172: guy_run_stop_01
+    21300174: guy_run_stop_02
+    21300176: guy_run_stop_03
+    21300178: guy_run_stop_04
+    21300180: guy_run_stop_05
+    21300182: guy_throw_01
+    21300184: guy_throw_02
+    21300186: guy_throw_03
+    21300188: guy_throw_04
+    21300190: guy_throw_initial_01
+    21300192: guy_throw_initial_02
+    21300194: guy_throw_initial_03
+    21300196: guy_throw_initial_04
+    21300198: guy_throw_initial_05
+    21300200: guy_throw_initial_06
+    21300202: guy_timeout_01
+    21300204: guy_timeout_02
+    21300206: guy_timeout_03
+    21300208: guy_timeout_04
+    21300210: guy_timeout_05
+    21300212: guy_timeout_06
+    21300214: guy_victory_01
+    21300216: guy_victory_02
+    21300218: guy_victory_03
+    21300220: guy_victory_04
+    21300222: guy_victory_05
+    21300224: guy_victory_06
+    21300226: guy_walk_backward_01
+    21300228: guy_walk_backward_02
+    21300230: guy_walk_backward_03
+    21300232: guy_walk_backward_04
+    21300234: guy_walk_backward_05
+    21300236: guy_walk_backward_06
+    21300238: guy_walk_backward_07
+    21300240: guy_walk_backward_08
+    21300242: guy_walk_backward_09
+    21300244: guy_walk_backward_10
+    21300246: guy_walk_backward_11
+    21300248: guy_walk_backward_12
+    21300250: guy_walk_backward_13
+    21300252: guy_walk_forward_01
+    21300254: guy_walk_forward_02
+    21300256: guy_walk_forward_03
+    21300258: guy_walk_forward_04
+    21300260: guy_walk_forward_05
+    21300262: guy_walk_forward_06
+    21300264: guy_walk_forward_07
+    21300266: guy_walk_forward_08
+    21300268: guy_walk_forward_09
+    21300270: guy_walk_forward_10
+    21300272: guy_walk_forward_11
+    21300274: guy_walk_forward_12
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: guy_crouch_01
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 820
+        width: 80
+        height: 76
+      alignment: 9
+      pivot: {x: 0.575, y: 0.69736844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_flip_out_01
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 732
+        width: 109
+        height: 86
+      alignment: 9
+      pivot: {x: 0.3853211, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_flip_out_02
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 615
+        width: 100
+        height: 98
+      alignment: 9
+      pivot: {x: 0.55, y: 0.6020408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_flip_out_03
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 845
+        width: 60
+        height: 95
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.37894738}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_flip_out_04
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 886
+        width: 107
+        height: 73
+      alignment: 9
+      pivot: {x: 0.49532712, y: 0.47945204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_flip_out_05
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 186
+        width: 59
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5126051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hit_01
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 507
+        width: 71
+        height: 106
+      alignment: 9
+      pivot: {x: 0.6056338, y: 0.4716981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hit_02
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 466
+        width: 75
+        height: 107
+      alignment: 9
+      pivot: {x: 0.74666667, y: 0.46728972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hit_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 642
+        width: 80
+        height: 100
+      alignment: 9
+      pivot: {x: 0.775, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hit_crouch_01
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 828
+        width: 87
+        height: 74
+      alignment: 9
+      pivot: {x: 0.4827586, y: 0.6756757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hit_crouch_02
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 816
+        width: 79
+        height: 76
+      alignment: 9
+      pivot: {x: 0.6455696, y: 0.65789473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hit_crouch_03
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 890
+        width: 80
+        height: 72
+      alignment: 9
+      pivot: {x: 0.675, y: 0.7361111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_01
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 904
+        width: 89
+        height: 67
+      alignment: 9
+      pivot: {x: 0.47191012, y: 0.76119405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_02
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 968
+        width: 98
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5510204, y: 0.92727274}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 928
+        width: 75
+        height: 65
+      alignment: 9
+      pivot: {x: 0.68, y: 0.8}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 850
+        width: 73
+        height: 76
+      alignment: 9
+      pivot: {x: 0.49315068, y: 0.65789473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_05
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 875
+        width: 62
+        height: 84
+      alignment: 9
+      pivot: {x: 0.48387095, y: 0.60714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_06
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 875
+        width: 62
+        height: 84
+      alignment: 9
+      pivot: {x: 0.48387095, y: 0.60714287}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_07
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 679
+        width: 89
+        height: 94
+      alignment: 9
+      pivot: {x: 0.29213482, y: 0.5851064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_08
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 679
+        width: 89
+        height: 94
+      alignment: 9
+      pivot: {x: 0.29213482, y: 0.5851064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_09
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 499
+        width: 130
+        height: 106
+      alignment: 9
+      pivot: {x: 0.26923078, y: 0.6509434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_10
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 51
+        width: 80
+        height: 124
+      alignment: 9
+      pivot: {x: 0.2375, y: 0.57258064}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_hozanto_11
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 406
+        width: 76
+        height: 108
+      alignment: 9
+      pivot: {x: 0.39473686, y: 0.5555556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_idle_01
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 502
+        width: 94
+        height: 106
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.4811321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_idle_02
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 449
+        width: 94
+        height: 106
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.4811321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_idle_03
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 337
+        width: 87
+        height: 110
+      alignment: 9
+      pivot: {x: 0.52873564, y: 0.46363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_idle_04
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 316
+        width: 88
+        height: 110
+      alignment: 9
+      pivot: {x: 0.52272725, y: 0.46363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_idle_05
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 337
+        width: 87
+        height: 110
+      alignment: 9
+      pivot: {x: 0.52873564, y: 0.46363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_idle_06
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 449
+        width: 94
+        height: 106
+      alignment: 9
+      pivot: {x: 0.4893617, y: 0.4811321}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_backward_01
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 57
+        width: 55
+        height: 123
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.4878049}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_backward_02
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 615
+        width: 100
+        height: 98
+      alignment: 9
+      pivot: {x: 0.55, y: 0.6020408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_backward_03
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 845
+        width: 60
+        height: 95
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.37894738}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_backward_04
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 886
+        width: 107
+        height: 73
+      alignment: 9
+      pivot: {x: 0.49532712, y: 0.47945204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_backward_05
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 186
+        width: 59
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5126051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_forward_01
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 186
+        width: 59
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5126051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_forward_02
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 505
+        width: 56
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4537037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_forward_03
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 886
+        width: 107
+        height: 73
+      alignment: 9
+      pivot: {x: 0.49532712, y: 0.47945204}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_forward_04
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 845
+        width: 60
+        height: 95
+      alignment: 9
+      pivot: {x: 0.6666667, y: 0.37894738}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_forward_05
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 615
+        width: 100
+        height: 98
+      alignment: 9
+      pivot: {x: 0.55, y: 0.6020408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_forward_06
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 57
+        width: 55
+        height: 123
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.4878049}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_neutral_01
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 186
+        width: 59
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5084746, y: 0.5126051}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_neutral_02
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 505
+        width: 56
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4537037}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_neutral_03
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 911
+        width: 59
+        height: 82
+      alignment: 9
+      pivot: {x: 0.59322035, y: 0.35365853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_neutral_04
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 942
+        width: 59
+        height: 81
+      alignment: 9
+      pivot: {x: 0.5762712, y: 0.30864197}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_neutral_05
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 911
+        width: 59
+        height: 82
+      alignment: 9
+      pivot: {x: 0.59322035, y: 0.35365853}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_neutral_06
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 775
+        width: 56
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.39795917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_jump_neutral_07
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 57
+        width: 55
+        height: 123
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.4878049}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_01
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 732
+        width: 109
+        height: 86
+      alignment: 9
+      pivot: {x: 0.3853211, y: 0.5116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_02
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 973
+        width: 120
+        height: 50
+      alignment: 9
+      pivot: {x: 0.34166667, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_03
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 964
+        width: 137
+        height: 59
+      alignment: 9
+      pivot: {x: 0.37226278, y: 1.1525424}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_04
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 898
+        width: 165
+        height: 66
+      alignment: 9
+      pivot: {x: 0.46060607, y: 1.0151515}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_05
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 961
+        width: 148
+        height: 62
+      alignment: 9
+      pivot: {x: 0.41216215, y: 1.1290323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 995
+        width: 137
+        height: 28
+      alignment: 9
+      pivot: {x: 0.40875912, y: 1.8928572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_getup_01
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 995
+        width: 137
+        height: 28
+      alignment: 9
+      pivot: {x: 0.40875912, y: 1.8928572}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_getup_02
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 961
+        width: 148
+        height: 62
+      alignment: 9
+      pivot: {x: 0.41216215, y: 1.1290323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_getup_03
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 962
+        width: 125
+        height: 61
+      alignment: 9
+      pivot: {x: 0.368, y: 1.0163934}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_getup_04
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 41
+        width: 88
+        height: 124
+      alignment: 9
+      pivot: {x: 0.72727275, y: 0.47580644}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_getup_05
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 845
+        width: 60
+        height: 95
+      alignment: 9
+      pivot: {x: 0.76666665, y: 0.31578946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_getup_06
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 814
+        width: 109
+        height: 76
+      alignment: 9
+      pivot: {x: 0.6146789, y: 0.36842105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_knockdown_getup_07
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 629
+        width: 94
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5531915, y: 0.53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_01
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 712
+        width: 119
+        height: 93
+      alignment: 9
+      pivot: {x: 0.46218488, y: 0.60215056}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_02
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 707
+        width: 117
+        height: 93
+      alignment: 9
+      pivot: {x: 0.45299146, y: 0.61290324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_03
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 810
+        width: 105
+        height: 78
+      alignment: 9
+      pivot: {x: 0.3904762, y: 0.55128205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_04
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 802
+        width: 107
+        height: 82
+      alignment: 9
+      pivot: {x: 0.40186915, y: 0.58536583}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 536
+        width: 132
+        height: 99
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.6262626}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_06
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 607
+        width: 133
+        height: 98
+      alignment: 9
+      pivot: {x: 0.48120302, y: 0.63265306}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_07
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 802
+        width: 107
+        height: 82
+      alignment: 9
+      pivot: {x: 0.40186915, y: 0.5731707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_08
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 810
+        width: 105
+        height: 78
+      alignment: 9
+      pivot: {x: 0.3904762, y: 0.5641026}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_01
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 661
+        width: 82
+        height: 95
+      alignment: 9
+      pivot: {x: 0.3292683, y: 0.56842107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_02
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 575
+        width: 77
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5194805, y: 0.5686275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_03
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 191
+        width: 87
+        height: 115
+      alignment: 9
+      pivot: {x: 0.79310346, y: 0.5043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_04
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 520
+        width: 112
+        height: 101
+      alignment: 9
+      pivot: {x: 0.8214286, y: 0.32673267}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 744
+        width: 89
+        height: 82
+      alignment: 9
+      pivot: {x: 0.6853933, y: 0.20731707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_06
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 722
+        width: 145
+        height: 86
+      alignment: 9
+      pivot: {x: 0.4, y: 0.15116279}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_07
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 807
+        width: 147
+        height: 80
+      alignment: 9
+      pivot: {x: 0.43537414, y: 0.1625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_kick_08
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 397
+        width: 82
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5, y: 0.32407406}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_01
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 661
+        width: 82
+        height: 95
+      alignment: 9
+      pivot: {x: 0.3292683, y: 0.56842107}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_02
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 575
+        width: 77
+        height: 102
+      alignment: 9
+      pivot: {x: 0.5194805, y: 0.5686275}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_03
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 715
+        width: 83
+        height: 93
+      alignment: 9
+      pivot: {x: 0.73493975, y: 0.5268817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_04
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 727
+        width: 90
+        height: 87
+      alignment: 9
+      pivot: {x: 0.62222224, y: 0.57471263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_05
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 727
+        width: 90
+        height: 87
+      alignment: 9
+      pivot: {x: 0.62222224, y: 0.57471263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_06
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 889
+        width: 106
+        height: 71
+      alignment: 9
+      pivot: {x: 0.4811321, y: 0.70422536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_07
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 966
+        width: 182
+        height: 57
+      alignment: 9
+      pivot: {x: 0.25824177, y: 1.122807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_08
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 966
+        width: 182
+        height: 57
+      alignment: 9
+      pivot: {x: 0.25824177, y: 1.122807}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_09
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 889
+        width: 106
+        height: 71
+      alignment: 9
+      pivot: {x: 0.4811321, y: 0.70422536}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_slide_10
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 758
+        width: 78
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5641026, y: 0.62352943}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_stop_01
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 623
+        width: 131
+        height: 97
+      alignment: 9
+      pivot: {x: 0.71755725, y: 0.68041235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_stop_02
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 637
+        width: 107
+        height: 93
+      alignment: 9
+      pivot: {x: 0.7570093, y: 0.7096774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_stop_03
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 894
+        width: 98
+        height: 70
+      alignment: 9
+      pivot: {x: 0.67346936, y: 0.74285716}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_stop_04
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 822
+        width: 81
+        height: 74
+      alignment: 9
+      pivot: {x: 0.69135803, y: 0.7162162}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_run_stop_05
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 736
+        width: 80
+        height: 84
+      alignment: 9
+      pivot: {x: 0.625, y: 0.64285713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_01
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 610
+        width: 94
+        height: 100
+      alignment: 9
+      pivot: {x: 0.40425533, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_02
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 624
+        width: 83
+        height: 101
+      alignment: 9
+      pivot: {x: 0.3253012, y: 0.4950495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 78
+        width: 73
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5753425, y: 0.475}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_04
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 892
+        width: 100
+        height: 70
+      alignment: 9
+      pivot: {x: 0.39, y: 0.7714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_initial_01
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 392
+        width: 86
+        height: 108
+      alignment: 9
+      pivot: {x: 0.40697673, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_initial_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 428
+        width: 101
+        height: 106
+      alignment: 9
+      pivot: {x: 0.26732674, y: 0.4716981}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_initial_03
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 420
+        width: 139
+        height: 103
+      alignment: 9
+      pivot: {x: 0.19424461, y: 0.4854369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_initial_04
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 557
+        width: 96
+        height: 102
+      alignment: 9
+      pivot: {x: 0.26041666, y: 0.48039216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_initial_05
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 525
+        width: 96
+        height: 102
+      alignment: 9
+      pivot: {x: 0.26041666, y: 0.48039216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_throw_initial_06
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 392
+        width: 86
+        height: 108
+      alignment: 9
+      pivot: {x: 0.40697673, y: 0.4722222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_timeout_01
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 389
+        width: 66
+        height: 111
+      alignment: 9
+      pivot: {x: 0.6818182, y: 0.45945945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_timeout_02
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 355
+        width: 74
+        height: 109
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4587156}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_timeout_03
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 278
+        width: 66
+        height: 112
+      alignment: 9
+      pivot: {x: 0.72727275, y: 0.49107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_timeout_04
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 274
+        width: 72
+        height: 113
+      alignment: 9
+      pivot: {x: 0.7361111, y: 0.48672566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_timeout_05
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 274
+        width: 81
+        height: 113
+      alignment: 9
+      pivot: {x: 0.654321, y: 0.48672566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_timeout_06
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 240
+        width: 79
+        height: 113
+      alignment: 9
+      pivot: {x: 0.6708861, y: 0.48672566}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_victory_01
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 516
+        width: 88
+        height: 105
+      alignment: 9
+      pivot: {x: 0.3181818, y: 0.4952381}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_victory_02
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 62
+        width: 74
+        height: 122
+      alignment: 9
+      pivot: {x: 0.3918919, y: 0.45081967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_victory_03
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 27
+        width: 76
+        height: 127
+      alignment: 9
+      pivot: {x: 0.38157895, y: 0.43307087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_victory_04
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 120
+        width: 65
+        height: 118
+      alignment: 9
+      pivot: {x: 0.44615385, y: 0.4661017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_victory_05
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 160
+        width: 65
+        height: 116
+      alignment: 9
+      pivot: {x: 0.44615385, y: 0.47413793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_victory_06
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 156
+        width: 65
+        height: 116
+      alignment: 9
+      pivot: {x: 0.44615385, y: 0.47413793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_01
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 308
+        width: 78
+        height: 110
+      alignment: 9
+      pivot: {x: 0.42307693, y: 0.48181817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 200
+        width: 75
+        height: 114
+      alignment: 9
+      pivot: {x: 0.29333332, y: 0.47368422}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_03
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 29
+        width: 79
+        height: 125
+      alignment: 9
+      pivot: {x: 0.32911393, y: 0.472}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_04
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 222
+        width: 95
+        height: 113
+      alignment: 9
+      pivot: {x: 0.43157893, y: 0.460177}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_05
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 389
+        width: 97
+        height: 108
+      alignment: 9
+      pivot: {x: 0.5051546, y: 0.46296296}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_06
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 294
+        width: 99
+        height: 110
+      alignment: 9
+      pivot: {x: 0.44444445, y: 0.47272727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_07
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 411
+        width: 78
+        height: 107
+      alignment: 9
+      pivot: {x: 0.3974359, y: 0.46728972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_08
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 156
+        width: 92
+        height: 116
+      alignment: 9
+      pivot: {x: 0.2826087, y: 0.4827586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_09
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 34
+        width: 81
+        height: 124
+      alignment: 9
+      pivot: {x: 0.34567901, y: 0.46774194}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_10
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 182
+        width: 82
+        height: 115
+      alignment: 9
+      pivot: {x: 0.46341464, y: 0.46086955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_11
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 102
+        width: 92
+        height: 118
+      alignment: 9
+      pivot: {x: 0.41304347, y: 0.5169492}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 177
+        width: 93
+        height: 115
+      alignment: 9
+      pivot: {x: 0.40860215, y: 0.5043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_backward_13
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 177
+        width: 93
+        height: 115
+      alignment: 9
+      pivot: {x: 0.40860215, y: 0.5043478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_01
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 167
+        width: 77
+        height: 115
+      alignment: 9
+      pivot: {x: 0.5064935, y: 0.49565217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_02
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 69
+        width: 73
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5205479, y: 0.5083333}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_03
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 221
+        width: 63
+        height: 113
+      alignment: 9
+      pivot: {x: 0.6031746, y: 0.46902654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_04
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 281
+        width: 45
+        height: 114
+      alignment: 9
+      pivot: {x: 0.6, y: 0.45614034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_05
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 531
+        width: 38
+        height: 104
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48076922}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_06
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 407
+        width: 59
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5254237, y: 0.45945945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_07
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 100
+        width: 81
+        height: 119
+      alignment: 9
+      pivot: {x: 0.49382716, y: 0.49579832}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_08
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 299
+        width: 86
+        height: 110
+      alignment: 9
+      pivot: {x: 0.55813956, y: 0.46363637}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_09
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 307
+        width: 59
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5423729, y: 0.45945945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_10
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 146
+        width: 43
+        height: 126
+      alignment: 9
+      pivot: {x: 0.55813956, y: 0.515873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_11
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 336
+        width: 39
+        height: 111
+      alignment: 9
+      pivot: {x: 0.4871795, y: 0.45045045}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: guy_walk_forward_12
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 284
+        width: 65
+        height: 111
+      alignment: 9
+      pivot: {x: 0.50769234, y: 0.45945945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

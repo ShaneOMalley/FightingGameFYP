@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Name: ZangiefThrow
   m_EditorClassIdentifier: 
   Level: 0
-  Damage: 15
+  Damage: 25
   KnockbackHit: 0.15
   KnockbackBlock: 0.3
   PushbackHit: 0.4
-  PushbackBlock: 0.2
+  PushbackBlock: 0.4
   Hitstun: -1
   Blockstun: -1
   KnocksDownGround: 1

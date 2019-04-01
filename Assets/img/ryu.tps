@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>4.12.0</string>
+        <string>4.12.1</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -1262,6 +1262,32 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,38,102,75</rect>
+                <key>scale9Paddings</key>
+                <rect>51,38,102,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait_cropped.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>25,38,50,75</rect>
+                <key>scale9Paddings</key>
+                <rect>25,38,50,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>
@@ -1362,6 +1388,8 @@
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_03.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_04.png</filename>
             <filename>../../../../../git/fyp-test/res/img/sprites/ryu/ryu_throw_back_05.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait_cropped.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

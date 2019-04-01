@@ -13,22 +13,21 @@ public class RyuController : CharacterSpecificController {
     private const string TRIGGER_RYU_SHORYU = "play_shoryu";
     private const string TRIGGER_RYU_THROW_FIREBALL = "play_throw_fireball";
     private const string TRIGGER_RYU_JUMP_KICK = "play_jump_kick";
+    private const string TRIGGER_RYU_JUMP_PUNCH = "play_jump_punch";
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
-
         StuckAnims = new string[]{
             "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_shoryu",
-            "ryu_throw_fireball", "ryu_throw_initial", "ryu_throw_whiff",
-            "ryu_throw_success", "ryu_throw_back_success", "ryu_thrown", "ryu_throw_tech",
-            "ryu_crouch_punch", "ryu_knockdown_air", "ryu_knockdown_ground",
+            "ryu_throw_fireball", "ryu_throw_fireball_cancelled", "ryu_throw_initial",
+            "ryu_throw_whiff", "ryu_throw_success", "ryu_throw_back_success", "thrown",
+            "throw_tech", "ryu_crouch_punch", "ryu_knockdown_air", "ryu_knockdown_ground",
             "ryu_knockdown_getup", "ryu_victory",
         };
 
         AirStuckAnims = new string[]
         {
-            "ryu_jump_kick", "ryu_flip_out"
+            "ryu_jump_kick", "ryu_jump_punch", "ryu_flip_out"
         };
 
         MovingAnims = new string[]
@@ -42,92 +41,105 @@ public class RyuController : CharacterSpecificController {
         };
 }
 
-    public override void HandleAttacking(PlayerController player, float playerTimeScale)
+    public override void HandleAttacking(float playerTimeScale)
     {
-        // Reset triggers for buffered special moves
-        if (!player.IsStuck)
+        if (_player == null || _animator == null)
         {
-            player.ResetTrigger(TRIGGER_RYU_SHORYU);
-            player.ResetTrigger(TRIGGER_RYU_THROW_FIREBALL);
+            return;
+        }
+
+        // Reset triggers for buffered special moves
+        if (!_player.IsStuck)
+        {
+            _player.ResetTrigger(TRIGGER_RYU_SHORYU);
+            _player.ResetTrigger(TRIGGER_RYU_THROW_FIREBALL);
         }
 
         // Attacking
-        if (!player.IsStuck || player.InSpecialCancelWindow)
+        if (_player.IsStuck && _player.InSpecialCancelWindow)
         {
-            // Specials
-            if (player.GetButtonDownWithBuffer("Special"))
+            // Special Cancels
+            if (_player.GetButtonDownWithBuffer("Special") && !_player.FireballExists())
             {
-                if (player.HoldingForward)
-                {
-                    player.FireTrigger(TRIGGER_RYU_SHORYU);
-                }
-                else if (player.HoldingBack)
-                {
-
-                }
-                else
-                {
-                    player.FireTrigger(TRIGGER_RYU_THROW_FIREBALL);
-                }
+                _player.FireTrigger(TRIGGER_RYU_THROW_FIREBALL);
             }
         }
-        if (!player.IsStuck)
+        if (!_player.IsStuck)
         {
             // Standing Attacks
-            if (player.IsStanding)
+            if (_player.IsStanding)
             {
-                if (player.GetButtonDownWithBuffer("Attack"))
+                if (_player.GetButtonDownWithBuffer("Special"))
                 {
-                    if (player.HoldingForward)
+                    if (_player.HoldingForward)
                     {
-                        player.FireTrigger(TRIGGER_RYU_OVERHEAD);
+                        _player.FireTrigger(TRIGGER_RYU_SHORYU);
+                    }
+                    else if (!_player.FireballExists())
+                    {
+                        _player.FireTrigger(TRIGGER_RYU_THROW_FIREBALL);
+                    }
+                }
+                if (_player.GetButtonDownWithBuffer("Attack"))
+                {
+                    if (_player.HoldingForward)
+                    {
+                        _player.FireTrigger(TRIGGER_RYU_OVERHEAD);
                     }
                     else
                     {
-                        player.FireTrigger(TRIGGER_RYU_ATTACK);
+                        _player.FireTrigger(TRIGGER_RYU_ATTACK);
                     }
                 }
-                else if (player.GetButtonDownWithBuffer("Kick"))
+                else if (_player.GetButtonDownWithBuffer("Kick"))
                 {
-                    player.FireTrigger(TRIGGER_RYU_KICK);
+                    _player.FireTrigger(TRIGGER_RYU_KICK);
                 }
-                else if (player.GetButtonDownWithBuffer("Throw"))
+                else if (_player.GetButtonDownWithBuffer("Throw"))
                 {
-                    player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
-                    _animator.SetBool("throw_back", player.HoldingBack);
+                    _player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
+                    _animator.SetBool("throw_back", _player.HoldingBack);
                 }
             }
             // Crouching Attacks
-            else if (player.IsCrouching)
+            else if (_player.IsCrouching)
             {
-                if (player.GetButtonDownWithBuffer("Special"))
+                if (_player.GetButtonDownWithBuffer("Special"))
                 {
-                    if (player.HoldingForward)
+                    if (_player.HoldingForward)
                     {
-                        player.FireTrigger(TRIGGER_RYU_SHORYU);
+                        _player.FireTrigger(TRIGGER_RYU_SHORYU);
+                    }
+                    else if (!_player.FireballExists())
+                    {
+                        _player.FireTrigger(TRIGGER_RYU_THROW_FIREBALL);
                     }
                 }
-                else if (player.GetButtonDownWithBuffer("Attack"))
+                else if (_player.GetButtonDownWithBuffer("Attack"))
                 {
-                    player.FireTrigger(TRIGGER_RYU_CROUCH_PUNCH);
+                    _player.FireTrigger(TRIGGER_RYU_CROUCH_PUNCH);
                 }
-                else if (player.GetButtonDownWithBuffer("Kick"))
+                else if (_player.GetButtonDownWithBuffer("Kick"))
                 {
-                    player.FireTrigger(TRIGGER_RYU_SWEEP);
+                    _player.FireTrigger(TRIGGER_RYU_SWEEP);
                 }
-                else if (player.GetButtonDownWithBuffer("Throw"))
+                else if (_player.GetButtonDownWithBuffer("Throw"))
                 {
-                    player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
-                    _animator.SetBool("throw_back", player.HoldingBack);
+                    _player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
+                    _animator.SetBool("throw_back", _player.HoldingBack);
                 }
             }
         }
         // Air attacks
-        if (player.IsAirborne && !player.IsAirStuck)
+        if (_player.IsAirborne && !_player.IsAirStuck)
         {
-            if (player.GetButtonDownWithBuffer("Kick"))
+            if (_player.GetButtonDownWithBuffer("Attack"))
             {
-                player.FireTrigger(TRIGGER_RYU_JUMP_KICK);
+                _player.FireTrigger(TRIGGER_RYU_JUMP_PUNCH);
+            }
+            else if (_player.GetButtonDownWithBuffer("Kick"))
+            {
+                _player.FireTrigger(TRIGGER_RYU_JUMP_KICK);
             }
         }
     }

@@ -24,9 +24,9 @@ AnimationClip:
       value: {fileID: 21300236, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     - time: 0.1
       value: {fileID: 21300238, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
-    - time: 0.2
+    - time: 0.3
       value: {fileID: 21300244, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
-    - time: 0.25
+    - time: 0.35
       value: {fileID: 21300246, guid: ecee0de75e839c249acc5c2108c25a97, type: 3}
     attribute: m_Sprite
     path: 
@@ -57,7 +57,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -99,14 +99,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.2
+  - time: 0.3
     functionName: SetCollisionBoxesFrame
     data: ryu_kick_05
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0.35
     functionName: SetCollisionBoxesFrame
     data: ryu_kick_06
     objectReferenceParameter: {fileID: 0}

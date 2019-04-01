@@ -14,6 +14,14 @@ TextureImporter:
     21300014: double_ko
     21300016: draw
     21300018: ryu_wins
+    21300020: charlie_wins
+    21300022: final_round
+    21300024: round_1
+    21300026: round_2
+    21300028: round_3
+    21300030: round_4
+    21300032: zangief_wins
+    21300034: time_over
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -79,13 +87,27 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: double_ko
+      name: charlie_wins
       rect:
         serializedVersion: 2
         x: 3
-        y: 212
-        width: 318
-        height: 41
+        y: 51
+        width: 334
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: double_ko
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 13
+        width: 288
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -96,10 +118,10 @@ TextureImporter:
       name: draw
       rect:
         serializedVersion: 2
-        x: 121
-        y: 76
-        width: 114
-        height: 40
+        x: 777
+        y: 13
+        width: 135
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,10 +132,10 @@ TextureImporter:
       name: fight
       rect:
         serializedVersion: 2
-        x: 3
-        y: 64
-        width: 116
-        height: 52
+        x: 615
+        y: 13
+        width: 160
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,10 +146,10 @@ TextureImporter:
       name: ko
       rect:
         serializedVersion: 2
-        x: 185
-        y: 128
-        width: 65
-        height: 39
+        x: 914
+        y: 13
+        width: 84
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,10 +160,10 @@ TextureImporter:
       name: round1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 22
-        width: 176
-        height: 40
+        x: 808
+        y: 51
+        width: 208
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +174,10 @@ TextureImporter:
       name: round2
       rect:
         serializedVersion: 2
-        x: 323
-        y: 171
-        width: 180
-        height: 40
+        x: 566
+        y: 89
+        width: 211
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +188,10 @@ TextureImporter:
       name: round3
       rect:
         serializedVersion: 2
-        x: 3
-        y: 127
-        width: 180
-        height: 40
+        x: 595
+        y: 51
+        width: 211
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +202,10 @@ TextureImporter:
       name: round4
       rect:
         serializedVersion: 2
-        x: 323
-        y: 213
-        width: 182
-        height: 40
+        x: 779
+        y: 89
+        width: 211
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,9 +217,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 169
-        width: 259
-        height: 41
+        y: 13
+        width: 320
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +230,38 @@ TextureImporter:
       name: ryu_wins
       rect:
         serializedVersion: 2
-        x: 264
-        y: 118
-        width: 212
-        height: 51
+        x: 343
+        y: 89
+        width: 221
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: time_over
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 51
+        width: 254
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zangief_wins
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 89
+        width: 338
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

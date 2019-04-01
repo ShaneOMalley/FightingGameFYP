@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>4.12.0</string>
+        <string>4.12.1</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -380,6 +380,83 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_01.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_02.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_03.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_04.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_05.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_06.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_07.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_08.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_09.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_10.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_11.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_12.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_13.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>96,56,192,112</rect>
+                <key>scale9Paddings</key>
+                <rect>96,56,192,112</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>51,38,102,75</rect>
+                <key>scale9Paddings</key>
+                <rect>51,38,102,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait_cropped.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>25,38,50,75</rect>
+                <key>scale9Paddings</key>
+                <rect>25,38,50,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/victory_ryu.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>76,40,151,80</rect>
+                <key>scale9Paddings</key>
+                <rect>76,40,151,80</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/Characters/Ryu/victory_ryu_upscaled.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>151,80,302,160</rect>
+                <key>scale9Paddings</key>
+                <rect>151,80,302,160</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
         </map>
         <key>fileList</key>
         <array>
@@ -570,6 +647,23 @@
             <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_flip_out_04.png</filename>
             <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_flip_out_05.png</filename>
             <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_flip_out_06.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_01.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_02.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_03.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_04.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_05.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_06.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_07.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_08.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_09.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_10.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_11.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_12.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_fireball_13.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/ryu_portrait_cropped.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/victory_ryu.png</filename>
+            <filename>../../../../../texturepacker/fyp/Characters/Ryu/victory_ryu_upscaled.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

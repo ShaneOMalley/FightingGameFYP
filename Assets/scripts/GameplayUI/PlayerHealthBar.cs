@@ -7,9 +7,11 @@ public class PlayerHealthBar : MonoBehaviour {
 
     public RectTransform Mask;
     public RectTransform MaskLag;
-    public PlayerController Player;
     public int LaunchDelayLag = 25;
     public float LerpFactorLag = 0.25f;
+
+    [HideInInspector]
+    public PlayerController Player;
 
     private float _height;
     private float _heightLag;

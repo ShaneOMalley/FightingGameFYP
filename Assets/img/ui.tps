@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>4.11.0</string>
+        <string>4.12.1</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -195,6 +195,19 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../../../../../texturepacker/fyp/UI/menu_bg.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>89,37,177,75</rect>
+                <key>scale9Paddings</key>
+                <rect>89,37,177,75</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../../../../../texturepacker/fyp/UI/postgame_bg.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
@@ -242,6 +255,7 @@
             <filename>../../../../../texturepacker/UI_Test/Buttons/no.png</filename>
             <filename>../../../../../texturepacker/UI_Test/Buttons/sound.png</filename>
             <filename>../../../../../texturepacker/fyp/UI/postgame_bg.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/menu_bg.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

@@ -17,7 +17,10 @@ public class AnnouncementGraphics : MonoBehaviour {
     public Sprite FightSprite;
     public Sprite KOSprite;
     public Sprite DoubleKOSprite;
+    public Sprite TimeOverSprite;
     public Sprite RyuWinSprite;
+    public Sprite CharlieWinSprite;
+    public Sprite ZangiefWinSprite;
     public Sprite DrawSprite;
 
     public RectTransform Graphic1;
@@ -50,7 +53,10 @@ public class AnnouncementGraphics : MonoBehaviour {
             { GameplayData.State.ANNOUNCE_FIGHT, FightSprite },
             { GameplayData.State.ANNOUNCE_KO, KOSprite },
             { GameplayData.State.ANNOUNCE_DOUBLE_KO, DoubleKOSprite },
+            { GameplayData.State.TIMEOUT_PAUSE, TimeOverSprite },
             { GameplayData.State.ANNOUNCE_RYU_WIN, RyuWinSprite },
+            { GameplayData.State.ANNOUNCE_CHARLIE_WIN, CharlieWinSprite },
+            { GameplayData.State.ANNOUNCE_ZANGIEF_WIN, ZangiefWinSprite },
             { GameplayData.State.ANNOUNCE_DRAW, DrawSprite },
         };
 

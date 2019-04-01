@@ -21,9 +21,9 @@ MonoBehaviour:
   Blockstun: 18
   KnocksDownGround: 0
   KnocksDownAir: 1
-  KnockdownLaunch: 0
-  KnockdownGravity: 0
-  KnockdownGroundFrames: 0
+  KnockdownLaunch: 0.1
+  KnockdownGravity: 0.02
+  KnockdownGroundFrames: 10
   FreezeTimeFrames: 12
   FreezeAttacker: 1
   FreezeDefender: 1

@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>4.10.0</string>
+        <string>4.12.1</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -181,137 +181,167 @@
         </struct>
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/double_ko.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/charlie_wins.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>80,10,159,21</rect>
+                <rect>84,9,167,18</rect>
                 <key>scale9Paddings</key>
-                <rect>80,10,159,21</rect>
+                <rect>84,9,167,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/draw.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/double_ko.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>29,10,57,20</rect>
+                <rect>72,9,144,18</rect>
                 <key>scale9Paddings</key>
-                <rect>29,10,57,20</rect>
+                <rect>72,9,144,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/fight.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/draw.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>29,13,58,26</rect>
+                <rect>34,9,67,18</rect>
                 <key>scale9Paddings</key>
-                <rect>29,13,58,26</rect>
+                <rect>34,9,67,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/ko.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/fight.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>16,10,33,19</rect>
+                <rect>40,9,80,18</rect>
                 <key>scale9Paddings</key>
-                <rect>16,10,33,19</rect>
+                <rect>40,9,80,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round1.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/ko.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>44,10,88,20</rect>
+                <rect>21,9,42,18</rect>
                 <key>scale9Paddings</key>
-                <rect>44,10,88,20</rect>
+                <rect>21,9,42,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round2.png</key>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round3.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/round1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>45,10,90,20</rect>
+                <rect>52,9,104,18</rect>
                 <key>scale9Paddings</key>
-                <rect>45,10,90,20</rect>
+                <rect>52,9,104,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round4.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/round2.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/round3.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/round4.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>46,10,91,20</rect>
+                <rect>53,9,105,18</rect>
                 <key>scale9Paddings</key>
-                <rect>46,10,91,20</rect>
+                <rect>53,9,105,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round_final.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/round_final.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>65,10,129,21</rect>
+                <rect>80,9,160,18</rect>
                 <key>scale9Paddings</key>
-                <rect>65,10,129,21</rect>
+                <rect>80,9,160,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">../../../../../git/fyp-test/res/img/sprites/announcement_graphics/ryu_wins.png</key>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/ryu_wins.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>53,13,106,25</rect>
+                <rect>55,9,111,18</rect>
                 <key>scale9Paddings</key>
-                <rect>53,13,106,25</rect>
+                <rect>55,9,111,18</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/time_over.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>64,9,127,18</rect>
+                <key>scale9Paddings</key>
+                <rect>64,9,127,18</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../../../../texturepacker/fyp/UI/announcement_graphics/zangief_wins.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>85,9,169,18</rect>
+                <key>scale9Paddings</key>
+                <rect>85,9,169,18</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
         </map>
         <key>fileList</key>
         <array>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/fight.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/ko.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round_final.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round1.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round2.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round3.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/round4.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/double_ko.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/ryu_wins.png</filename>
-            <filename>../../../../../git/fyp-test/res/img/sprites/announcement_graphics/draw.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/charlie_wins.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/double_ko.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/draw.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/fight.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/ko.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/ryu_wins.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/zangief_wins.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/round1.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/round2.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/round3.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/round4.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/round_final.png</filename>
+            <filename>../../../../../texturepacker/fyp/UI/announcement_graphics/time_over.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

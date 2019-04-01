@@ -18,15 +18,14 @@ public class ZangiefController : CharacterSpecificController {
     private const string TRIGGER_ZANGIEF_LARIAT = "play_lariat";
 
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
-
         StuckAnims = new string[] {
             "zangief_towards_punch", "zangief_stand_punch", "zangief_stand_kick",
-            "zangief_throw_initial", "zangief_throw_success", "zangief_throw_whiff",
-            "zangief_throw_back_success", "zangief_crouch_punch", "zangief_crouch_kick",
-            "zangief_jump_punch", "zangief_jump_kick", "zangief_lariat"
+            "zangief_throw_initial", "zangief_throw_success", "zangief_throw_back_success",
+            "zangief_throw_whiff", "throw_tech", "thrown",
+            "zangief_crouch_punch", "zangief_crouch_kick", "zangief_jump_punch",
+            "zangief_jump_kick", "zangief_lariat"
         };
 
         AirStuckAnims = new string[] {
@@ -40,101 +39,97 @@ public class ZangiefController : CharacterSpecificController {
         };
 }
 
-    public override void HandleAttacking(PlayerController player, float playerTimeScale)
+    public override void HandleAttacking(float playerTimeScale)
     {
-        // Reset triggers for buffered special moves
-        if (!player.IsStuck)
+        if (_player == null || _animator == null)
         {
-            player.ResetTrigger(TRIGGER_ZANGIEF_LARIAT);
+            return;
+        }
+
+        // Reset triggers for buffered special moves
+        if (!_player.IsStuck)
+        {
+            _player.ResetTrigger(TRIGGER_ZANGIEF_LARIAT);
         }
 
         // Attacking
-        if (!player.IsStuck || player.InSpecialCancelWindow)
+        if (!_player.IsStuck || _player.InSpecialCancelWindow)
         {
             // Specials
-            if (player.GetButtonDownWithBuffer("Special"))
+            if (_player.GetButtonDownWithBuffer("Special"))
             {
-                player.FireTrigger(TRIGGER_ZANGIEF_LARIAT);
-                //if (player.HoldingForward)
-                //{
-                //}
-                //else if (player.HoldingBack)
-                //{
-                //}
-                //else
-                //{
-                //}
+                _player.FireTrigger(TRIGGER_ZANGIEF_LARIAT);
             }
         }
-        if (!player.IsStuck)
+        if (!_player.IsStuck)
         {
             // Standing Attacks
-            if (player.IsStanding)
+            if (_player.IsStanding)
             {
-                if (player.GetButtonDownWithBuffer("Attack"))
+                if (_player.GetButtonDownWithBuffer("Attack"))
                 {
-                    if (player.HoldingForward)
+                    if (_player.HoldingForward)
                     {
-                        player.FireTrigger(TRIGGER_ZANGIEF_TOWARDS_PUNCH);
+                        _player.FireTrigger(TRIGGER_ZANGIEF_TOWARDS_PUNCH);
                     }
                     else
                     {
-                        player.FireTrigger(TRIGGER_ZANGIEF_STAND_PUNCH);
+                        _player.FireTrigger(TRIGGER_ZANGIEF_STAND_PUNCH);
                     }
                 }
-                else if (player.GetButtonDownWithBuffer("Kick"))
+                else if (_player.GetButtonDownWithBuffer("Kick"))
                 {
-                    player.FireTrigger(TRIGGER_ZANGIEF_STAND_KICK);
+                    _player.FireTrigger(TRIGGER_ZANGIEF_STAND_KICK);
                 }
-                else if (player.GetButtonDownWithBuffer("Throw"))
+                else if (_player.GetButtonDownWithBuffer("Throw"))
                 {
-                    _animator.SetBool("throw_back", player.HoldingBack);
-                    player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
+                    _animator.SetBool("throw_back", _player.HoldingBack);
+                    _player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
                 }
             }
             // Crouching Attacks
-            else if (player.IsCrouching)
+            else if (_player.IsCrouching)
             {
-                if (player.GetButtonDownWithBuffer("Special"))
+                if (_player.GetButtonDownWithBuffer("Special"))
                 {
-                    if (player.HoldingForward)
+                    if (_player.HoldingForward)
                     {
                     }
                 }
-                else if (player.GetButtonDownWithBuffer("Attack"))
+                else if (_player.GetButtonDownWithBuffer("Attack"))
                 {
-                    player.FireTrigger(TRIGGER_ZANGIEF_CROUCH_PUNCH);
+                    _player.FireTrigger(TRIGGER_ZANGIEF_CROUCH_PUNCH);
                 }
-                else if (player.GetButtonDownWithBuffer("Kick"))
+                else if (_player.GetButtonDownWithBuffer("Kick"))
                 {
-                    player.FireTrigger(TRIGGER_ZANGIEF_CROUCH_KICK);
+                    _player.FireTrigger(TRIGGER_ZANGIEF_CROUCH_KICK);
                 }
-                else if (player.GetButtonDownWithBuffer("Throw"))
+                else if (_player.GetButtonDownWithBuffer("Throw"))
                 {
-                    _animator.SetBool("throw_back", player.HoldingBack);
-                    player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
+                    _animator.SetBool("throw_back", _player.HoldingBack);
+                    _player.FireTrigger(PlayerController.TRIGGER_PLAYER_THROW_INITIAL);
                 }
             }
         }
         // Air attacks
-        if (player.IsAirborne && !player.IsAirStuck)
+        if (_player.IsAirborne && !_player.IsAirStuck)
         {
-            if (player.GetButtonDownWithBuffer("Attack"))
+            if (_player.GetButtonDownWithBuffer("Attack"))
             {
-                player.FireTrigger(TRIGGER_ZANGIEF_JUMP_PUNCH);
+                _player.FireTrigger(TRIGGER_ZANGIEF_JUMP_PUNCH);
             }
-            else if (player.GetButtonDownWithBuffer("Kick"))
+            else if (_player.GetButtonDownWithBuffer("Kick"))
             {
-                player.FireTrigger(TRIGGER_ZANGIEF_JUMP_KICK);
+                _player.FireTrigger(TRIGGER_ZANGIEF_JUMP_KICK);
             }
         }
 
         // Lariat Movement
         if (CanMoveLariat)
         {
-            if (player.HoldingForward)
+            if (_player.HoldingForward)
             {
-                player.transform.Translate(playerTimeScale * LariatMoveSpeed * (player.IsFacingRight ? 1 : -1), 0, 0);
+                _player.transform.Translate(playerTimeScale * LariatMoveSpeed * (_player.IsFacingRight ? 1 : -1) * Utils.TimeCorrection, 0, 0);
             }
             //else if (player.HoldingBack)
             //{

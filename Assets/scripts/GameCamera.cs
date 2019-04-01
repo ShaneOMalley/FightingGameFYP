@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameCamera : MonoBehaviour
 {
     public GameController GameController;
+    //[HideInInspector]
     public Transform[] Subjects;
     public Transform CameraBoundsLeft;
     public Transform CameraBoundsRight;
