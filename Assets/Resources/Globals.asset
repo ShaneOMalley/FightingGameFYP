@@ -13,15 +13,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetFrameRate: 60
   DrawHitboxes: 0
-  ShowRecoveryColor: 0
+  ShowRecoveryColor: 1
   DebugPreviewAnimationMovements: 0
   TimeScale: 1
   HitFreezeLength: 12
   InputBufferFrames: 7
   MasterVolume: 1
-  Player1Character: 2
-  Player2Character: 1
+  Player1Character: 0
+  Player2Character: 0
   Player1Controller: 1
   BackupP1Controller: 1
-  Player2Controller: 2
-  PlayerWinning: 0
+  Player2Controller: 3
+  PlayerWinning: 2

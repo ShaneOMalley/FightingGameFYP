@@ -12,7 +12,7 @@ public abstract class CharacterSpecificController : MonoBehaviour {
     protected PlayerController _player;
     protected Animator _animator;
 
-    public virtual void Update ()
+    public virtual void FixedUpdate ()
     {
         if (_animator == null)
         {

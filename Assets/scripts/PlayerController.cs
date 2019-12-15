@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ILastUpdater
 {
     public GameplayData Data;
 
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float HitShakeScaleX;
     //private float _hitShakeDistance = 0.1f;
+
+    private Text _debugText;
     
     public Globals.Player PlayerNum = Globals.Player.P1;
 
@@ -72,6 +75,30 @@ public class PlayerController : MonoBehaviour
 
     // A map of actions to the number of frames to repeat the action
     private Dictionary<string, int> _actionBuffers = new Dictionary<string, int>
+    {
+        { "Horizontal", 0 },
+        { "Vertical", 0 },
+        { "Throw", 0 },
+        { "Special", 0 },
+        { "Attack", 0 },
+        { "Kick", 0 },
+        { "Select", 0 },
+        { "Start", 0 },
+    };
+
+    private readonly Dictionary<string, float> _inputState = new Dictionary<string, float>()
+    {
+        { "Horizontal", 0 },
+        { "Vertical", 0 },
+        { "Throw", 0 },
+        { "Special", 0 },
+        { "Attack", 0 },
+        { "Kick", 0 },
+        { "Select", 0 },
+        { "Start", 0 },
+    };
+    
+    private readonly Dictionary<string, float> _inputStatePrevious = new Dictionary<string, float>()
     {
         { "Horizontal", 0 },
         { "Vertical", 0 },
@@ -169,26 +196,7 @@ public class PlayerController : MonoBehaviour
     public const string TRIGGER_PLAYER_STOP_CELEBRATION = "stop_celebration";
 
     private CharacterSpecificController _characterSpecificController;
-
-    // Ryu-specific
-    //private const string TRIGGER_RYU_ATTACK = "play_attack";
-    //private const string TRIGGER_RYU_KICK = "play_kick";
-    //private const string TRIGGER_RYU_SWEEP = "play_sweep";
-    //private const string TRIGGER_RYU_CROUCH_PUNCH = "play_crouch_punch";
-    //private const string TRIGGER_RYU_OVERHEAD = "play_overhead";
-    //private const string TRIGGER_RYU_SHORYU = "play_shoryu";
-    //private const string TRIGGER_RYU_THROW_FIREBALL = "play_throw_fireball";
-    //private const string TRIGGER_RYU_JUMP_KICK = "play_jump_kick";
-
-    //private static string[] StuckAnims =
-    //{
-    //    "ryu_attack", "ryu_kick", "ryu_sweep", "ryu_overhead", "ryu_shoryu",
-    //    "ryu_throw_fireball", "ryu_throw_initial", "ryu_throw_whiff",
-    //    "ryu_throw_success", "ryu_throw_back_success", "ryu_thrown", "ryu_throw_tech",
-    //    "ryu_crouch_punch", "ryu_knockdown_air", "ryu_knockdown_ground",
-    //    "ryu_knockdown_getup", "ryu_victory"
-    //};
-
+    
     private static State[] StuckStates =
     {
         State.STATE_HIT, State.STATE_BLOCK, State.STATE_KNOCKDOWN_AIR,
@@ -197,25 +205,10 @@ public class PlayerController : MonoBehaviour
         State.STATE_FORWARD_JUMP, State.STATE_FLIP_OUT,
     };
 
-    //private static string[] AirStuckAnims =
-    //{
-    //    "ryu_jump_kick", "ryu_flip_out"
-    //};
-
     private static State[] AirStuckStates =
     {
         State.STATE_FLIP_OUT
     };
-
-    //private static string[] MovingAnims =
-    //{
-    //    "ryu_shoryu"
-    //};
-
-    //private static string[] IgnoreGravityAirborneAnims =
-    //{
-    //    "ryu_shoryu"
-    //};
 
     private bool _victoryFired = false;
     private bool _timeoutFired = false;
@@ -254,6 +247,7 @@ public class PlayerController : MonoBehaviour
     private Transform _nextBoxesFrame = null;
 
     public GameController GameController;
+    public LastUpdateManager LastUpdateManager;
 
     private const string GLOBALS_NAME = "Globals";
     private static Globals _globals;
@@ -566,6 +560,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
+        LastUpdateManager.LastUpdateList.Add(this);
         _globals = Resources.Load<Globals>(GLOBALS_NAME);
 
         _animator = this.GetComponent<Animator>();
@@ -578,11 +573,31 @@ public class PlayerController : MonoBehaviour
 
         _animatedDeltaPosPrevious = Vector2.zero;
         _characterSpecificController = GetComponent<CharacterSpecificController>();
+
+        _debugText = GameObject.Find("debug_text").GetComponent<Text>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        foreach (string action in ActionToAxis.Keys)
+        {
+            string axis = string.Format(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
+            float value = Input.GetAxis(axis) + (Input.GetButton(axis) ? 1 : 0);
+            if (action == "Attack")
+                Debug.Log("Action: " + action + ", Axis: " + axis + ", Value: " + value);
+//            if (!Mathf.Approximately(value, 0))
+//            {
+                _inputState[action] = value;
+//            }
+        }
+    }
+    
+    void FixedUpdate()
+    {
+        Debug.Log("Attack " + GetAxis("Attack"));
+        Debug.Log("Horizontal " + GetAxis("Horizontal"));
+        
         // Update recovery color
         if (_globals.ShowRecoveryColor && IsStuck && Data.CurrentState == GameplayData.State.GAMEPLAY)
         {
@@ -802,6 +817,11 @@ public class PlayerController : MonoBehaviour
             {
                 SetState(State.STATE_HIT);
             }
+
+            if (_debugText)
+            {
+                _debugText.text = String.Format("Hitstun Frames: {0}", _hitstun_frames);
+            }
         }
 
         // Blockstun handling
@@ -885,9 +905,15 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        
+        // Cache old input state
+        foreach (string key in _inputState.Keys)
+        {
+            _inputStatePrevious[key] = _inputState[key];
+        }
     }
 
-    public void LateUpdate()
+    public void LastUpdate()
     {
         // Set the collision boxes frame
         UpdateSetCollisionBoxesFrame();
@@ -1100,6 +1126,7 @@ public class PlayerController : MonoBehaviour
             KnockbackSpeed(relative_knockback);
             _hitstun_frames = num_frames;
             FireTrigger(TRIGGER_PLAYER_HIT);
+            SetState(State.STATE_HIT);
         }
 
         GameController.PlayHitSFX();
@@ -1148,6 +1175,7 @@ public class PlayerController : MonoBehaviour
         _blockstun_frames = num_frames;
         KnockbackSpeed(relative_knockback);
         FireTrigger(TRIGGER_PLAYER_BLOCK);
+        SetState(State.STATE_BLOCK);
 
         GameController.PlayBlockSFX();
     }
@@ -1256,8 +1284,11 @@ public class PlayerController : MonoBehaviour
 
     private void SetState(State state)
     {
-        _animator.SetInteger("state", (int)state);
-        _state = state;
+        if (_state != state)
+        {
+            _animator.SetInteger("state", (int) state);
+            _state = state;
+        }
     }
 
     private void SetJumpDecision(State state)
@@ -1344,6 +1375,8 @@ public class PlayerController : MonoBehaviour
         Projectile fireball = Instantiate(fireballPrefab, FireballSpawnPos.position, Quaternion.identity);
 
         fireball.GameController = GameController;
+        fireball.LastUpdateManager = LastUpdateManager;
+        LastUpdateManager.LastUpdateList.Add(fireball);
         fireball.Owner = this;
         fireball.Opponent = OtherPlayer;
 
@@ -1384,7 +1417,14 @@ public class PlayerController : MonoBehaviour
         {
             return _actionRecording[_actionPlaybackFrame].GetAxis(_direction, action);
         }
-        return Input.GetAxis(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
+
+//        if (action == "Horizontal")
+//        {
+//            print(_inputState[action]);
+//        }
+        return _inputState[action];
+//        return _inputState[string.Format(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]))];
+//        return Input.GetAxis(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
     }
 
     private bool GetButton(string action)
@@ -1393,7 +1433,9 @@ public class PlayerController : MonoBehaviour
         {
             return _actionRecording[_actionPlaybackFrame].GetButton(action);
         }
-        return Input.GetButton(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
+        return _inputState[action] > 0;
+//        return _inputState[string.Format(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]))] > 0;
+//        return Input.GetButton(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
     }
 
     private bool GetButtonDown(string action)
@@ -1402,7 +1444,12 @@ public class PlayerController : MonoBehaviour
         {
             return _actionRecording[_actionPlaybackFrame].GetButtonDown(action);
         }
-        return Input.GetButtonDown(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
+
+//        return _inputState[action] > 0;
+        return _inputState[action] > 0 && Mathf.Approximately(_inputStatePrevious[action], 0);
+//        string key = string.Format(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
+//        return _inputState[key] > 0 && Mathf.Approximately(_inputStatePrevious[key], 0);
+//        return Input.GetButtonDown(string.Format("J{0}{1}", ControllerNum, ActionToAxis[action]));
     }
 
     private void UpdateBufferedInputs()

@@ -18,9 +18,12 @@ public class Timer : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         int secondsLeft = GameplayData.FramesLeft > 0 ? (GameplayData.FramesLeft - 1) / 60 + 1 : 0;
+//	    Debug.Log("Timer FixedUpdate");
+//	    Debug.Log("Frames Left: " + GameplayData.FramesLeft);
+//	    Debug.Log("Seconds Left: " + secondsLeft);
             
         secondsLeft = (int)Mathf.Clamp(secondsLeft, 0, 99);
         int ldigit = secondsLeft / 10;

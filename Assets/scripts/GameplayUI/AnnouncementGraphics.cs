@@ -67,8 +67,9 @@ public class AnnouncementGraphics : MonoBehaviour {
         _prevState = null;
     }
 	
-	void Update ()
+	void FixedUpdate ()
     {
+        Debug.Log("AnnoucementGraphics FixedUpdate");
         if (Data.CurrentState != _prevState)
         {
             FireAnnouncement(Data.CurrentState);

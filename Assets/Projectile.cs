@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour {
-
+public class Projectile : MonoBehaviour, ILastUpdater
+{
     public AttackData AttackData;
     public Vector3 Velocity;
     
@@ -13,6 +13,8 @@ public class Projectile : MonoBehaviour {
     public PlayerController Opponent;
     [HideInInspector]
     public GameController GameController;
+    [HideInInspector]
+    public LastUpdateManager LastUpdateManager;
 
     private Animator _animator;
     private BoxCollider2D _bounds;
@@ -35,7 +37,7 @@ public class Projectile : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         _animator.speed = _globals.TimeScale;
 
@@ -45,13 +47,14 @@ public class Projectile : MonoBehaviour {
         }
     }
 
-    void LateUpdate ()
+    public void LastUpdate ()
     {
         if (!_dissapated)
         {
             if (_bounds.bounds.max.x < GameController.Camera.Left
                 || _bounds.bounds.min.x > GameController.Camera.Right)
             {
+                LastUpdateManager.LastUpdateList.Remove(this);
                 GameController.Projectiles.Remove(this);
                 Destroy(gameObject);
             }
@@ -100,6 +103,7 @@ public class Projectile : MonoBehaviour {
 
     public void Dissapate()
     {
+        LastUpdateManager.LastUpdateList.Remove(this);
         GameController.Projectiles.Remove(this);
         _animator.SetTrigger(PLAY_DISSAPATE);
         _dissapated = true;
