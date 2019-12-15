@@ -1,4 +1,4 @@
-# Fighting Game: Name TBD
+# Two Battling Dudes: An accessible fighting game
 ## Shane O'Malley's Final Year Project for the University of Limerick 
 
 This project is my final year project for the Computer Games Development course (LM110) in the University of Limerick.
